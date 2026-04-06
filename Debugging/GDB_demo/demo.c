@@ -17,15 +17,15 @@
 // GDB unlocked demo
 int main(void)
 {
-	unsigned int i;
 	unsigned int a[11];
+	unsigned int i;
 
 	i = 0;
-	while (i < 12)
-	{
+	while (i < 12 )	{
 		a[i] = 0;
 		printf("a[%d] = %d\n", i, a[i]);
-		// printf("a = %p, i = %p, %d\n", &a[i], &i, i);
+		printf("a = %p, i = %p, %d\n", &a[i], &i, i);
 		i++;
 	}
+	return 0;
 }

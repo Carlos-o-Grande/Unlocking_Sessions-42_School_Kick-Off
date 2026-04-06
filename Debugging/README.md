@@ -2,7 +2,7 @@
 
 A practical introduction to debugging C programs using GDB and Visual Studio Code.
 
-## 📚 Session Contents
+##  Session Contents
 
 ### **GDB Command-Line Demo** &nbsp; [(GDB demo)](GDB%20demo/)
 Learn the fundamentals of debugging with GDB through hands-on examples. Covers essential commands, breakpoints, variable inspection, and program flow analysis.

@@ -1,0 +1,90 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+	// this launch option runs the executable but before executes "preLaunchTask":
+	//  "C/C++: gcc build active file" (see tasks.json)
+	// "program": "${workspaceFolder}/ballons" can be replaced by a variable expanded on launch
+	// we also setup args[] to 99, this executes "./ballons 99" setting the argv of the program
+		{
+			"name": "Compile & Launch",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/${fileBasenameNoExtension}",
+			"args": [
+				"99",
+			],
+			"stopAtEntry": true,	//optional, if true debugger always stop at first instruction
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "C/C++: gcc build active file",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		// this launch option runs the executable but before executes "Makefile" task  (see tasks.json)
+		{
+			"name": "Makefile & Launch",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/a.out", // edit to the bin name in your makefile
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "Makefile",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+		// this launch option just executes the program
+		{
+			"name": "Launch (no build)",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/${fileBasenameNoExtension}",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				},
+				{
+					"description": "Set Disassembly Flavor to Intel",
+					"text": "-gdb-set disassembly-flavor intel",
+					"ignoreFailures": true
+				}
+			]
+		},
+	]
+}

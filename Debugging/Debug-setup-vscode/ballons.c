@@ -13,19 +13,51 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-// GDB unlocked demo
-int main(void)
+void	no_more_ballons()
 {
-	unsigned int i;
-	unsigned int a[11];
+	printf("no more Luftballons in the hand!\n");
+	return ;
+}
 
-	i = 0;
-	while (i < 12)
+void	one_ballon()
+{
+	printf("1 Luftballon in the hand, let it fly, now there\'s,\n");
+	return ;
+}
+
+void	do_this(int *cnt, char *string)
+{
+	// cnt in this scope is a pointer - WATCH
+	if (*cnt == 1)
+		one_ballon();
+	else
+		printf("%i %s\n", *cnt, string);
+
+	// Segfault when cnt reaches 67
+	if (*cnt == 67)
 	{
-		a[i] = 0;
-		printf("a[%d] = %d\n", i, a[i]);
-		// printf("a = %p, i = %p, %d\n", &a[i], &i, i);
-		i++;
+		printf("About to crash when cnt=%d...\n", *cnt);
+		printf("Divide by Zero %d", *cnt/0);
 	}
+
+	return ;
+}
+
+int		main(int argc, char **argv)
+{
+	int		cnt = 5;	// cnt in the this scope is an int - WATCH
+	char	*string = "Luftballons in the hand, let one fly, now there\'s,";
+
+	if (argc == 2)
+		cnt = atoi(argv[1]);	// there is a missing check here, what is it?
+	while (cnt)					// HINT: not guarding atoi() breaks this!
+	{
+		do_this(&cnt, string);	// pass cnt as a pointer - WATCH
+		cnt--;
+		if (cnt == 0)
+			no_more_ballons();
+	}
+	return (0);
 }

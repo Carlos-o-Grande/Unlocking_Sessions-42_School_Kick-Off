@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlocking Session: Syntax</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+  <nav class="topnav">
+    <div class="nav-title">Unlocking Session: Syntax</div>
+
+    <div class="nav-dropdown" id="navDrop">
+      <button class="nav-menu-btn" onclick="toggleNav()">
+        Sections <span class="arrow">▾</span>
+      </button>
+      <div class="nav-menu">
+        <a href="#cover"><span class="sec-num">00</span> Beginning</a>
+        <a href="#s00"><span class="sec-num">00</span> First Byte</a>
+        <a href="#s01"><span class="sec-num">01</span> Vocabulary</a>
+        <a href="#s02"><span class="sec-num">02</span> The Byte &amp; Types</a>
+        <a href="#s03"><span class="sec-num">03</span> Compiler Flags &amp; Makefile</a>
+        <a href="#s04"><span class="sec-num">04</span> Boolean Logic &amp; Precedence</a>
+        <a href="#s05"><span class="sec-num">05</span> Scope &amp; Variable Lifetime</a>
+        <a href="#s06"><span class="sec-num">06</span> Loops</a>
+        <a href="#s07"><span class="sec-num">07</span> Clean Code</a>
+        <a href="#s08"><span class="sec-num">08</span> Defensive Programming</a>
+        <a href="#s09"><span class="sec-num">09</span> Reading C</a>
+        <hr class="nav-divider">
+        <a href="#recap"><span class="sec-num">↩</span> Recap</a>
+      </div>
+    </div>
+
+    <button class="btn-notes-global" id="globalToggle" onclick="toggleAllNotes()">
+      📋 Show All Notes
+    </button>
+  </nav>
+
+  <!-- ════════════════════════════════════════
+     COVER / WELCOME
+════════════════════════════════════════ -->
+  <div class="cover" id="cover">
+    <div class="cover-content">
+      <div class="cover-left">
+        <div class="cover-tag">42 School · Kick-off Week · Onboarding</div>
+        <h1 class="cover-title">
+          Unlocking Session:
+          <span>Syntax</span>
+        </h1>
+      </div>
+      <div class="cover-right">
+        <!-- <div class="cover-presenter"> -->
+        <!-- Replace presenter.jpg with your photo -->
+        <!-- <img src="presenter.jpg" alt="Presenter photo" class="presenter-img" />
+          <div class="presenter-tag">← this guy</div>
+        </div> -->
+        <div class="cover-qr-area">
+          <!-- Replace qr-github.png with your QR code image -->
+
+          <a href="https://tinyurl.com/unlock-sessions">
+          <img src=" unlock-sessions-qr.png" alt="GitHub repository QR code" class="qr-img" />
+
+          <img src="github-mark-white.png" alt="GitHub repository QR code" class="qr-img-logo" />
+          <div class="qr-label">
+            tinyurl.com/<br/>unlock-sessions
+          </div>
+
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════ -->
+  <div class=" content">
+
+    <!-- SESSION MAP -->
+    <div class="toc">
+      <h2>// Session Map</h2>
+      <div class="toc-grid">
+        <div class="toc-item"><span class="n">00</span> First Byte</div>
+        <div class="toc-item"><span class="n">01</span> Vocabulary — Common Language</div>
+        <div class="toc-item"><span class="n">02</span> The Byte &amp; Types</div>
+        <div class="toc-item"><span class="n">03</span> Compiler Flags &amp; Makefile</div>
+        <div class="toc-item"><span class="n">04</span> Boolean Logic &amp; Precedence</div>
+        <div class="toc-item"><span class="n">05</span> Scope &amp; Variable Lifetime</div>
+        <div class="toc-item"><span class="n">06</span> Loops</div>
+        <div class="toc-item"><span class="n">07</span> Clean Code</div>
+        <div class="toc-item"><span class="n">08</span> Defensive Programming</div>
+        <div class="toc-item"><span class="n">09</span> Reading C — cdecl Method</div>
+      </div>
+      <div class="budget">
+        <div class="bchip">00 · ~3 min</div>
+        <div class="bchip">01 · ~4 min</div>
+        <div class="bchip">02 · ~7 min</div>
+        <div class="bchip">03 · ~5 min</div>
+        <div class="bchip">04 · ~8 min</div>
+        <div class="bchip">05 · ~4 min</div>
+        <div class="bchip">06 · ~5 min</div>
+        <div class="bchip">07 · ~4 min</div>
+        <div class="bchip">08 · ~7 min</div>
+        <div class="bchip">09 · ~4 min</div>
+        <div class="bchip total">Structured ~51 min · buffer ~9 min</div>
+      </div>
+    </div>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 00 — FIRST BYTE
+════════════════════════════════════════ -->
+    <section id="s00">
+      <div class="section-hdr">
+        <div class="num s-open">✋</div>
+        <h2>First Byte</h2>
+        <div class="timing">~3 min</div>
+      </div>
+
+      <!-- S01 — the gag: audience-facing only -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 01 <span class="stag stag-int">Interactive</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-amber">
+            <h3>How many fingers?</h3>
+            <div class="snum">S01</div>
+          </div>
+          <div class="slide-body">
+            <div class="big-txt">✋</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S02 — binary hands: decode these -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 02 <span class="stag stag-int">Interactive — Audience Exercise</span>
+        </div>
+        <div class="slide">
+          <div class="slide-hdr c-amber">
+            <h3>Read the byte — what's the value?</h3>
+            <div class="snum">S02</div>
+          </div>
+          <div class="slide-body">
+            <div class="bit-legend">
+              pinky = <span>16</span> &nbsp;·&nbsp;
+              ring = <span>8</span> &nbsp;·&nbsp;
+              middle = <span>4</span> &nbsp;·&nbsp;
+              index = <span>2</span> &nbsp;·&nbsp;
+              thumb = <span>1</span>
+              &nbsp;&nbsp;|&nbsp;&nbsp; raised = 1 &nbsp;·&nbsp; down = 0
+            </div>
+            <div class="emoji-grid">
+              <div class="emoji-item">
+                <span class="emoji-face">✌️</span>
+                <div class="emoji-q">= ?</div>
+              </div>
+              <div class="emoji-item">
+                <span class="emoji-face">🤟</span>
+                <div class="emoji-q">= ?</div>
+              </div>
+              <div class="emoji-item">
+                <span class="emoji-face">🤘</span>
+                <div class="emoji-q">= ?</div>
+              </div>
+              <div class="emoji-item">
+                <span class="emoji-face">🤙</span>
+                <div class="emoji-q">= ?</div>
+              </div>
+            </div>
+            <div class="slide-key">Each raised finger is a bit = 1. Each lowered finger is a bit = 0. Add the
+              weights of
+              all raised fingers.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n00',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — First Byte</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n00" hidden>
+        <div class="notes-body">
+          <p>Raise your open hand toward the audience. Ask genuinely — not rhetorically.</p>
+          <div class="engage">
+            <p>"How many fingers am I showing?" → wait for "five". Then: "What <em>number</em> am I showing?"
+              — pause
+              and let answers come in.</p>
+          </div>
+          <p>You'll get "five", maybe "one" from someone thinking binary. That split reaction is the whole
+            gag. Reframe:
+            <em>"Replace each finger with a bit. A bit is open (1) or closed (0). One hand is 5 bits — a full
+              byte needs
+              8. Good thing I have two hands and some toes."</em>
+          </p>
+          <p><strong>Slide S02 — decode exercise:</strong> Show the weight legend first. Then let them work.
+            Results:
+          </p>
+          <ul>
+            <li>✌️ index(2) + middle(4) = <strong>6</strong> — binary 00110</li>
+            <li>🤟 thumb(1) + index(2) + pinky(16) = <strong>19</strong> — binary 10011</li>
+            <li>🤘 index(2) + pinky(16) = <strong>18</strong> — binary 10010</li>
+            <li>🤙 thumb(1) + pinky(16) = <strong>17</strong> — binary 10001</li>
+          </ul>
+          <p>Don't rush. Let the room work. Someone will shout answers — let others verify. This interactive
+            moment
+            builds energy and rapport before any teaching begins.</p>
+          <div class="transition-note">Now that we share a feel for binary, let's establish vocabulary before
+            we go
+            deeper.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 01 — VOCABULARY
+════════════════════════════════════════ -->
+    <section id="s01">
+      <div class="section-hdr">
+        <div class="num s-vocab">V</div>
+        <h2>Vocabulary — Common Language</h2>
+        <div class="timing">~4 min</div>
+      </div>
+
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 03 <span class="stag stag-vis">Visual</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-purple">
+            <h3>Parts of a C function — shared vocabulary</h3>
+            <div class="snum">S03</div>
+          </div>
+          <div class="slide-body">
+            <div class="two-col">
+              <div>
+                <pre><code><span class="vt">size_t</span>  <span class="vfn">ft_strlen</span>(<span class="vpt">char </span><span class="co">*</span><span class="vpn">str</span>)
+{
+    <span class="vt">size_t</span>  <span class="vv">len</span>;
+
+    <span class="vv">len</span> <span class="co">=</span> <span class="cn">0</span>;
+    <span class="ck">while</span> (<span class="vpn">str</span>[<span class="vv">len</span>])
+        <span class="vv">len</span><span class="co">++</span>;
+    <span class="ck">return</span> (<span class="vv">len</span>);
+}</code></pre>
+              </div>
+              <div>
+                <div class="vocab-grid">
+                  <div class="vocab-item">
+                    <div class="vocab-dot bg-amber mt-sm"></div>
+                    <div>
+                      <div class="vname vt">Return type</div>
+                      <div class="vdesc">What the function gives back</div>
+                    </div>
+                  </div>
+                  <div class="vocab-item">
+                    <div class="vocab-dot bg-cyan mt-sm"></div>
+                    <div>
+                      <div class="vname vfn">Function name</div>
+                      <div class="vdesc">A verb — what it does</div>
+                    </div>
+                  </div>
+                  <div class="vocab-item">
+                    <div class="vocab-dot bg-purple mt-sm"></div>
+                    <div>
+                      <div class="vname vpt">Parameter</div>
+                      <div class="vdesc">Input — a noun (type + name)</div>
+                    </div>
+                  </div>
+                  <div class="vocab-item">
+                    <div class="vocab-dot bg-red mt-sm"></div>
+                    <div>
+                      <div class="vname vv">Local variable</div>
+                      <div class="vdesc">Working memory — a noun</div>
+                    </div>
+                  </div>
+                  <div class="vocab-item">
+                    <div class="vocab-dot bg-cyan mt-sm"></div>
+                    <div>
+                      <div class="vname co">Condition</div>
+                      <div class="vdesc">Boolean expression tested</div>
+                    </div>
+                  </div>
+                  <div class="vocab-item">
+                    <div class="vocab-dot bg-purple mt-sm"></div>
+                    <div>
+                      <div class="vname ck">Statement</div>
+                      <div class="vdesc">Action performed</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-key">We'll use these words throughout. If something is unclear, name the part —
+              that's
+              what vocabulary is for.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n01',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Vocabulary</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n01" hidden>
+        <div class="notes-body">
+          <p>This uses <code>ft_strlen</code> — something they all wrote in the piscine. The familiarity is
+            intentional.
+            Point at the code on the left as you name each coloured part.</p>
+          <div class="engage">
+            <p>"Look at the parameter name 'str' and the variable 'len' — what kind of word are those, verb or
+              noun? Why
+              does that matter when choosing a name?"</p>
+          </div>
+          <p>They describe <em>things</em>, not <em>actions</em>. This seeds the Clean Code section without
+            front-loading rules. Keep it short — vocabulary reinforces itself throughout the session.</p>
+          <div class="transition-note">Now that we share vocabulary, let's look at what the compiler works
+            with — bytes
+            and types.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 02 — BYTE & TYPES
+════════════════════════════════════════ -->
+    <section id="s02">
+      <div class="section-hdr">
+        <div class="num">2</div>
+        <h2>The Byte &amp; Types in C</h2>
+        <div class="timing">~7 min</div>
+      </div>
+
+      <!-- S04 — nibbles & hex -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 04 <span class="stag stag-live">Live Demo — IDE</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>Nibbles &amp; hex — 0x42 is not 42</h3>
+            <div class="snum">S04</div>
+          </div>
+          <div class="slide-body">
+            <p class="subtext mb-md">A nibble is 4 bits. Two nibbles make a
+              byte. Each nibble maps to exactly one hex digit.</p>
+            <div class="nibble-vis" style="display: flex; justify-content: space-evenly; align-items: center;">
+              <span class="nb-top" style="margin: 0;">hex literal: 0x42</span>
+              <div style="text-align: center;">
+                <span class="nb-bits"><span class="nb-u">0100</span>&nbsp;&nbsp;<span class="nb-l">0010</span></span>
+                <span class="nb-top">upper nibble&nbsp;&nbsp;lower nibble</span>
+              </div>
+              <span class="nb-eq" style="margin: 0;"><span class="nb-u">4</span> × 16 + <span class="nb-l">2</span> × 1
+                = 66 decimal</span>
+            </div>
+            <pre><code>#include &lt;stdio.h&gt;
+
+<span class="ct">int</span>     <span class="cf">main</span>(<span class="ck">void</span>)
+{
+    <span class="ct">int</span>     n;
+    <span class="ct">int</span>     upper;
+    <span class="ct">int</span>     lower;
+
+    n <span class="co">=</span> <span class="cn">0x42</span>;                   <span class="cm">// hex literal — decimal value is 66, not 42!</span>
+    upper <span class="co">=</span> (n <span class="co">&gt;&gt;</span> <span class="cn">4</span>) <span class="co">&amp;</span> <span class="cn">0x0F</span>;    <span class="cm">// shift right 4, mask — upper nibble</span>
+    lower <span class="co">=</span> n <span class="co">&amp;</span> <span class="cn">0x0F</span>;            <span class="cm">// mask lower 4 bits — lower nibble</span>
+    <span class="cf">printf</span>(<span class="cs">"hex:          0x%02X\n"</span>, n);      <span class="cm">// 0x42</span>
+    <span class="cf">printf</span>(<span class="cs">"decimal:      %d\n"</span>, n);           <span class="cm">// 66</span>
+    <span class="cf">printf</span>(<span class="cs">"upper nibble: %d\n"</span>, upper);        <span class="cm">// 4</span>
+    <span class="cf">printf</span>(<span class="cs">"lower nibble: %d\n"</span>, lower);        <span class="cm">// 2</span>
+    <span class="ck">return</span> (<span class="cn">0</span>);
+}</code></pre>
+            <div class="slide-key">Hex is a compact way to write binary — one hex digit per nibble. This is
+              why memory
+              addresses and bitmasks are always shown in hex.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S05 — types table -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 05 <span class="stag stag-tbl">Table</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>Types — the compiler's memory contract</h3>
+            <div class="snum">S05</div>
+          </div>
+          <div class="slide-body">
+            <p class="subtext mb-md">A type tells the compiler: <em>how
+                many bytes to read</em> and <em>how to interpret them</em>. That is all a type is.</p>
+            <table class="types core-table">
+              <tr>
+                <th>Type</th>
+                <th>Size (64-bit)</th>
+                <th>Range / Notes</th>
+              </tr>
+              <tr>
+                <td class="tt">char</td>
+                <td class="tb">1 byte</td>
+                <td class="tr">−128 → 127 &nbsp;|&nbsp; unsigned: 0 → 255 &nbsp;|&nbsp; holds one character
+                </td>
+              </tr>
+              <tr>
+                <td class="tt">int</td>
+                <td class="tb">4 bytes</td>
+                <td class="tr">−2,147,483,648 → 2,147,483,647</td>
+              </tr>
+              <tr>
+                <td class="tt">long</td>
+                <td class="tb">8 bytes</td>
+                <td class="tr">~±9.2 × 10¹⁸</td>
+              </tr>
+              <tr>
+                <td class="tt">float</td>
+                <td class="tb">4 bytes</td>
+                <td class="tr">~7 significant decimal digits</td>
+              </tr>
+              <tr>
+                <td class="tt">double</td>
+                <td class="tb">8 bytes</td>
+                <td class="tr">~15 significant decimal digits</td>
+              </tr>
+              <tr>
+                <td class="tt">size_t</td>
+                <td class="tb">8 bytes</td>
+                <td class="tr">Unsigned · safe for sizes &amp; indices · platform-adapted</td>
+              </tr>
+            </table>
+            <pre><code><span class="ct">int</span>    a <span class="co">=</span> <span class="cn">7</span>;
+<span class="ct">int</span>    b <span class="co">=</span> <span class="cn">2</span>;
+<span class="ct">float</span>  result;
+
+result <span class="co">=</span> a <span class="co">/</span> b;           <span class="cm">// int / int = int — result is 3.0, not 3.5</span>
+result <span class="co">=</span> (<span class="ct">float</span>)a <span class="co">/</span> b;    <span class="cm">// explicit cast — result is 3.5</span></code></pre>
+            <div class="slide-key">int ÷ int = int. Always. The decimal is silently discarded. One of the most
+              common
+              silent bugs in C.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n02',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Byte &amp; Types</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n02" hidden>
+        <div class="notes-body">
+          <p><strong>On the nibble demo (S04):</strong> "The school is called 42. But if you write 0x42 in C —
+            the hex
+            literal — what does it equal?" Pause. Show the nibble breakdown. Upper nibble 4, lower nibble 2,
+            total
+            4×16+2 = 66. Compile and run to confirm. This is a memorable moment that connects the school name
+            to a real
+            binary concept.</p>
+          <p>The <code>>></code> shift and <code>&amp; 0x0F</code> mask are bitwise operations — you don't
+            need to teach
+            them, just show the pattern and say "this extracts the upper or lower 4 bits".</p>
+          <div class="engage">
+            <p>"Why do you think memory addresses are always shown in hex rather than decimal?" — each byte =
+              exactly 2
+              hex digits. Much more compact for raw memory values.</p>
+          </div>
+          <p><strong>On types (S05):</strong> The core idea: types are a contract with the compiler. Without
+            them, the
+            compiler has no idea how many bytes to read at a given address.</p>
+          <p><strong>On the implicit conversion demo:</strong> Type it live. The result being 3.0 surprises
+            people every
+            single time. The fix — explicit cast — is the lesson.</p>
+          <div class="followup">
+            <div class="fq-label">Likely Follow-up</div>
+            <p class="fq">"Is int always 4 bytes?"</p>
+            <p class="fa">On all 42 school machines (64-bit Linux), yes. The C standard only guarantees a
+              minimum.
+              That's why <code>stdint.h</code> provides <code>int32_t</code> and <code>uint64_t</code> for
+              guaranteed-size needs.</p>
+          </div>
+          <div class="transition-note">Types control what the compiler reads. Flags control what the compiler
+            tells you
+            when something looks wrong.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 03 — COMPILER FLAGS & MAKEFILE
+════════════════════════════════════════ -->
+    <section id="s03">
+      <div class="section-hdr">
+        <div class="num s-tools">⚙</div>
+        <h2>Compiler Flags &amp; Makefile</h2>
+        <div class="timing">~5 min</div>
+      </div>
+
+      <!-- S06 — compiler flags -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 06 <span class="stag stag-tbl">Table</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-red">
+            <h3>-Wall -Wextra -Werror — your first line of defence</h3>
+            <div class="snum">S06</div>
+          </div>
+          <div class="slide-body">
+            <p class="subtext mb-lg">These three flags are mandatory at 42.
+              Together they turn suspicious code into <em>compile errors</em>.</p>
+            <table class="flags core-table">
+              <tr>
+                <th>Flag</th>
+                <th>What it catches</th>
+              </tr>
+              <tr>
+                <td class="tf">-Wall</td>
+                <td>
+                  Unused variables · missing return · implicit function declarations<br>
+                  Assignment in condition <code class="ic">if (x = 5)</code> · integer overflow in
+                  constants<br>
+                  <span class="tw">— the standard set of "probably a bug" warnings</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="tf">-Wextra</td>
+                <td>
+                  Signed/unsigned comparison · missing parameter names · unused parameters<br>
+                  Precedence warnings <code class="ic">a &amp; b == 0</code> · shadow variable warnings<br>
+                  <span class="tw">— goes beyond -Wall to catch subtler issues</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="tf">-Werror</td>
+                <td>
+                  <strong>Treats every warning as a compile error.</strong><br>
+                  <span class="tw">Code does not compile if it has any warning. No exceptions.</span>
+                </td>
+              </tr>
+            </table>
+            <div class="slide-key">The flags don't make your code better — they make the compiler louder when
+              your code
+              is suspicious. That loudness is a feature, not an obstacle.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S07 — makefile -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 07 <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-green">
+            <h3>Makefile — the build contract</h3>
+            <div class="snum">S07</div>
+          </div>
+          <div class="slide-body">
+            <p class="subtext mb-md">Add source filenames to <code class="ic">FILES</code> to compile
+              multi-file
+              programs. This is the minimum viable Makefile.</p>
+            <pre><code>CC     = cc
+CFLAGS = -Wall -Wextra -Werror
+NAME   = program
+FILES  = main.c
+
+all:
+	$(CC) $(CFLAGS) $(FILES) -o $(NAME)
+
+clean:
+	rm -f $(NAME)
+
+fclean: clean
+
+re: fclean all
+
+.PHONY: all clean fclean re</code></pre>
+            <ul>
+              <li><code class="ic">make</code> — compile. <code class="ic">make re</code> — recompile from
+                scratch</li>
+              <li>Add more sources to <code class="ic">FILES</code> separated by spaces — immediate multi-file
+                support
+              </li>
+              <li><code class="ic">fclean</code> and <code class="ic">clean</code> both remove the binary — no
+                object
+                files in this setup</li>
+              <li>Extend with <code class="ic">OBJS</code> and pattern rules when your project grows</li>
+            </ul>
+            <div class="slide-key">The CFLAGS are already set to the 42 mandatory flags. Your code compiles
+              with the
+              same strictness every time, on every machine.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n03',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Compiler Flags &amp; Makefile</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n03" hidden>
+        <div class="notes-body">
+          <p>Students sometimes disable warnings to make their code compile. This slide explains why that's
+            backwards —
+            warnings are telling you something. -Werror forces you to listen.</p>
+          <div class="engage">
+            <p>"Has anyone had a program compile successfully and then crash at runtime — with no warnings?
+              What does
+              that tell you about what warnings catch?" — most hands go up. Answer: warnings catch things that
+              <em>look
+                suspicious at compile time</em>, not everything that goes wrong at runtime.
+            </p>
+          </div>
+          <p><strong>On the Makefile (S07):</strong> Explain each variable. Show it working with the nibble
+            demo code
+            from S04 — <code>make</code>, then run the program. The simplicity is the point. Add a second .c
+            file to
+            FILES live to show it still works.</p>
+          <div class="followup">
+            <div class="fq-label">Likely Follow-up</div>
+            <p class="fq">"Can I silence a specific warning?"</p>
+            <p class="fa">Yes — with <code>-Wno-warning-name</code>. At 42, the norm flags are fixed and you
+              shouldn't
+              silence them. In real-world code you sometimes suppress known-intentional patterns. For now: if
+              the
+              compiler warns about it, fix it.</p>
+          </div>
+          <div class="transition-note">The flags will catch many boolean and assignment mistakes before they
+            reach
+            runtime. Let's look at those patterns now.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 04 — BOOLEAN LOGIC & PRECEDENCE
+════════════════════════════════════════ -->
+    <section id="s04">
+      <div class="section-hdr">
+        <div class="num">4</div>
+        <h2>Boolean Logic &amp; Operator Precedence</h2>
+        <div class="timing">~8 min</div>
+      </div>
+
+      <!-- S08 — truth tables -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 08 <span class="stag stag-tbl">Tables</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>Boolean operators — truth tables</h3>
+            <div class="snum">S08</div>
+          </div>
+          <div class="slide-body">
+            <p class="mb-md text-xl">In C: <code class="ic">0</code> is false. <strong>Every
+                other value</strong> is true. Colour stripes = same input pair across all tables.</p>
+            <div class="bool-grid">
+              <div>
+                <div class="bt-label">AND <span class="bt-sym">&amp;&amp;</span></div>
+                <table class="bt">
+                  <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>out</th>
+                  </tr>
+                  <tr class="r00">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                  <tr class="r01">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                  <tr class="r10">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                  <tr class="r11">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <div class="bt-label">OR <span class="bt-sym">||</span></div>
+                <table class="bt">
+                  <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>out</th>
+                  </tr>
+                  <tr class="r00">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                  <tr class="r01">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r10">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r11">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <div class="bt-label">XOR <span class="bt-sym">!=</span> equivalent</div>
+                <table class="bt">
+                  <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>out</th>
+                  </tr>
+                  <tr class="r00">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                  <tr class="r01">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r10">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r11">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <div class="bt-label">NOT <span class="bt-sym">!</span></div>
+                <table class="bt">
+                  <tr>
+                    <th>A</th>
+                    <th>!A</th>
+                  </tr>
+                  <tr class="r00">
+                    <td class="bt-in">0</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r01">
+                    <td class="bt-in">0</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r10">
+                    <td class="bt-in">1</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                  <tr class="r11">
+                    <td class="bt-in">1</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <div class="bt-label">NAND </div>
+                <table class="bt">
+                  <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>NAND</th>
+                  </tr>
+                  <tr class="r00">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r01">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r10">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r11">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                </table>
+              </div>
+              <div>
+                <div class="bt-label">NOR </div>
+                <table class="bt">
+                  <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>NOR</th>
+                  </tr>
+                  <tr class="r00">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-T">1</td>
+                  </tr>
+                  <tr class="r01">
+                    <td class="bt-in">0</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                  <tr class="r10">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">0</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                  <tr class="r11">
+                    <td class="bt-in">1</td>
+                    <td class="bt-in">1</td>
+                    <td class="bt-F">0</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <!-- De Morgan / NAND / NOR — prominent section -->
+            <div class="demorgan-section">
+              <div class="demorgan-title">De Morgan's Laws — NAND and NOR</div>
+              <div class="demorgan-grid">
+
+                <div class="dm-eq">
+                  <span class="dm-name">NAND</span>
+                  <span class="dm-op">!(A &amp;&amp; B)</span>
+                  <span class="dm-alt">= (!A || !B) ← De Morgan</span>
+                  <span class="subtext-xs block mt-xs">AND inverted —
+                    only false when both are true</span>
+                </div>
+                <div class="dm-eq">
+                  <span class="dm-name">NOR</span>
+                  <span class="dm-op">!(A || B)</span>
+                  <span class="dm-alt">= (!A &amp;&amp; !B) ← De Morgan</span>
+                  <span class="subtext-xs block mt-xs">OR inverted —
+                    only true when both are false</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- C operator reference legend -->
+            <div class="bool-legend">
+              <div class="bool-legend-title">C Operator Reference</div>
+              <div class="bool-legend-grid">
+                <div class="bl-item">
+                  <div class="bl-sym">&amp;&amp;</div>
+                  <div>
+                    <div class="bl-name">AND</div>
+                    <div class="bl-note">stops at first false</div>
+                  </div>
+                </div>
+                <div class="bl-item">
+                  <div class="bl-sym">||</div>
+                  <div>
+                    <div class="bl-name">OR</div>
+                    <div class="bl-note">stops at first true</div>
+                  </div>
+                </div>
+                <div class="bl-item">
+                  <div class="bl-sym">!</div>
+                  <div>
+                    <div class="bl-name">NOT</div>
+                    <div class="bl-note">inverts 0/nonzero</div>
+                  </div>
+                </div>
+                <div class="bl-item">
+                  <div class="bl-sym">a != b</div>
+                  <div>
+                    <div class="bl-name">logical XOR</div>
+                    <div class="bl-note">^ is bitwise XOR</div>
+                  </div>
+                </div>
+                <div class="bl-item">
+                  <div class="bl-sym">!(a&amp;&amp;b)</div>
+                  <div>
+                    <div class="bl-name">NAND</div>
+                    <div class="bl-note">= (!a || !b)</div>
+                  </div>
+                </div>
+                <div class="bl-item">
+                  <div class="bl-sym">!(a||b)</div>
+                  <div>
+                    <div class="bl-name">NOR</div>
+                    <div class="bl-note">= (!a &amp;&amp; !b)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-key">AND needs ALL true. OR needs ONE true. XOR needs EXACTLY ONE true. NAND/NOR
+              = their
+              inverses. Same row colours = same inputs — compare across tables.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S09 — short-circuit + = vs == -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 09 <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>Short-circuit evaluation &amp; the = vs == trap</h3>
+            <div class="snum">S09</div>
+          </div>
+          <div class="slide-body">
+            <ul class="mb-lg">
+              <li><strong>&amp;&amp; stops at the first false</strong> — right side never evaluates if left is
+                false
+              </li>
+              <li><strong>|| stops at the first true</strong> — right side never evaluates if left is true
+              </li>
+            </ul>
+            <pre><code><span class="ck">if</span> (ptr<span class="co">-&gt;</span>value <span class="co">==</span> <span class="cn">42</span>)          <span class="cm">// crash if ptr is NULL — reads from address 0</span>
+    do_something();
+
+<span class="ck">if</span> (ptr <span class="co">&amp;&amp;</span> ptr<span class="co">-&gt;</span>value <span class="co">==</span> <span class="cn">42</span>)   <span class="cm">// safe — right side only runs if ptr is not NULL</span>
+    do_something();</code></pre>
+            <hr class="divider">
+            <p><strong class="text-red">= vs ==</strong> — the silent bug that compiles perfectly (-Wall will
+              catch it):</p>
+            <pre><code><span class="ct">int</span>   x;
+
+x <span class="co">=</span> <span class="cn">0</span>;
+<span class="ck">if</span> (x <span class="co">=</span> <span class="cn">5</span>)    <span class="cm">// assigns 5 to x, evaluates x (truthy) — always runs</span>
+    ...
+<span class="ck">if</span> (x <span class="co">==</span> <span class="cn">5</span>)   <span class="cm">// compares x to 5 — what you meant</span>
+    ...</code></pre>
+            <div class="slide-key">Short-circuit is a pattern, not a trick. Always check a pointer is non-NULL
+              before
+              dereferencing it. -Wall warns on assignment inside a condition.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S10 — precedence -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 10 <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>Operator precedence — where C puts the invisible parentheses</h3>
+            <div class="snum">S10</div>
+          </div>
+          <div class="slide-body">
+            <p class="prec-note">Higher rows bind first — they are evaluated before lower rows. You don't need
+              to
+              memorise this. You need to know when to add explicit parentheses.</p>
+            <div class="prec-table">
+              <div class="prec-row">
+                <div class="prec-lbl">Postfix</div>
+                <div class="prec-ops">() [] -&gt; . x++ x--</div>
+              </div>
+              <div class="prec-row">
+                <div class="prec-lbl">Prefix / Unary</div>
+                <div class="prec-ops">++x --x * &amp; ! ~ sizeof</div>
+              </div>
+              <div class="prec-row">
+                <div class="prec-lbl">Multiply / Divide</div>
+                <div class="prec-ops">* / %</div>
+              </div>
+              <div class="prec-row">
+                <div class="prec-lbl">Add / Subtract</div>
+                <div class="prec-ops">+ -</div>
+              </div>
+              <div class="prec-row">
+                <div class="prec-lbl">Comparison</div>
+                <div class="prec-ops">&lt; &gt; &lt;= &gt;=</div>
+              </div>
+              <div class="prec-row">
+                <div class="prec-lbl">Equality</div>
+                <div class="prec-ops">== !=</div>
+              </div>
+              <div class="prec-row">
+                <div class="prec-lbl">Bitwise</div>
+                <div class="prec-ops">&amp; ^ |</div>
+              </div>
+              <div class="prec-row">
+                <div class="prec-lbl">Logical</div>
+                <div class="prec-ops">&amp;&amp; ||</div>
+              </div>
+              <div class="prec-row">
+                <div class="prec-lbl">Assignment</div>
+                <div class="prec-ops">= += -= …</div>
+              </div>
+            </div>
+            <p class="my-md"><strong>Classic traps — what does C actually read?</strong></p>
+            <pre><code>a <span class="co">&amp;</span> b <span class="co">==</span> <span class="cn">0</span>    <span class="cm">// becomes: a &amp; (b == 0)  — equality binds tighter than &amp;</span>
+<span class="co">*</span>p<span class="co">++</span>          <span class="cm">// becomes: *(p++)        — postfix ++ binds tighter than *</span>
+a <span class="co">=</span> b <span class="co">==</span> c    <span class="cm">// becomes: a = (b == c) — comparison before assignment</span>
+<span class="co">!</span>x <span class="co">+</span> <span class="cn">1</span>       <span class="cm">// becomes: (!x) + 1     — ! is unary, binds very tight</span></code></pre>
+            <div class="slide-key">Rule: when mixing operators from different rows in the table, add explicit
+              parentheses. Parentheses are documentation — they show intent to the compiler and to the next
+              reader.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n04',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Boolean Logic &amp; Precedence</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n04" hidden>
+        <div class="notes-body">
+          <p><strong>On truth tables (S08):</strong> Before explaining, point at the orange-striped row (A=1,
+            B=1).
+            "Look at the same-coloured row across all four tables — when both inputs are 1, what does each
+            operation
+            give?" Let them read back.</p>
+          <div class="engage">
+            <p>"Look at the XOR table — when is XOR false? What do those rows have in common?" — only the rows
+              where A
+              equals B. XOR means "they're different." Useful in conditionals when you want exactly one of two
+              conditions true.</p>
+          </div>
+          <p><strong>On NAND and NOR (De Morgan section):</strong> "NAND is AND with the output flipped. NOR
+            is OR with
+            the output flipped. De Morgan's law tells us how to rewrite them — distribute the NOT and flip the
+            operator.
+            This comes up when you want to simplify a negated compound condition." Show the equivalence on
+            paper if
+            helpful.</p>
+          <p><strong>On short-circuit (S09):</strong> The ptr example is the key. If ptr is NULL (0), the &&
+            short-circuits: right side never evaluates, no crash. This is why && and || are designed this way
+            — it's not
+            an accident.</p>
+          <div class="engage">
+            <p>"Walk me through what happens step by step when C evaluates <code>if (x = 5)</code>." — assign
+              5 to x,
+              evaluate x (5 is nonzero = true), branch always taken. -Wall produces: <em>warning: suggest
+                parentheses
+                around assignment used as truth value</em>.</p>
+          </div>
+          <p><strong>On the precedence table (S10):</strong> Don't read it aloud. Use it as visual reference.
+            Walk
+            through each trap example. On <code>*p++</code>: "postfix ++ binds before *, so the pointer
+            advances — not
+            the dereferenced value." They'll use this pattern in the defensive programming section.</p>
+          <div class="followup">
+            <div class="fq-label">Likely Follow-up</div>
+            <p class="fq">"Does C have a bool type?"</p>
+            <p class="fa">Yes — via <code>#include &lt;stdbool.h&gt;</code> in C99, giving <code>bool</code>,
+              <code>true</code>, <code>false</code>. Most 42 code uses int as booleans. The logic is
+              identical: 0 =
+              false, nonzero = true.
+            </p>
+          </div>
+          <div class="transition-note">We know how conditions work. Next: where do the variables in those
+            conditions
+            actually live, and for how long?</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 05 — SCOPE & LIFETIME
+════════════════════════════════════════ -->
+    <section id="s05">
+      <div class="section-hdr">
+        <div class="num">5</div>
+        <h2>Scope &amp; Variable Lifetime</h2>
+        <div class="timing">~4 min</div>
+      </div>
+
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 11 <span class="stag stag-vis">Visual</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>Scope — { } is a life boundary</h3>
+            <div class="snum">S11</div>
+          </div>
+          <div class="slide-body">
+            <div class="scope-vis">
+              <span class="sl0">int main(void) {</span>
+              <span class="sl1">int x =
+                10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  class="stag2 born">BORN</span></span>
+              <span class="sl1">{</span>
+              <span class="sl2">int x =
+                99;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  class="stag2 born">BORN</span>&nbsp;<span class="stag2 shadow">SHADOWS outer x</span></span>
+              <span class="sl2">printf("%d\n", x);&nbsp;&nbsp;&nbsp;// prints 99</span>
+              <span
+                class="sl1">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                  class="stag2 dead">inner x DEAD</span></span>
+              <span class="sl1">printf("%d\n", x);&nbsp;&nbsp;&nbsp;&nbsp;// prints 10</span>
+              <span class="sl0">}</span>
+            </div>
+            <ul class="mt-md">
+              <li>A variable lives from its declaration to the closing <code class="ic">}</code></li>
+              <li><strong>Shadowing:</strong> inner name hides outer — outer still exists, just unreachable
+              </li>
+              <li>42 norm: declare all variables <strong>at the top of the function</strong> — no nested
+                declarations
+              </li>
+            </ul>
+            <div class="slide-key">The norm rule isn't arbitrary. Declarations at the top make the entire
+              variable set
+              visible at a glance.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 12 <span class="stag stag-live">Live Demo</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>Uninitialized variables — reading garbage</h3>
+            <div class="snum">S12</div>
+          </div>
+          <div class="slide-body">
+            <pre><code><span class="ct">int</span>   x;
+<span class="cf">printf</span>(<span class="cs">"%d\n"</span>, x);   <span class="cm">// undefined behaviour — prints whatever was there before</span>
+
+<span class="ct">int</span>   x;
+x <span class="co">=</span> <span class="cn">0</span>;               <span class="cm">// explicit initialization — predictable</span>
+
+<span class="ct">int</span>   arr[<span class="cn">5</span>];
+<span class="cf">ft_memset</span>(arr, <span class="cn">0</span>, <span class="ck">sizeof</span>(arr));  <span class="cm">// zero-initialize a whole array</span></code></pre>
+            <ul>
+              <li>An uninitialized local variable holds whatever memory happened to be there</li>
+              <li>C makes no guarantee — the value may differ on every run, every machine</li>
+              <li>Habit: initialize to 0 when you declare, even if you will assign later</li>
+            </ul>
+            <div class="slide-key">Compile and run — show the garbage value. Run again. It may change. This is
+              the
+              behaviour named "undefined".</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n05',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Scope &amp; Lifetime</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n05" hidden>
+        <div class="notes-body">
+          <p><strong>On scope (S11):</strong> Walk through line by line. "We enter the outer block. x=10 is
+            born. Inner
+            block opens. A new x=99 is born — it hides the outer. We see 99. Inner block closes — inner x
+            dies. We're
+            back to 10." Draw nested boxes if needed.</p>
+          <div class="engage">
+            <p>"If I declare a variable inside a while loop body — what happens to it on the next iteration?"
+              In
+              norm-compliant code this can't happen, but the concept of lifetime still applies at function
+              scope.</p>
+          </div>
+          <p><strong>On uninitialized vars (S12):</strong> Actually compile and run. Show the garbage. Run
+            twice — it
+            may differ. This visual demonstration is more memorable than any explanation. After: "Where
+            exactly does
+            that variable live in memory?" — let answers come. "Stack" is correct. "That's the next session."
+          </p>
+          <div class="transition-note">Variables have scope and lifetime. Now: how do we use them in
+            repetition?</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 06 — LOOPS
+════════════════════════════════════════ -->
+    <section id="s06">
+      <div class="section-hdr">
+        <div class="num">6</div>
+        <h2>Loops</h2>
+        <div class="timing">~5 min</div>
+      </div>
+
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 13 <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>While — the only loop you write at 42</h3>
+            <div class="snum">S13</div>
+          </div>
+          <div class="slide-body">
+            <pre><code><span class="ct">int</span>   i;
+
+i <span class="co">=</span> <span class="cn">0</span>;                       <span class="cm">// 1. init      — before the loop</span>
+<span class="ck">while</span> (i <span class="co">&lt;</span> <span class="cn">5</span>)                <span class="cm">// 2. condition — tested before each iteration</span>
+{
+    <span class="cf">printf</span>(<span class="cs">"%d\n"</span>, i);        <span class="cm">// 3. body      — what you want to repeat</span>
+    i<span class="co">++</span>;                      <span class="cm">// 4. increment — move toward the exit condition</span>
+}                             <span class="cm">// jumps back to 2</span></code></pre>
+            <ul>
+              <li><strong>for</strong> exists and is the same machine — norm forbids it. Converting: step 1
+                goes before,
+                step 4 goes to the body's end. Done.</li>
+              <li><strong>Off-by-one:</strong> <code class="ic">i &lt; 5</code> → indices 0,1,2,3,4 (correct
+                for a
+                5-element array). <code class="ic">i &lt;= 5</code> → 6 iterations, last is out of bounds.
+              </li>
+              <li>Missing step 4 → infinite loop. The condition never changes.</li>
+              <li>Also forbidden by norm: <span class="badge badge-no">for</span> <span
+                  class="badge badge-no">do…while</span></li>
+            </ul>
+            <div class="slide-key">Every while loop has four parts. If one is missing — you have a bug or an
+              infinite
+              loop. Always ask: "What changes to eventually make the condition false?"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 14 <span class="stag stag-live">Live Demo</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>Nested loops — name your variables for the context</h3>
+            <div class="snum">S14</div>
+          </div>
+          <div class="slide-body">
+            <pre><code><span class="ct">int</span>   row;
+<span class="ct">int</span>   col;
+
+row <span class="co">=</span> <span class="cn">0</span>;
+<span class="ck">while</span> (row <span class="co">&lt;</span> <span class="cn">3</span>)                <span class="cm">// outer: controls which row we are on</span>
+{
+    col <span class="co">=</span> <span class="cn">0</span>;
+    <span class="ck">while</span> (col <span class="co">&lt;</span> <span class="cn">4</span>)             <span class="cm">// inner: runs completely for each row</span>
+    {
+        <span class="cf">printf</span>(<span class="cs">"[%d,%d] "</span>, row, col);
+        col<span class="co">++</span>;
+    }
+    <span class="cf">printf</span>(<span class="cs">"\n"</span>);
+    row<span class="co">++</span>;
+}</code></pre>
+            <ul>
+              <li>Inner loop executes <strong>completely</strong> for each outer step: 3 × 4 = 12 total</li>
+              <li><code class="ic">row</code> and <code class="ic">col</code> — not <code class="ic">i</code>
+                and <code class="ic">j</code>. The name tells you which dimension you're in</li>
+              <li>In geometric code: <code class="ic">x</code> and <code class="ic">y</code> are better still
+                — name
+                what the value <em>means</em></li>
+              <li>Classic bug: forgetting <code class="ic">col = 0</code> inside the outer loop — demo this
+                deliberately
+              </li>
+            </ul>
+            <div class="slide-key">When operating in two dimensions — grid, matrix, 2D space — your variable
+              names
+              should reflect those dimensions. i and j tell you nothing. row and col tell you everything.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n06',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Loops</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n06" hidden>
+        <div class="notes-body">
+          <p><strong>On the while anatomy (S13):</strong> Number each part as you speak. Students know how to
+            write
+            loops — naming the four parts makes the structure explicit. "Which of the four parts is missing?"
+            is a more
+            useful debugging question than "what's wrong?"</p>
+          <p>On <code>for</code>: 20 seconds. "It exists. You'll see it everywhere. Norm forbids it. The
+            conversion is
+            one move — figure it out yourself."</p>
+          <div class="engage">
+            <p>"For a 5-element array — which is correct: i &lt; 5 or i &lt;= 5? Tell me the index of the last
+              element
+              first." Indices go 0 through 4. i &lt; 5 is correct. i &lt;= 5 reaches index 5 — outside the
+              array.</p>
+          </div>
+          <p><strong>On nested loops (S14):</strong> Build incrementally in the IDE. First outer loop printing
+            just the
+            row number. Then add inner loop. Then deliberately remove <code>col = 0</code> inside the outer
+            loop and run
+            it. Show the bug. Restore. Students remember witnessed bugs.</p>
+          <p>On naming: make it natural, not a rule. "I could write i and j here — but look at the printf. If
+            the outer
+            variable is called row, I don't have to think about which loop is which while I'm reading."</p>
+          <div class="transition-note">Now that we can write loops correctly, let's talk about writing
+            everything else
+            correctly — starting with naming.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 07 — CLEAN CODE
+════════════════════════════════════════ -->
+    <section id="s07">
+      <div class="section-hdr">
+        <div class="num s-clean">✓</div>
+        <h2>Clean Code — Writing Style</h2>
+        <div class="timing">~4 min</div>
+      </div>
+
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 15 <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-green">
+            <h3>Names communicate intent</h3>
+            <div class="snum">S15</div>
+          </div>
+          <div class="slide-body">
+            <pre><code><span class="cm">// functions are verbs — they do something</span>
+<span class="ct">int</span>    <span class="cf">count_words</span>(<span class="ct">char</span> <span class="co">*</span>sentence, <span class="ct">char</span> separator);
+<span class="ct">char</span>   <span class="co">*</span><span class="cf">find_next_token</span>(<span class="ct">char</span> <span class="co">*</span>input);
+<span class="ct">int</span>    <span class="cf">validate_input</span>(<span class="ct">char</span> <span class="co">*</span>buffer, <span class="ct">size_t</span> length);
+
+<span class="cm">// variables and parameters are nouns — they hold something</span>
+<span class="ct">size_t</span>  word_count;
+<span class="ct">char</span>    <span class="co">*</span>current_token;
+<span class="ct">int</span>     is_valid;      <span class="cm">// booleans: starts with is_ or has_</span>
+
+<span class="cm">// names that carry dimension belong in the context</span>
+<span class="ct">int</span>     pixel_x;      <span class="cm">// not i</span>
+<span class="ct">int</span>     pixel_y;      <span class="cm">// not j</span>
+<span class="ct">int</span>     row;          <span class="cm">// not i — even for simple loops</span>
+<span class="ct">int</span>     col;          <span class="cm">// not j</span>
+
+<span class="cm">// len is universal — always understood</span>
+<span class="ct">size_t</span>  len;</code></pre>
+            <ul class="mt-md">
+              <li>42 norm: snake_case for everything, no camelCase</li>
+              <li>A name should answer: <em>what does this hold</em> or <em>what does this do</em></li>
+              <li>If you need a comment to explain a variable name — rename the variable instead</li>
+            </ul>
+            <div class="slide-key">The person reading your code at 2am debugging a segfault is you. Name
+              things so that
+              person can work without rereading every function.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n07',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Clean Code</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n07" hidden>
+        <div class="notes-body">
+          <p>This is about intention, not rules. The audience already writes code — this is about writing code
+            that
+            communicates.</p>
+          <div class="engage">
+            <p>"If a function is called <code>process</code> — what does it do?" They'll say "we don't know."
+              Follow up:
+              "What if it's called <code>validate_email</code>?" The contrast makes the principle obvious
+              without a
+              lecture.</p>
+          </div>
+          <p>The <code>is_</code> / <code>has_</code> prefix for booleans is a widely used convention. It
+            makes
+            conditions read like English: <code>if (is_valid)</code>, <code>while (has_more_tokens)</code>.
+          </p>
+          <p>The "if you need a comment to explain the name — rename it" line usually gets a reaction. Let it
+            land
+            before moving on.</p>
+          <p><code>len</code> is a universally understood abbreviation — there's no ambiguity. Don't spell it
+            out as
+            <code>length_of_string</code>; that's noise. Don't abbreviate further to <code>l</code>; that's a
+            single
+            letter with no meaning.
+          </p>
+          <div class="transition-note">Good names prevent bugs. Defensive programming catches the bugs that
+            names can't
+            prevent.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 08 — DEFENSIVE PROGRAMMING
+════════════════════════════════════════ -->
+    <section id="s08">
+      <div class="section-hdr">
+        <div class="num s-def">🛡</div>
+        <h2>Defensive Programming</h2>
+        <div class="timing">~7 min</div>
+      </div>
+
+      <!-- S16 — guard clauses -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 16 <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-purple">
+            <h3>Guard clauses — handle bad cases first</h3>
+            <div class="snum">S16</div>
+          </div>
+          <div class="slide-body">
+            <p class="subtext mb-lg"><em>Defensive programming:</em> write
+              code that handles what <em>shouldn't</em> happen — before it does.</p>
+            <div class="two-col">
+              <div>
+                <div class="col-label col-bad">Three levels of nesting</div>
+                <pre class="m-0 text-lg"><code><span class="ct">int</span> process(<span class="ct">char</span> <span class="co">*</span>s, <span class="ct">int</span> len)
+{
+    <span class="ct">int</span>   result;
+
+    result <span class="co">=</span> <span class="cn">0</span>;
+    <span class="ck">if</span> (s)
+    {
+        <span class="ck">if</span> (len <span class="co">&gt;</span> <span class="cn">0</span>)
+        {
+            <span class="cm">// work lives 3 levels deep</span>
+            result <span class="co">=</span> <span class="cn">1</span>;
+        }
+    }
+    <span class="ck">return</span> (result);
+}</code></pre>
+              </div>
+              <div>
+                <div class="col-label col-good">Flat — one level</div>
+                <pre class="m-0 text-lg"><code><span class="ct">int</span> process(<span class="ct">char</span> <span class="co">*</span>s, <span class="ct">int</span> len)
+{
+    <span class="ck">if</span> (<span class="co">!</span>s <span class="co">||</span> len <span class="co">&lt;=</span> <span class="cn">0</span>)
+        <span class="ck">return</span> (<span class="cn">0</span>);
+    <span class="cm">// happy path — no nesting</span>
+    <span class="ck">return</span> (<span class="cn">1</span>);
+}</code></pre>
+                <br>
+                <p class="text-lg">Invert the bad conditions. Return early. Keep the main logic at the
+                  shallowest indentation level.</p>
+              </div>
+            </div>
+            <div class="slide-key">Every level of nesting is a place bugs hide. Flat code is readable code.
+              Readable
+              code is maintainable code.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S17 — Magic numbers / Muggle -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 17 <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-amber">
+            <h3>Magic numbers — only the compiler is magic</h3>
+            <div class="snum">S17</div>
+          </div>
+          <div class="slide-body">
+            <div class="muggle-hero">
+              <div class="m-title">✨ Only the compiler is magic.</div>
+              <div class="m-sub">You are a muggle. Name your constants.</div>
+              <div class="m-rule">#define your values — always.</div>
+            </div>
+            <div class="two-col mt-lg">
+              <div>
+                <div class="col-label col-bad">❌ Magic (for compilers only)</div>
+                <pre class="m-0 text-lg"><code><span class="ct">char</span>   buf[<span class="cn">1024</span>];
+<span class="ct">int</span>    limit <span class="co">=</span> <span class="cn">42</span>;
+
+<span class="ck">if</span> (count <span class="co">&gt;</span> <span class="cn">42</span>)
+    handle_overflow();</code></pre>
+                <p class="subtext-sm mt-sm">What is 1024? What is 42? Change one
+                  — did you find them all?</p>
+              </div>
+              <div>
+                <div class="col-label col-good">✓ Named constants</div>
+                <pre class="m-0 text-lg"><code><span class="cp">#define</span> BUFFER_SIZE  <span class="cn">1024</span>
+<span class="cp">#define</span> MAX_PLAYERS  <span class="cn">42</span>
+
+<span class="ct">char</span>   buf[BUFFER_SIZE];
+<span class="ct">int</span>    limit <span class="co">=</span> MAX_PLAYERS;
+
+<span class="ck">if</span> (count <span class="co">&gt;</span> MAX_PLAYERS)
+    handle_overflow();</code></pre>
+                <p class="subtext-sm mt-sm">Change it in one place. Intent is
+                  visible. No hunting.</p>
+              </div>
+            </div>
+            <div class="slide-key">#define is compile-time: no memory cost, usable in array size declarations
+              where
+              variables are not. It is the C way to name things that never change.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S18 — Header guards & const -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 18 <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-purple">
+            <h3>Header guards &amp; const — systematic protection</h3>
+            <div class="snum">S18</div>
+          </div>
+          <div class="slide-body">
+            <div class="two-col">
+              <div>
+                <div class="col-label col-note">Header guard — prevent double inclusion</div>
+                <pre class="m-0 text-lg"><code><span class="cp">#ifndef</span> MYPROJECT_H
+<span class="cp"># define</span> MYPROJECT_H
+
+<span class="cp"># include</span> <span class="cs">&lt;unistd.h&gt;</span>
+
+<span class="ct">int</span>   my_function(<span class="ck">void</span>);
+
+<span class="cp">#endif</span></code></pre>
+                <p class="subtext-sm mt-sm">Without this: including the same
+                  header twice causes duplicate declarations → compile error.</p>
+              </div>
+              <div>
+                <div class="col-label col-note">const — making intent visible</div>
+                <pre class="m-0 text-lg"><code><span class="ck">const</span> <span class="ct">char</span>  <span class="co">*</span>s;
+<span class="cm">// data is immutable, pointer can change</span>
+
+<span class="ct">char</span>  <span class="co">*</span><span class="ck">const</span> s;
+<span class="cm">// pointer is immutable, data can change</span>
+
+<span class="ct">size_t</span>  <span class="cf">ft_strlen</span>(<span class="ck">const</span> <span class="ct">char</span> <span class="co">*</span>str);
+<span class="cm">// promise: I will not modify your string</span></code></pre>
+              </div>
+            </div>
+            <div class="slide-key">Header guards are the canonical C defensive pattern — every .h file you
+              write should
+              have one. const is a promise you make to the compiler and to whoever calls your function.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S19 — Array iteration approach A: sizeof -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 19 — Approach A <span class="stag stag-live">Live Demo</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-purple">
+            <h3>Iterating without int i — approach A: sizeof</h3>
+            <div class="snum">S19a</div>
+          </div>
+          <div class="slide-body">
+            <pre><code><span class="ct">int</span>     arr[] <span class="co">=</span> {<span class="cn">10</span>, <span class="cn">20</span>, <span class="cn">30</span>, <span class="cn">40</span>, <span class="cn">50</span>};
+<span class="ct">size_t</span>  len;
+<span class="ct">int</span>     <span class="co">*</span>ptr;
+
+<span class="cm">// sizeof(arr)    = 5 x 4 = 20 bytes (total array)</span>
+<span class="cm">// sizeof(arr[0]) = 4 bytes     (one element)</span>
+<span class="cm">// 20 / 4         = 5           (number of elements)</span>
+len <span class="co">=</span> <span class="ck">sizeof</span>(arr) <span class="co">/</span> <span class="ck">sizeof</span>(arr[<span class="cn">0</span>]);
+
+ptr <span class="co">=</span> arr;
+<span class="ck">while</span> (ptr <span class="co">&lt;</span> arr <span class="co">+</span> len)
+{
+    <span class="cf">printf</span>(<span class="cs">"%d\n"</span>, <span class="co">*</span>ptr);
+    ptr<span class="co">++</span>;
+}</code></pre>
+            <ul>
+              <li>The pointer <strong>is</strong> the iterator — no index variable needed</li>
+              <li><code class="ic">ptr++</code> advances by <code class="ic">sizeof(int)</code> bytes — it
+                knows the
+                type</li>
+              <li>⚠️ <strong>This breaks if you pass <code class="ic">arr</code> to a function</strong> —
+                sizeof returns
+                the pointer size, not the array size. This has a name: <strong>pointer decay</strong>.</li>
+            </ul>
+            <div class="slide-key">sizeof / sizeof works only when the array is declared in the same scope.
+              Once passed
+              to a function, the size information is gone. That mechanism is the next session's opening.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S19b — Array iteration approach B: sentinel -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 19 — Approach B <span class="stag stag-live">Live Demo</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-purple">
+            <h3>Iterating without int i — approach B: pointer as iterator</h3>
+            <div class="snum">S19b</div>
+          </div>
+          <div class="slide-body">
+            <pre><code><span class="cm">// Works when the array has a sentinel — a value that marks the end</span>
+<span class="ct">int</span>   arr[] <span class="co">=</span> {<span class="cn">10</span>, <span class="cn">20</span>, <span class="cn">30</span>, <span class="cn">40</span>, <span class="cn">50</span>, <span class="cn">0</span>};   <span class="cm">// 0 = end marker</span>
+<span class="ct">int</span>   <span class="co">*</span>ptr;
+
+ptr <span class="co">=</span> arr;
+<span class="ck">while</span> (<span class="co">*</span>ptr)
+{
+    <span class="cf">printf</span>(<span class="cs">"%d\n"</span>, <span class="co">*</span>ptr);
+    ptr<span class="co">++</span>;
+}
+
+<span class="cm">// argv is already NULL-terminated — same pattern, no design needed</span>
+<span class="ct">char</span>  <span class="co">**</span>arg;
+
+arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1</span>;    <span class="cm">// skip program name</span>
+<span class="ck">while</span> (<span class="co">*</span>arg)
+{
+    <span class="cf">printf</span>(<span class="cs">"%s\n"</span>, <span class="co">*</span>arg);
+    arg<span class="co">++</span>;
+}</code></pre>
+            <ul>
+              <li>Strings already use this — <code class="ic">'\0'</code> is a sentinel. Strings are not
+                special; they
+                are char arrays with a contract</li>
+              <li>You need to <strong>design the contract</strong>: what value means "end"?</li>
+              <li>argv is a real example they have used — NULL-terminated array of char pointers</li>
+            </ul>
+            <div class="slide-key">The sentinel approach requires a contract. Once you have one, the pointer
+              drives
+              itself — no index, no counter, no sizeof.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n08',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Defensive Programming</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n08" hidden>
+        <div class="notes-body">
+          <p><strong>On guard clauses (S16):</strong> Show both side by side in the IDE. Ask: "Which would you
+            rather
+            debug at 2am?" The flat version always wins. The key move: invert the bad condition, return
+            immediately,
+            keep the work at the shallowest level.</p>
+          <div class="engage">
+            <p>"Give me a concrete scenario where not checking for NULL before using a pointer causes a
+              problem — what
+              exactly happens at runtime?" Guide toward: segmentation fault (SIGSEGV). You are writing to or
+              reading
+              from memory you do not own. The OS kills the process.</p>
+          </div>
+          <p><strong>On the muggle slide (S17):</strong> Let the joke land before moving to the code. The
+            "change it in
+            one place" argument is the practical reason. Spend 30 seconds on the why, not the what.</p>
+          <p><strong>On header guards (S18):</strong> Quick scenario: file A.c and B.c both include
+            myheader.h, and A.c
+            also includes B.c. Without guards, the header is processed twice — duplicate declarations, compile
+            error.
+            With the guard, the second include is a no-op. Every .h file you write should have one.</p>
+          <p><strong>On const (S18):</strong> const left of * means data is const. const right of * means
+            pointer is
+            const. Function parameters marked <code>const char *</code> are a promise: "I will not modify your
+            string."
+            The compiler enforces that promise.</p>
+          <p><strong>On sizeof approach (S19a):</strong> Walk through the math on screen. Then: "Now watch
+            what happens
+            when I move this to a function." Write a helper that receives <code>int *arr</code> and tries the
+            same
+            sizeof trick. Show it returns 2 (8/4 = 2). Wrong. "The array lost its size information. This is
+            called
+            pointer decay. That is the next session."</p>
+          <p><strong>On sentinel approach (S19b):</strong> Connect to ft_strlen: they wrote
+            <code>while (str[i] != '\0') i++;</code> — this is just <code>while (*str) str++;</code>. Same
+            logic,
+            pointer-driven. argv is a real example they have used.
+          </p>
+          <div class="followup">
+            <div class="fq-label">Likely Follow-up</div>
+            <p class="fq">"What is the difference between NULL, '\0', and 0?"</p>
+            <p class="fa">In C all three compare equal — they are all zero. NULL is (void*)0 for pointers.
+              '\0' is the
+              null byte for string terminators. 0 is the integer zero. Using the right one communicates
+              intent, even if
+              the behaviour is identical.</p>
+          </div>
+          <div class="transition-note">You can write, defend, and iterate over C code. The last skill: reading
+            a
+            declaration you have never seen before.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     SECTION 09 — READING C
+════════════════════════════════════════ -->
+    <section id="s09">
+      <div class="section-hdr">
+        <div class="num s-read">📖</div>
+        <h2>Reading C — The cdecl Method</h2>
+        <div class="timing">~4 min</div>
+      </div>
+
+      <!-- S20 -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 20 <span class="stag stag-vis">Visual</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-amber">
+            <h3>The inside-out, right-then-left rule</h3>
+            <div class="snum">S20</div>
+          </div>
+          <div class="slide-body">
+            <p class="mb-lg">Start at the identifier. Go <strong>right</strong> first, then
+              <strong>left</strong>, jump out of parentheses and repeat.
+            </p>
+            <div class="highlight-box">
+              <p class="slide-box-text text-xl text-center text-amber mb-lg">
+                char &nbsp;*(*f)(int, char *)</p>
+              <div class="cdecl-steps">
+                <div class="cdecl-step">
+                  <div class="cdecl-n">1</div>
+                  <div>Start at <span class="cdfocus">f</span></div>
+                </div>
+                <div class="cdecl-step">
+                  <div class="cdecl-n">2</div>
+                  <div>Go right → hit <code class="ic">)</code>. Go left → <span class="cdfocus">*</span>.
+                    &nbsp;<span class="cdresult">f is a pointer</span></div>
+                </div>
+                <div class="cdecl-step">
+                  <div class="cdecl-n">3</div>
+                  <div>Escape <code class="ic">( )</code>. Go right → <span class="cdfocus">(int, char
+                      *)</span>.
+                    &nbsp;<span class="cdresult">to a function taking (int, char *)</span></div>
+                </div>
+                <div class="cdecl-step">
+                  <div class="cdecl-n">4</div>
+                  <div>Go left → <span class="cdfocus">char *</span>. &nbsp;<span class="cdresult">returning
+                      char
+                      *</span></div>
+                </div>
+              </div>
+              <div class="slide-box">
+                <span class="slide-box-text text-lg">f
+                  is a pointer to a function taking (int, char *), returning char *</span>
+              </div>
+            </div>
+            <div class="slide-key">You won't write declarations like this often. But you will read them in
+              headers, man
+              pages, and other people's code. Being able to parse them calmly is a superpower.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S21 -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 21 <span class="stag stag-live">Live Demo — cdecl.org</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-amber">
+            <h3>Practice — and validate at cdecl.org</h3>
+            <div class="snum">S21</div>
+          </div>
+          <div class="slide-body">
+            <pre><code><span class="cm">// Read these before I reveal — right-then-left from the name</span>
+
+<span class="ct">int</span>   (<span class="co">*</span>arr)[<span class="cn">5</span>]
+<span class="cm">// arr is a pointer to array 5 of int</span>
+
+<span class="ck">const</span> <span class="ct">char</span>  <span class="co">*</span>s
+<span class="cm">// s is a pointer to const char  (data immutable, pointer movable)</span>
+
+<span class="ct">char</span>  <span class="co">*</span><span class="ck">const</span> s
+<span class="cm">// s is a const pointer to char  (pointer immutable, data mutable)</span></code></pre>
+            <p class="mt-md">Navigate live to <strong class="text-cyan">cdecl.org</strong> — type
+              a declaration, get plain English. Use it as validation, not as a crutch.</p>
+            <ul class="mt-md">
+              <li>const <strong>left</strong> of * → data is const</li>
+              <li>const <strong>right</strong> of * → pointer is const</li>
+              <li>The position relative to the star is the rule</li>
+            </ul>
+            <div class="slide-key">const left of * = data is const. const right of * = pointer is const.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n09',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Reading C</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n09" hidden>
+        <div class="notes-body">
+          <p><strong>Before showing the answer (S20):</strong> Put the declaration on screen and ask someone
+            to attempt
+            a reading. "Don't be afraid to be wrong — what do you think the outer star is doing?" The most
+            common wrong
+            answer: "it returns a pointer to char." The right framing: the parentheses around (*f) group the
+            star with
+            f, making f itself the pointer.</p>
+          <div class="engage">
+            <p>"Before I walk through it — tell me what you think the parentheses around (*f) are doing here.
+              Why are
+              they there?" Without them, <code>char *f(int, char*)</code> would be a function, not a
+              pointer-to-function.</p>
+          </div>
+          <p><strong>On cdecl.org (S21):</strong> Navigate live. Type the declarations in order. Let students
+            read
+            before you reveal. If internet is unavailable, the method stands on its own — skip the site.</p>
+          <div class="followup">
+            <div class="fq-label">Likely Follow-up</div>
+            <p class="fq">"When would I use a function pointer?"</p>
+            <p class="fa">Callbacks — passing a function as an argument. ft_lstmap takes a function pointer to
+              apply to
+              each list node. qsort() takes a comparator. Anywhere you want to parameterise behaviour without
+              if/else
+              chains. You will use this throughout your 42 projects.</p>
+          </div>
+          <div class="followup">
+            <div class="fq-label">Likely Follow-up</div>
+            <p class="fq">"Is there a rule for where to put const — before or after the type?"</p>
+            <p class="fa"><code>const int *</code> and <code>int const *</code> are identical. What matters is
+              position
+              relative to the star. Const left of star = data const. Const right of star = pointer const.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
+     RECAP
+════════════════════════════════════════ -->
+    <section id="recap">
+      <div class="section-hdr">
+        <div class="num" class="bg-muted text-dark">↩</div>
+        <h2>Recap</h2>
+        <div class="timing">open floor</div>
+      </div>
+
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 22 <span class="stag stag-int">Interactive</span></div>
+        <div class="slide">
+          <div class="slide-hdr">
+            <h3>What we covered — did I explain it correctly?</h3>
+            <div class="snum">S22</div>
+          </div>
+          <div class="slide-body">
+            <div class="recap-grid">
+              <a class="recap-item" href="#s00">
+                <div class="recap-icon">✋</div>
+                <div>
+                  <div class="rtitle">First Byte</div>
+                  <div class="rkey">Bits → bytes → binary decomposition</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s01">
+                <div class="recap-icon">📚</div>
+                <div>
+                  <div class="rtitle">Vocabulary</div>
+                  <div class="rkey">Return type · parameter · condition · statement</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s02">
+                <div class="recap-icon">🔢</div>
+                <div>
+                  <div class="rtitle">Byte &amp; Types</div>
+                  <div class="rkey">Nibbles · hex · type as memory contract</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s03">
+                <div class="recap-icon">⚙️</div>
+                <div>
+                  <div class="rtitle">Compiler Flags &amp; Makefile</div>
+                  <div class="rkey">-Wall -Wextra -Werror · build contract</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s04">
+                <div class="recap-icon">🔀</div>
+                <div>
+                  <div class="rtitle">Boolean Logic</div>
+                  <div class="rkey">AND / OR / XOR / NAND / NOR · short-circuit · precedence</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s05">
+                <div class="recap-icon">📦</div>
+                <div>
+                  <div class="rtitle">Scope &amp; Lifetime</div>
+                  <div class="rkey">{ } boundaries · shadowing · initialization</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s06">
+                <div class="recap-icon">🔄</div>
+                <div>
+                  <div class="rtitle">Loops</div>
+                  <div class="rkey">Four parts · nested · meaningful names</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s07">
+                <div class="recap-icon">✨</div>
+                <div>
+                  <div class="rtitle">Clean Code</div>
+                  <div class="rkey">Functions = verbs · variables = nouns · snake_case</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s08">
+                <div class="recap-icon">🛡️</div>
+                <div>
+                  <div class="rtitle">Defensive Programming</div>
+                  <div class="rkey">Guards · #define · header guards · pointer iteration</div>
+                </div>
+              </a>
+              <a class="recap-item" href="#s09">
+                <div class="recap-icon">📖</div>
+                <div>
+                  <div class="rtitle">Reading C</div>
+                  <div class="rkey">Inside-out rule · const position · cdecl.org</div>
+                </div>
+              </a>
+            </div>
+            <div class="slide-key mt-lg">Did I explain it correctly? — Open floor.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n10',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Closing</span>
+        <span class="toggle-arrow">▼</span>
+      </button>
+      <div class="notes" id="n10" hidden>
+        <div class="notes-body">
+          <p>"Did I explain it correctly?" puts responsibility on you — it signals openness and makes it
+            easier for
+            confused students to speak up without feeling they failed to understand.</p>
+          <div class="engage">
+            <p>"Before we finish — tell me one thing from today that surprised you, or something that clicked
+              for the
+              first time. Does not have to be technical." Personal, not evaluative. Low barrier to answer.</p>
+          </div>
+          <p>If time remains: pick one section and recap collaboratively. "Who can walk me through the guard
+            clause
+            pattern from memory?" or "What are the four parts of a while loop?" — make them retrieve, not just
+            receive.
+          </p>
+          <div class="warn">Do not end with "OK thank you." End with the question open. Give 5 seconds of
+            silence.
+            Someone always speaks.</div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /content -->
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navDrop').classList.toggle('open');
+    }
+    document.addEventListener('click', function (e) {
+      const drop = document.getElementById('navDrop');
+      if (!drop.contains(e.target)) drop.classList.remove('open');
+    });
+
+    function toggleNotes(id, btn) {
+      const el = document.getElementById(id);
+      const wasHidden = el.hidden;
+      el.hidden = !wasHidden;
+      btn.classList.toggle('open', wasHidden);
+      const lbl = btn.querySelector('.toggle-label');
+      if (lbl) {
+        const base = lbl.textContent.replace(/^(Show|Hide) /, '');
+        lbl.textContent = (wasHidden ? 'Hide ' : 'Show ') + base;
+      }
+      updateGlobalBtn();
+    }
+
+    function toggleAllNotes() {
+      const all = document.querySelectorAll('.notes');
+      const anyVisible = Array.from(all).some(n => !n.hidden);
+      all.forEach(n => { n.hidden = anyVisible; });
+      document.querySelectorAll('.notes-toggle').forEach(btn => {
+        btn.classList.toggle('open', !anyVisible);
+        const lbl = btn.querySelector('.toggle-label');
+        if (lbl) {
+          const base = lbl.textContent.replace(/^(Show|Hide) /, '');
+          lbl.textContent = (anyVisible ? 'Show ' : 'Hide ') + base;
+        }
+      });
+      updateGlobalBtn();
+    }
+
+    function updateGlobalBtn() {
+      const all = document.querySelectorAll('.notes');
+      const anyVisible = Array.from(all).some(n => !n.hidden);
+      const btn = document.getElementById('globalToggle');
+      btn.textContent = anyVisible ? '📋 Hide All Notes' : '📋 Show All Notes';
+    }
+
+    function navigateSlide(direction) {
+      const stops = Array.from(document.querySelectorAll('.cover, .section-hdr, .slide-wrap, #recap'));
+      let target = null;
+
+      // Use dynamic thresholds. If a header and a slide are both fully visible
+      // together, we skip the micro-scroll between them to save clicks.
+      if (direction === 1) {
+        target = stops.find(el => el.getBoundingClientRect().top > window.innerHeight * 0.35);
+      } else {
+        target = stops.slice().reverse().find(el => el.getBoundingClientRect().top < -window.innerHeight * 0.15);
+      }
+
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+
+  <div class="slide-nav">
+    <button onclick="navigateSlide(-1)" title="Previous Slide">▲</button>
+    <button onclick="navigateSlide(1)" title="Next Slide">▼</button>
+  </div>
+</body>
+
+</html>

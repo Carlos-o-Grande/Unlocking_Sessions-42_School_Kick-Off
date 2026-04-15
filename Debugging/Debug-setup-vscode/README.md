@@ -6,7 +6,7 @@ If you never used a debugger before or never configure it on VS Code, stay a whi
 
 First image will guide you at starting the config process. Just click where pointed.
 
-![1_setup](https://github.com/Carlos-o-Grande/Debug-setup-vscode-quick/blob/main/Debug-setup-vscode/assets/1_setup.png)
+![1_setup](https://github.com/Carlos-o-Grande/Unlocking_Sessions-42_School_Kick-Off/tree/main/Debugging/Debug-setup-vscode/assets/1_setup.png)
 
 - When you have done that, on VS Code explorer (1st button on top left) there is a new folder `.vscode` with the file `launch.json`.
 - Copy `launch.json` and `tasks.json` on '/examples' to `.vscode` folder to follow this guide.
@@ -107,7 +107,7 @@ Files are commented where is relevant. Here they are edited for brevity.
 
 ### Now we are ready to debug our code:
 
-![2_debug](https://github.com/Carlos-o-Grande/Debug-setup-vscode-quick/blob/main/Debug-setup-vscode/assets/2_debug.png)
+![2_debug](https://github.com/Carlos-o-Grande/Unlocking_Sessions-42_School_Kick-Off/tree/main/Debugging/Debug-setup-vscode/assets/2_debug.png)
 
 1. Dropdown with the options from launch.json
 2. debugger toolbar (more on that below)
@@ -133,7 +133,7 @@ If you want to keep track a variable click the + on box 4 and write the name.
 <br />
 
 ### Debugger toolbar
-![3_toolbar](https://github.com/Carlos-o-Grande/Debug-setup-vscode-quick/blob/main/Debug-setup-vscode/assets/toolbar.png)
+![3_toolbar](https://github.com/Carlos-o-Grande/Unlocking_Sessions-42_School_Kick-Off/tree/main/Debugging/Debug-setup-vscode/assets/toolbar.png)
 
 from left to right:
 - PLAY - goes to the next breakpoint

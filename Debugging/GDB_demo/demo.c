@@ -24,7 +24,7 @@ int main(void)
 	while (i < 12 )	{
 		a[i] = 0;
 		printf("a[%d] = %d\n", i, a[i]);
-		printf("a = %p, i = %p, %d\n", &a[i], &i, i);
+		// printf("a = %p, i = %p, %d\n", &a[i], &i, i);
 		i++;
 	}
 	return 0;

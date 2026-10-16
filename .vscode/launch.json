@@ -12,9 +12,9 @@
 			"name": "Compile & Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/${fileBasenameNoExtension}",
+			"program": "${workspaceFolder}/Debugging/Debug-setup-vscode/${fileBasenameNoExtension}",
 			"args": [
-				"99",
+				"42",
 			],
 			"stopAtEntry": true,	//optional, if true debugger always stop at first instruction
 			"cwd": "${fileDirname}",
@@ -41,7 +41,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/a.out", // edit to the bin name in your makefile
-			"args": [],
+			"args": ["3"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],
@@ -66,8 +66,8 @@
 			"name": "Launch (no build)",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/${fileBasenameNoExtension}",
-			"args": [],
+			"program": "home/kajo/Documents/42/Unlocking_Sessions-42_School_Kick-Off/Debugging/Debug-setup-vscode/${fileBasenameNoExtension}",
+			"args": ["3"],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],

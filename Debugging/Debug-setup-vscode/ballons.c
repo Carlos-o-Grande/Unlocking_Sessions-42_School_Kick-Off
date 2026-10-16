@@ -36,10 +36,10 @@ void	do_this(int *cnt, char *string)
 		printf("%i %s\n", *cnt, string);
 
 	// Segfault when cnt reaches 67
-	if (*cnt == 67)
+	if (*cnt == 40)
 	{
 		printf("About to crash when cnt=%d...\n", *cnt);
-		printf("Divide by Zero %d", *cnt/0);
+		// printf("Divide by Zero %d", *cnt/0);
 	}
 
 	return ;

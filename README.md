@@ -12,7 +12,7 @@ Learn the fundamentals of debugging C programs using GDB (GNU Debugger) and Visu
 - Identifying and fixing common C programming errors
 
 ### [C Syntax & Fundamentals](Syntax/)
-Master core C programming concepts and best practices. Covers:
+Explore core C programming concepts and foundations. Covers:
 - Binary representation and the byte model
 - C type system and memory contracts
 - Compiler flags and defensive programming

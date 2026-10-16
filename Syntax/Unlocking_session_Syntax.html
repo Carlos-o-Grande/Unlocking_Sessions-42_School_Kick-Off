@@ -31,6 +31,7 @@
         <a href="#s02"><span class="sec-num">02</span> The Byte &amp; Types</a>
         <a href="#s03"><span class="sec-num">03</span> Compiler Flags &amp; Makefile</a>
         <a href="#s04"><span class="sec-num">04</span> Boolean Logic &amp; Precedence</a>
+        <a href="#s04b"><span class="sec-num">04+</span> Boolean Logic at Work</a>
         <a href="#s05"><span class="sec-num">05</span> Scope &amp; Variable Lifetime</a>
         <a href="#s06"><span class="sec-num">06</span> Loops</a>
         <a href="#s07"><span class="sec-num">07</span> Clean Code</a>
@@ -84,12 +85,12 @@
   <!-- ════════════════════════════════════════
      MAIN CONTENT
 ════════════════════════════════════════ -->
-  <div class=" content">
+  <div class="content">
 
     <!-- SESSION MAP -->
     <div class="toc">
       <h2>// Session Map</h2>
-      <div class="toc-grid">
+      <div class="toc-grid grid-2">
         <div class="toc-item"><span class="n">00</span> First Byte</div>
         <div class="toc-item"><span class="n">01</span> Vocabulary — Common Language</div>
         <div class="toc-item"><span class="n">02</span> The Byte &amp; Types</div>
@@ -136,7 +137,7 @@
             <div class="snum">S01</div>
           </div>
           <div class="slide-body">
-            <div class="big-txt">✋</div>
+            <div class="card big-txt">✋</div>
           </div>
         </div>
       </div>
@@ -160,19 +161,19 @@
               &nbsp;&nbsp;|&nbsp;&nbsp; raised = 1 &nbsp;·&nbsp; down = 0
             </div>
             <div class="emoji-grid">
-              <div class="emoji-item">
+              <div class="card emoji-item">
                 <span class="emoji-face">✌️</span>
                 <div class="emoji-q">= ?</div>
               </div>
-              <div class="emoji-item">
+              <div class="card emoji-item">
                 <span class="emoji-face">🤟</span>
                 <div class="emoji-q">= ?</div>
               </div>
-              <div class="emoji-item">
+              <div class="card emoji-item">
                 <span class="emoji-face">🤘</span>
                 <div class="emoji-q">= ?</div>
               </div>
-              <div class="emoji-item">
+              <div class="card emoji-item">
                 <span class="emoji-face">🤙</span>
                 <div class="emoji-q">= ?</div>
               </div>
@@ -187,7 +188,7 @@
       <button class="notes-toggle" onclick="toggleNotes('n00',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — First Byte</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n00" hidden>
         <div class="notes-body">
@@ -241,9 +242,9 @@
             <div class="snum">S03</div>
           </div>
           <div class="slide-body">
-            <div class="two-col">
+            <div class="two-col grid-2">
               <div>
-                <pre><code><span class="vt">size_t</span>  <span class="vfn">ft_strlen</span>(<span class="vpt">char </span><span class="co">*</span><span class="vpn">str</span>)
+                <pre data-snippet="s03_ft_strlen"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Asize_t%09ft_strlen%28char%20%2Astr%29%0A%7B%0A%09size_t%09len%3B%0A%0A%09len%20%3D%200%3B%0A%09while%20%28str%5Blen%5D%29%0A%09%09len%2B%2B%3B%0A%09return%20%28len%29%3B%0A%7D%0A%0Aint%09main%28void%29%0A%7B%0A%09printf%28%22%25zu%5Cn%22%2C%20ft_strlen%28%22Hello%2C%2042%21%22%29%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5zaXplX3RcdGZ0X3N0cmxlbihjaGFyICpzdHIpXG57XG5cdHNpemVfdFx0bGVuO1xuXG5cdGxlbiA9IDA7XG5cdHdoaWxlIChzdHJbbGVuXSlcblx0XHRsZW4rKztcblx0cmV0dXJuIChsZW4pO1xufVxuXG5pbnRcdG1haW4odm9pZClcbntcblx0cHJpbnRmKFwiJXp1XFxuXCIsIGZ0X3N0cmxlbihcIkhlbGxvLCA0MiFcIikpO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code><span class="vt">size_t</span>  <span class="vfn">ft_strlen</span>(<span class="vpt">char </span><span class="co">*</span><span class="vpn">str</span>)
 {
     <span class="vt">size_t</span>  <span class="vv">len</span>;
 
@@ -254,43 +255,43 @@
 }</code></pre>
               </div>
               <div>
-                <div class="vocab-grid">
-                  <div class="vocab-item">
+                <div class="vocab-grid grid-2">
+                  <div class="card vocab-item">
                     <div class="vocab-dot bg-amber mt-sm"></div>
                     <div>
                       <div class="vname vt">Return type</div>
                       <div class="vdesc">What the function gives back</div>
                     </div>
                   </div>
-                  <div class="vocab-item">
+                  <div class="card vocab-item">
                     <div class="vocab-dot bg-cyan mt-sm"></div>
                     <div>
                       <div class="vname vfn">Function name</div>
                       <div class="vdesc">A verb — what it does</div>
                     </div>
                   </div>
-                  <div class="vocab-item">
+                  <div class="card vocab-item">
                     <div class="vocab-dot bg-purple mt-sm"></div>
                     <div>
                       <div class="vname vpt">Parameter</div>
                       <div class="vdesc">Input — a noun (type + name)</div>
                     </div>
                   </div>
-                  <div class="vocab-item">
+                  <div class="card vocab-item">
                     <div class="vocab-dot bg-red mt-sm"></div>
                     <div>
                       <div class="vname vv">Local variable</div>
                       <div class="vdesc">Working memory — a noun</div>
                     </div>
                   </div>
-                  <div class="vocab-item">
+                  <div class="card vocab-item">
                     <div class="vocab-dot bg-cyan mt-sm"></div>
                     <div>
                       <div class="vname co">Condition</div>
                       <div class="vdesc">Boolean expression tested</div>
                     </div>
                   </div>
-                  <div class="vocab-item">
+                  <div class="card vocab-item">
                     <div class="vocab-dot bg-purple mt-sm"></div>
                     <div>
                       <div class="vname ck">Statement</div>
@@ -310,7 +311,7 @@
       <button class="notes-toggle" onclick="toggleNotes('n01',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Vocabulary</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n01" hidden>
         <div class="notes-body">
@@ -362,22 +363,21 @@
               <span class="nb-eq" style="margin: 0;"><span class="nb-u">4</span> × 16 + <span class="nb-l">2</span> × 1
                 = 66 decimal</span>
             </div>
-            <pre><code>#include &lt;stdio.h&gt;
-
-<span class="ct">int</span>     <span class="cf">main</span>(<span class="ck">void</span>)
+            <pre class="language-c" data-snippet="s04_nibbles"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09n%3B%0A%09int%09upper%3B%0A%09int%09lower%3B%0A%0A%09n%20%3D%200x42%3B%0A%09upper%20%3D%20%28n%20%3E%3E%204%29%20%26%200x0F%3B%0A%09lower%20%3D%20n%20%26%200x0F%3B%0A%09printf%28%22hex%3A%20%20%20%20%20%20%20%20%20%200x%2502X%5Cn%22%2C%20n%29%3B%0A%09printf%28%22decimal%3A%20%20%20%20%20%20%25d%5Cn%22%2C%20n%29%3B%0A%09printf%28%22upper%20nibble%3A%20%25d%5Cn%22%2C%20upper%29%3B%0A%09printf%28%22lower%20nibble%3A%20%25d%5Cn%22%2C%20lower%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRuO1xuXHRpbnRcdHVwcGVyO1xuXHRpbnRcdGxvd2VyO1xuXG5cdG4gPSAweDQyO1xuXHR1cHBlciA9IChuID4%2BIDQpICYgMHgwRjtcblx0bG93ZXIgPSBuICYgMHgwRjtcblx0cHJpbnRmKFwiaGV4OiAgICAgICAgICAweCUwMlhcXG5cIiwgbik7XG5cdHByaW50ZihcImRlY2ltYWw6ICAgICAgJWRcXG5cIiwgbik7XG5cdHByaW50ZihcInVwcGVyIG5pYmJsZTogJWRcXG5cIiwgdXBwZXIpO1xuXHRwcmludGYoXCJsb3dlciBuaWJibGU6ICVkXFxuXCIsIGxvd2VyKTtcblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">#include &lt;stdio.h&gt;
+int     main(void)
 {
-    <span class="ct">int</span>     n;
-    <span class="ct">int</span>     upper;
-    <span class="ct">int</span>     lower;
+    int     n;
+    int     upper;
+    int     lower;
 
-    n <span class="co">=</span> <span class="cn">0x42</span>;                   <span class="cm">// hex literal — decimal value is 66, not 42!</span>
-    upper <span class="co">=</span> (n <span class="co">&gt;&gt;</span> <span class="cn">4</span>) <span class="co">&amp;</span> <span class="cn">0x0F</span>;    <span class="cm">// shift right 4, mask — upper nibble</span>
-    lower <span class="co">=</span> n <span class="co">&amp;</span> <span class="cn">0x0F</span>;            <span class="cm">// mask lower 4 bits — lower nibble</span>
-    <span class="cf">printf</span>(<span class="cs">"hex:          0x%02X\n"</span>, n);      <span class="cm">// 0x42</span>
-    <span class="cf">printf</span>(<span class="cs">"decimal:      %d\n"</span>, n);           <span class="cm">// 66</span>
-    <span class="cf">printf</span>(<span class="cs">"upper nibble: %d\n"</span>, upper);        <span class="cm">// 4</span>
-    <span class="cf">printf</span>(<span class="cs">"lower nibble: %d\n"</span>, lower);        <span class="cm">// 2</span>
-    <span class="ck">return</span> (<span class="cn">0</span>);
+    n = 0x42;                   // hex literal — decimal value is 66, not 42!
+    upper = (n &gt;&gt; 4) &amp; 0x0F;    // shift right 4, mask — upper nibble
+    lower = n &amp; 0x0F;            // mask lower 4 bits — lower nibble
+    printf("hex:          0x%02X\n", n);      // 0x42
+    printf("decimal:      %d\n", n);           // 66
+    printf("upper nibble: %d\n", upper);        // 4
+    printf("lower nibble: %d\n", lower);        // 2
+    return (0);
 }</code></pre>
             <div class="slide-key">Hex is a compact way to write binary — one hex digit per nibble. This is
               why memory
@@ -435,12 +435,12 @@
                 <td class="tr">Unsigned · safe for sizes &amp; indices · platform-adapted</td>
               </tr>
             </table>
-            <pre><code><span class="ct">int</span>    a <span class="co">=</span> <span class="cn">7</span>;
-<span class="ct">int</span>    b <span class="co">=</span> <span class="cn">2</span>;
-<span class="ct">float</span>  result;
+            <pre class="language-c" data-snippet="s05_int_division"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09%09a%3B%0A%09int%09%09b%3B%0A%09float%09result%3B%0A%0A%09a%20%3D%207%3B%0A%09b%20%3D%202%3B%0A%09result%20%3D%20a%20%2F%20b%3B%0A%09printf%28%22a%20%2F%20b%20%20%20%20%20%20%20%20%3D%20%25f%5Cn%22%2C%20result%29%3B%0A%09result%20%3D%20%28float%29a%20%2F%20b%3B%0A%09printf%28%22%28float%29a%20%2F%20b%20%3D%20%25f%5Cn%22%2C%20result%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRcdGE7XG5cdGludFx0XHRiO1xuXHRmbG9hdFx0cmVzdWx0O1xuXG5cdGEgPSA3O1xuXHRiID0gMjtcblx0cmVzdWx0ID0gYSAvIGI7XG5cdHByaW50ZihcImEgLyBiICAgICAgICA9ICVmXFxuXCIsIHJlc3VsdCk7XG5cdHJlc3VsdCA9IChmbG9hdClhIC8gYjtcblx0cHJpbnRmKFwiKGZsb2F0KWEgLyBiID0gJWZcXG5cIiwgcmVzdWx0KTtcblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int    a = 7;
+int    b = 2;
+float  result;
 
-result <span class="co">=</span> a <span class="co">/</span> b;           <span class="cm">// int / int = int — result is 3.0, not 3.5</span>
-result <span class="co">=</span> (<span class="ct">float</span>)a <span class="co">/</span> b;    <span class="cm">// explicit cast — result is 3.5</span></code></pre>
+result = a / b;           // int / int = int — result is 3.0, not 3.5
+result = (float)a / b;    // explicit cast — result is 3.5</code></pre>
             <div class="slide-key">int ÷ int = int. Always. The decimal is silently discarded. One of the most
               common
               silent bugs in C.</div>
@@ -448,10 +448,67 @@ result <span class="co">=</span> (<span class="ct">float</span>)a <span class="c
         </div>
       </div>
 
+      <!-- S05a — signed vs unsigned (optional) -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 05a <span class="stag stag-code">Code — Optional</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-amber">
+            <h3>Signed vs unsigned — same bits, two readings</h3>
+            <div class="snum">S05a</div>
+          </div>
+          <div class="slide-body">
+            <p class="subtext mb-lg">The type doesn't change the bits in memory — it changes how they are read.</p>
+            <div class="two-col grid-2">
+              <div>
+                <div class="col-label text-cyan">Same bits, two readings — the type decides</div>
+                <pre class="m-0 text-lg language-c" data-snippet="s05a_signed_unsigned"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09signed%20char%09%09s%3B%0A%09unsigned%20char%09u%3B%0A%0A%09s%20%3D%20-3%3B%0A%09u%20%3D%20s%3B%0A%09printf%28%22%25d%20%25d%5Cn%22%2C%20s%2C%20u%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0c2lnbmVkIGNoYXJcdFx0cztcblx0dW5zaWduZWQgY2hhclx0dTtcblxuXHRzID0gLTM7XG5cdHUgPSBzO1xuXHRwcmludGYoXCIlZCAlZFxcblwiLCBzLCB1KTtcblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">signed char    s;
+unsigned char  u;
+
+s = -3;
+u = s;                      // same 8 bits
+printf("%d %d\n", s, u);    // -3 253</code></pre>
+              </div>
+              <div>
+                <div class="col-label text-cyan">Same 8 bits, two ranges</div>
+                <pre class="m-0 text-lg"><code>s = 1111 1101   signed    −3
+u = 1111 1101   unsigned  253
+
+signed char     −128 → 127
+unsigned char      0 → 255</code></pre>
+              </div>
+            </div>
+            <div class="slide-key">Negative numbers are stored in <strong>two's complement</strong>;
+              <strong>one's complement</strong> was an earlier attempt. Study both: why does
+              <code class="ic">signed char</code> stop at 127, while <code class="ic">unsigned char</code> reaches
+              255 with the same 8 bits?</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n05a',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — Signed vs unsigned</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="notes" id="n05a" hidden>
+        <div class="notes-body">
+          <p><strong>Optional</strong> — skip it if you're short on time. Spend it on the demo: the bits never
+            change, the type decides how they are read. Point back at the ranges in S05.</p>
+          <p>Name one's and two's complement, don't explain them — that's their research.</p>
+          <div class="followup">
+            <div class="fq-label">Likely Follow-up</div>
+            <p class="fq">"What happens if I store 200 in a signed char?"</p>
+            <p class="fa">The bits wrap: it reads back as −56 (200 − 256). Whether you're warned depends on
+              the compiler — <code>c = 200;</code> compiles silently with gcc and <code>-Wall -Wextra
+              -Werror</code>, while clang stops it with <code>-Wconstant-conversion</code>.</p>
+          </div>
+        </div>
+      </div>
+
       <button class="notes-toggle" onclick="toggleNotes('n02',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Byte &amp; Types</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n02" hidden>
         <div class="notes-body">
@@ -521,17 +578,15 @@ result <span class="co">=</span> (<span class="ct">float</span>)a <span class="c
               <tr>
                 <td class="tf">-Wall</td>
                 <td>
-                  Unused variables · missing return · implicit function declarations<br>
-                  Assignment in condition <code class="ic">if (x = 5)</code> · integer overflow in
-                  constants<br>
+                  Unused variables · missing return · assignment in condition <code class="ic">if (x = 5)</code><br>
+                  Precedence <code class="ic">a &amp; b == 0</code> — read as <code class="ic">a &amp; (b == 0)</code><br>
                   <span class="tw">— the standard set of "probably a bug" warnings</span>
                 </td>
               </tr>
               <tr>
                 <td class="tf">-Wextra</td>
                 <td>
-                  Signed/unsigned comparison · missing parameter names · unused parameters<br>
-                  Precedence warnings <code class="ic">a &amp; b == 0</code> · shadow variable warnings<br>
+                  Signed/unsigned comparison · unused parameters<br>
                   <span class="tw">— goes beyond -Wall to catch subtler issues</span>
                 </td>
               </tr>
@@ -540,6 +595,33 @@ result <span class="co">=</span> (<span class="ct">float</span>)a <span class="c
                 <td>
                   <strong>Treats every warning as a compile error.</strong><br>
                   <span class="tw">Code does not compile if it has any warning. No exceptions.</span>
+                </td>
+              </tr>
+            </table>
+            <p class="subtext mt-md">Not caught by any of the three: <strong>shadowed variables</strong> — an inner
+              <code class="ic">x</code> hiding an outer <code class="ic">x</code> compiles silently. Only
+              <code class="ic">-Wshadow</code> warns. → <a href="#s05" class="text-cyan">S11 — Scope</a></p>
+            <p class="subtext mt-lg mb-lg">Your Makefile may add other flags, as long as they don't switch off any of
+              the three above.</p>
+            <table class="flags core-table">
+              <tr>
+                <th>Flag</th>
+                <th>What it does</th>
+              </tr>
+              <tr>
+                <td class="tf">-g</td>
+                <td>
+                  Adds debug info — the debugger can stop at a source line and show variable names<br>
+                  <span class="tw">— without it, gdb says "No symbol table is loaded"</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="tf">-O0 … -O3</td>
+                <td>
+                  Optimization level. <code class="ic">-O0</code> (default): runs as written ·
+                  <code class="ic">-O2</code>: faster, but code is reordered and removed<br>
+                  <span class="tw">— debug with <code class="ic">-O0 -g</code>: optimized code shows the debugger
+                    wrong values or &lt;optimized out&gt;</span>
                 </td>
               </tr>
             </table>
@@ -562,7 +644,7 @@ result <span class="co">=</span> (<span class="ct">float</span>)a <span class="c
             <p class="subtext mb-md">Add source filenames to <code class="ic">FILES</code> to compile
               multi-file
               programs. This is the minimum viable Makefile.</p>
-            <pre><code>CC     = cc
+            <pre class="language-makefile"><code class="language-makefile">CC     = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME   = program
 FILES  = main.c
@@ -599,7 +681,7 @@ re: fclean all
       <button class="notes-toggle" onclick="toggleNotes('n03',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Compiler Flags &amp; Makefile</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n03" hidden>
         <div class="notes-body">
@@ -838,27 +920,27 @@ re: fclean all
             <!-- De Morgan / NAND / NOR — prominent section -->
             <div class="demorgan-section">
               <div class="demorgan-title">De Morgan's Laws — NAND and NOR</div>
-              <div class="demorgan-grid">
+              <div class="demorgan-grid grid-2">
 
                 <div class="dm-eq">
                   <span class="dm-name">NAND</span>
                   <span class="dm-op">!(A &amp;&amp; B)</span>
                   <span class="dm-alt">= (!A || !B) ← De Morgan</span>
-                  <span class="subtext-xs block mt-xs">AND inverted —
+                  <span class="subtext block mt-xs">AND inverted —
                     only false when both are true</span>
                 </div>
                 <div class="dm-eq">
                   <span class="dm-name">NOR</span>
                   <span class="dm-op">!(A || B)</span>
                   <span class="dm-alt">= (!A &amp;&amp; !B) ← De Morgan</span>
-                  <span class="subtext-xs block mt-xs">OR inverted —
+                  <span class="subtext block mt-xs">OR inverted —
                     only true when both are false</span>
                 </div>
               </div>
             </div>
 
             <!-- C operator reference legend -->
-            <div class="bool-legend">
+            <div class="card bool-legend">
               <div class="bool-legend-title">C Operator Reference</div>
               <div class="bool-legend-grid">
                 <div class="bl-item">
@@ -928,20 +1010,20 @@ re: fclean all
               <li><strong>|| stops at the first true</strong> — right side never evaluates if left is true
               </li>
             </ul>
-            <pre><code><span class="ck">if</span> (ptr<span class="co">-&gt;</span>value <span class="co">==</span> <span class="cn">42</span>)          <span class="cm">// crash if ptr is NULL — reads from address 0</span>
+            <pre class="language-c" data-snippet="s09_null_check"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%23include%20%3Cstddef.h%3E%0A%0Atypedef%20struct%20s_node%0A%7B%0A%09int%09value%3B%0A%7D%09t_node%3B%0A%0Avoid%09do_something%28void%29%0A%7B%0A%09printf%28%22value%20is%2042%5Cn%22%29%3B%0A%7D%0A%0Aint%09main%28void%29%0A%7B%0A%09t_node%09node%3B%0A%09t_node%09%2Aptr%3B%0A%0A%09node.value%20%3D%2042%3B%0A%09ptr%20%3D%20%26node%3B%0A%09if%20%28ptr%20%26%26%20ptr-%3Evalue%20%3D%3D%2042%29%0A%09%09do_something%28%29%3B%0A%09ptr%20%3D%20NULL%3B%0A%09if%20%28ptr%20%26%26%20ptr-%3Evalue%20%3D%3D%2042%29%0A%09%09do_something%28%29%3B%0A%09printf%28%22safe%20check%20done%2C%20now%20without%20the%20NULL%20check%3A%5Cn%22%29%3B%0A%09fflush%28stdout%29%3B%0A%09if%20%28ptr-%3Evalue%20%3D%3D%2042%29%0A%09%09do_something%28%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuI2luY2x1ZGUgPHN0ZGRlZi5oPlxuXG50eXBlZGVmIHN0cnVjdCBzX25vZGVcbntcblx0aW50XHR2YWx1ZTtcbn1cdHRfbm9kZTtcblxudm9pZFx0ZG9fc29tZXRoaW5nKHZvaWQpXG57XG5cdHByaW50ZihcInZhbHVlIGlzIDQyXFxuXCIpO1xufVxuXG5pbnRcdG1haW4odm9pZClcbntcblx0dF9ub2RlXHRub2RlO1xuXHR0X25vZGVcdCpwdHI7XG5cblx0bm9kZS52YWx1ZSA9IDQyO1xuXHRwdHIgPSAmbm9kZTtcblx0aWYgKHB0ciAmJiBwdHItPnZhbHVlID09IDQyKVxuXHRcdGRvX3NvbWV0aGluZygpO1xuXHRwdHIgPSBOVUxMO1xuXHRpZiAocHRyICYmIHB0ci0%2BdmFsdWUgPT0gNDIpXG5cdFx0ZG9fc29tZXRoaW5nKCk7XG5cdHByaW50ZihcInNhZmUgY2hlY2sgZG9uZSwgbm93IHdpdGhvdXQgdGhlIE5VTEwgY2hlY2s6XFxuXCIpO1xuXHRmZmx1c2goc3Rkb3V0KTtcblx0aWYgKHB0ci0%2BdmFsdWUgPT0gNDIpXG5cdFx0ZG9fc29tZXRoaW5nKCk7XG5cdHJldHVybiAoMCk7XG59XG4iLCAiY29tcGlsZXJzIjogW3siaWQiOiAiY2cxNjIiLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifV0sICJleGVjdXRvcnMiOiBbeyJjb21waWxlciI6IHsiaWQiOiAiY2cxNjIiLCAibGlicyI6IFtdLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifSwgImFyZ3VtZW50cyI6ICIiLCAic3RkaW4iOiAiIn1dfV19" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">if (ptr-&gt;value == 42)          // crash if ptr is NULL — reads from address 0
     do_something();
 
-<span class="ck">if</span> (ptr <span class="co">&amp;&amp;</span> ptr<span class="co">-&gt;</span>value <span class="co">==</span> <span class="cn">42</span>)   <span class="cm">// safe — right side only runs if ptr is not NULL</span>
+if (ptr &amp;&amp; ptr-&gt;value == 42)   // safe — right side only runs if ptr is not NULL
     do_something();</code></pre>
             <hr class="divider">
             <p><strong class="text-red">= vs ==</strong> — the silent bug that compiles perfectly (-Wall will
               catch it):</p>
-            <pre><code><span class="ct">int</span>   x;
+            <pre class="language-c" data-snippet="s09_assign_vs_compare" data-no-flags><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09x%3B%0A%0A%09x%20%3D%200%3B%0A%09if%20%28x%20%3D%205%29%0A%09%09printf%28%22always%20runs%3A%20x%20is%20now%20%25d%5Cn%22%2C%20x%29%3B%0A%09if%20%28x%20%3D%3D%205%29%0A%09%09printf%28%22x%20%3D%3D%205%5Cn%22%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHR4O1xuXG5cdHggPSAwO1xuXHRpZiAoeCA9IDUpXG5cdFx0cHJpbnRmKFwiYWx3YXlzIHJ1bnM6IHggaXMgbm93ICVkXFxuXCIsIHgpO1xuXHRpZiAoeCA9PSA1KVxuXHRcdHByaW50ZihcInggPT0gNVxcblwiKTtcblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHR4O1xuXG5cdHggPSAwO1xuXHRpZiAoeCA9IDUpXG5cdFx0cHJpbnRmKFwiYWx3YXlzIHJ1bnM6IHggaXMgbm93ICVkXFxuXCIsIHgpO1xuXHRpZiAoeCA9PSA1KVxuXHRcdHByaW50ZihcInggPT0gNVxcblwiKTtcblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIiJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIiJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Run without flags</a></span><code class="language-c">int   x;
 
-x <span class="co">=</span> <span class="cn">0</span>;
-<span class="ck">if</span> (x <span class="co">=</span> <span class="cn">5</span>)    <span class="cm">// assigns 5 to x, evaluates x (truthy) — always runs</span>
+x = 0;
+if (x = 5)    // assigns 5 to x, evaluates x (truthy) — always runs
     ...
-<span class="ck">if</span> (x <span class="co">==</span> <span class="cn">5</span>)   <span class="cm">// compares x to 5 — what you meant</span>
+if (x == 5)   // compares x to 5 — what you meant
     ...</code></pre>
             <div class="slide-key">Short-circuit is a pattern, not a trick. Always check a pointer is non-NULL
               before
@@ -1001,10 +1083,10 @@ x <span class="co">=</span> <span class="cn">0</span>;
               </div>
             </div>
             <p class="my-md"><strong>Classic traps — what does C actually read?</strong></p>
-            <pre><code>a <span class="co">&amp;</span> b <span class="co">==</span> <span class="cn">0</span>    <span class="cm">// becomes: a &amp; (b == 0)  — equality binds tighter than &amp;</span>
-<span class="co">*</span>p<span class="co">++</span>          <span class="cm">// becomes: *(p++)        — postfix ++ binds tighter than *</span>
-a <span class="co">=</span> b <span class="co">==</span> c    <span class="cm">// becomes: a = (b == c) — comparison before assignment</span>
-<span class="co">!</span>x <span class="co">+</span> <span class="cn">1</span>       <span class="cm">// becomes: (!x) + 1     — ! is unary, binds very tight</span></code></pre>
+            <pre class="language-c" data-snippet="s10_precedence"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09a%3B%0A%09int%09b%3B%0A%09int%09c%3B%0A%09int%09x%3B%0A%09int%09arr%5B2%5D%3B%0A%09int%09%2Ap%3B%0A%0A%09a%20%3D%204%3B%0A%09b%20%3D%202%3B%0A%09printf%28%22a%20%26%20b%20%3D%3D%200%20%20means%20a%20%26%20%28b%20%3D%3D%200%29%3A%20%25d%5Cn%22%2C%20a%20%26%20%28b%20%3D%3D%200%29%29%3B%0A%09printf%28%22you%20meant%20%20%20%20%20%20%20%20%20%28a%20%26%20b%29%20%3D%3D%200%3A%20%25d%5Cn%22%2C%20%28a%20%26%20b%29%20%3D%3D%200%29%3B%0A%09arr%5B0%5D%20%3D%2010%3B%0A%09arr%5B1%5D%20%3D%2020%3B%0A%09p%20%3D%20arr%3B%0A%09x%20%3D%20%2Ap%2B%2B%3B%0A%09printf%28%22%2Ap%2B%2B%20read%20%25d%2C%20p%20now%20points%20at%20%25d%5Cn%22%2C%20x%2C%20%2Ap%29%3B%0A%09b%20%3D%203%3B%0A%09c%20%3D%203%3B%0A%09a%20%3D%20b%20%3D%3D%20c%3B%0A%09printf%28%22a%20%3D%20b%20%3D%3D%20c%20%20gives%20a%20%3D%20%25d%5Cn%22%2C%20a%29%3B%0A%09x%20%3D%205%3B%0A%09printf%28%22%21x%20%2B%201%20%3D%20%25d%2C%20%21%28x%20%2B%201%29%20%3D%20%25d%5Cn%22%2C%20%21x%20%2B%201%2C%20%21%28x%20%2B%201%29%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRhO1xuXHRpbnRcdGI7XG5cdGludFx0Yztcblx0aW50XHR4O1xuXHRpbnRcdGFyclsyXTtcblx0aW50XHQqcDtcblxuXHRhID0gNDtcblx0YiA9IDI7XG5cdHByaW50ZihcImEgJiBiID09IDAgIG1lYW5zIGEgJiAoYiA9PSAwKTogJWRcXG5cIiwgYSAmIChiID09IDApKTtcblx0cHJpbnRmKFwieW91IG1lYW50ICAgICAgICAgKGEgJiBiKSA9PSAwOiAlZFxcblwiLCAoYSAmIGIpID09IDApO1xuXHRhcnJbMF0gPSAxMDtcblx0YXJyWzFdID0gMjA7XG5cdHAgPSBhcnI7XG5cdHggPSAqcCsrO1xuXHRwcmludGYoXCIqcCsrIHJlYWQgJWQsIHAgbm93IHBvaW50cyBhdCAlZFxcblwiLCB4LCAqcCk7XG5cdGIgPSAzO1xuXHRjID0gMztcblx0YSA9IGIgPT0gYztcblx0cHJpbnRmKFwiYSA9IGIgPT0gYyAgZ2l2ZXMgYSA9ICVkXFxuXCIsIGEpO1xuXHR4ID0gNTtcblx0cHJpbnRmKFwiIXggKyAxID0gJWQsICEoeCArIDEpID0gJWRcXG5cIiwgIXggKyAxLCAhKHggKyAxKSk7XG5cdHJldHVybiAoMCk7XG59XG4iLCAiY29tcGlsZXJzIjogW3siaWQiOiAiY2cxNjIiLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifV0sICJleGVjdXRvcnMiOiBbeyJjb21waWxlciI6IHsiaWQiOiAiY2cxNjIiLCAibGlicyI6IFtdLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifSwgImFyZ3VtZW50cyI6ICIiLCAic3RkaW4iOiAiIn1dfV19" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">a &amp; b == 0    // becomes: a &amp; (b == 0)  — equality binds tighter than &amp;
+*p++          // becomes: *(p++)        — postfix ++ binds tighter than *
+a = b == c    // becomes: a = (b == c) — comparison before assignment
+!x + 1       // becomes: (!x) + 1     — ! is unary, binds very tight</code></pre>
             <div class="slide-key">Rule: when mixing operators from different rows in the table, add explicit
               parentheses. Parentheses are documentation — they show intent to the compiler and to the next
               reader.
@@ -1016,7 +1098,7 @@ a <span class="co">=</span> b <span class="co">==</span> c    <span class="cm">/
       <button class="notes-toggle" onclick="toggleNotes('n04',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Boolean Logic &amp; Precedence</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n04" hidden>
         <div class="notes-body">
@@ -1072,6 +1154,146 @@ a <span class="co">=</span> b <span class="co">==</span> c    <span class="cm">/
 
 
     <!-- ════════════════════════════════════════
+     SECTION 04+ — BOOLEAN LOGIC AT WORK (OPTIONAL)
+════════════════════════════════════════ -->
+    <section id="s04b">
+      <div class="section-hdr">
+        <div class="num">4+</div>
+        <h2>Boolean logic at work — how the CPU adds and multiplies</h2>
+        <div class="timing">~4 min · optional</div>
+      </div>
+
+      <!-- S08a — how the CPU adds -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 08a <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-purple">
+            <h3>How the CPU adds — XOR and AND</h3>
+            <div class="snum">S08a</div>
+          </div>
+          <div class="slide-body">
+            <p class="subtext mb-lg">The AND and XOR from the truth tables, applied to every bit of a number at
+              once — that's why <code class="ic">&amp;</code>, <code class="ic">^</code> and <code class="ic">|</code>
+              are called <strong>bitwise</strong> operators. XOR gives the sum of two bits, AND shows where a
+              carry is born.</p>
+            <div class="two-col grid-2">
+              <div>
+                <div class="col-label text-cyan">5 + 3 without using +</div>
+                <pre class="m-0 text-lg language-c" data-snippet="s08a_add"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09unsigned%20int%09a%3B%0A%09unsigned%20int%09b%3B%0A%09unsigned%20int%09carry%3B%0A%0A%09a%20%3D%200x5%3B%0A%09b%20%3D%200x3%3B%0A%09while%20%28b%20%21%3D%200%29%0A%09%7B%0A%09%09carry%20%3D%20a%20%26%20b%3B%0A%09%09a%20%3D%20a%20%5E%20b%3B%0A%09%09b%20%3D%20carry%20%3C%3C%201%3B%0A%09%7D%0A%09printf%28%22%25u%5Cn%22%2C%20a%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0dW5zaWduZWQgaW50XHRhO1xuXHR1bnNpZ25lZCBpbnRcdGI7XG5cdHVuc2lnbmVkIGludFx0Y2Fycnk7XG5cblx0YSA9IDB4NTtcblx0YiA9IDB4Mztcblx0d2hpbGUgKGIgIT0gMClcblx0e1xuXHRcdGNhcnJ5ID0gYSAmIGI7XG5cdFx0YSA9IGEgXiBiO1xuXHRcdGIgPSBjYXJyeSA8PCAxO1xuXHR9XG5cdHByaW50ZihcIiV1XFxuXCIsIGEpO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">unsigned int  a;
+unsigned int  b;
+unsigned int  carry;
+
+a = 0x5;                  // 0101
+b = 0x3;                  // 0011
+while (b != 0)
+{
+    carry = a &amp; b;        // 1 + 1 → a carry is born
+    a = a ^ b;            // sum, ignoring carries
+    b = carry &lt;&lt; 1;       // carry moves one place left
+}
+// a = 1000 (8)</code></pre>
+              </div>
+              <div>
+                <div class="col-label text-cyan">Each row: a ^ b → new a · (a &amp; b) &lt;&lt; 1 → new b</div>
+                <pre class="m-0 text-lg"><code>      a      b     a ^ b  (a &amp; b) &lt;&lt; 1
+1   0101   0011    0110     0010
+2   0110   0010    0100     0100
+3   0100   0100    0000     1000
+4   0000   1000    1000     0000  stop
+
+                   a = 1000 (8) ✓</code></pre>
+              </div>
+            </div>
+            <div class="slide-key">Inside the CPU, the adder is built from the same XOR and AND gates — this loop
+              does the same work in software.</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n08a',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — How the CPU adds</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="notes" id="n08a" hidden>
+        <div class="notes-body">
+          <p><strong>On adding (S08a):</strong> Go back to the S08 tables. 1 XOR 1 = 0 and 1 AND 1 = 1 — that is
+            1 + 1 = 10: write 0, carry 1. XOR gives the digit, AND gives the carry, the shift moves the carry
+            to the next column. Walk the trace one row at a time.</p>
+          <div class="engage">
+            <p>Reveal rows 1 and 2, then ask: "What are a and b on row 3?" — 0110 ^ 0010 = 0100, and
+              (0110 &amp; 0010) &lt;&lt; 1 = 0100. "When does the loop stop?" — when there is no carry left
+              (b == 0).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- S08b — multiplication: shift and add -->
+      <div class="slide-wrap">
+        <div class="slide-meta">Slide 08b <span class="stag stag-code">Code</span></div>
+        <div class="slide">
+          <div class="slide-hdr c-purple">
+            <h3>How the CPU multiplies — shift and add</h3>
+            <div class="snum">S08b</div>
+          </div>
+          <div class="slide-body">
+            <p class="subtext mb-lg">Shifting left one place multiplies by 2: <code class="ic">0011</code> (3)
+              <code class="ic">&lt;&lt; 1</code> = <code class="ic">0110</code> (6). For every 1 bit in
+              <code class="ic">b</code>, add the matching shifted copy of <code class="ic">a</code>.</p>
+            <div class="two-col grid-2">
+              <div>
+                <div class="col-label text-cyan">3 × 5 without using *</div>
+                <pre class="m-0 text-lg language-c" data-snippet="s08b_multiply"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09unsigned%20int%09a%3B%0A%09unsigned%20int%09b%3B%0A%09unsigned%20int%09r%3B%0A%0A%09a%20%3D%200x3%3B%0A%09b%20%3D%200x5%3B%0A%09r%20%3D%200%3B%0A%09while%20%28b%20%21%3D%200%29%0A%09%7B%0A%09%09if%20%28b%20%26%201%29%0A%09%09%09r%20%2B%3D%20a%3B%0A%09%09a%20%3C%3C%3D%201%3B%0A%09%09b%20%3E%3E%3D%201%3B%0A%09%7D%0A%09printf%28%22%25u%5Cn%22%2C%20r%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0dW5zaWduZWQgaW50XHRhO1xuXHR1bnNpZ25lZCBpbnRcdGI7XG5cdHVuc2lnbmVkIGludFx0cjtcblxuXHRhID0gMHgzO1xuXHRiID0gMHg1O1xuXHRyID0gMDtcblx0d2hpbGUgKGIgIT0gMClcblx0e1xuXHRcdGlmIChiICYgMSlcblx0XHRcdHIgKz0gYTtcblx0XHRhIDw8PSAxO1xuXHRcdGIgPj49IDE7XG5cdH1cblx0cHJpbnRmKFwiJXVcXG5cIiwgcik7XG5cdHJldHVybiAoMCk7XG59XG4iLCAiY29tcGlsZXJzIjogW3siaWQiOiAiY2cxNjIiLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifV0sICJleGVjdXRvcnMiOiBbeyJjb21waWxlciI6IHsiaWQiOiAiY2cxNjIiLCAibGlicyI6IFtdLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifSwgImFyZ3VtZW50cyI6ICIiLCAic3RkaW4iOiAiIn1dfV19" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">unsigned int  a;
+unsigned int  b;
+unsigned int  r;
+
+a = 0x3;                  // 0011
+b = 0x5;                  // 0101
+r = 0;
+while (b != 0)
+{
+    if (b &amp; 1)            // last bit of b is 1?
+        r += a;           // then add a
+    a &lt;&lt;= 1;              // a × 2
+    b &gt;&gt;= 1;              // move to the next bit of b
+}
+// r = 1111 (15)</code></pre>
+              </div>
+              <div>
+                <div class="col-label text-cyan">Each row: add a if b &amp; 1, then a &lt;&lt; 1, b &gt;&gt; 1</div>
+                <pre class="m-0 text-lg"><code>      b    b &amp; 1    a     r
+1   0101     1    0011   0000 + 0011 = 0011
+2   0010     0    0110   0011
+3   0001     1    1100   0011 + 1100 = 1111
+4   0000   stop
+
+                 r = 1111 (15) ✓</code></pre>
+              </div>
+            </div>
+            <div class="slide-key">Same method as long multiplication by hand — in binary each digit is 0 or 1,
+              so every step is either "add" or "skip".</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="notes-toggle" onclick="toggleNotes('n08b',this)">
+        <span class="toggle-icon">📋</span>
+        <span class="toggle-label">Presenter Notes — How the CPU multiplies</span>
+        <span class="arrow">▼</span>
+      </button>
+      <div class="notes" id="n08b" hidden>
+        <div class="notes-body">
+          <p><strong>On multiplying (S08b):</strong> Do 3 × 5 as decimal long multiplication on the board
+            first, then point at the code: each digit of b is 0 or 1, so each row is "add a" or "skip".
+            <code>a &lt;&lt;= 1</code> is the next row of long multiplication, shifted one place left.</p>
+          <div class="transition-note">Back to the main thread: where do the variables in our conditions
+            actually live, and for how long?</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════
      SECTION 05 — SCOPE & LIFETIME
 ════════════════════════════════════════ -->
     <section id="s05">
@@ -1089,7 +1311,7 @@ a <span class="co">=</span> b <span class="co">==</span> c    <span class="cm">/
             <div class="snum">S11</div>
           </div>
           <div class="slide-body">
-            <div class="scope-vis">
+            <div class="scope-vis" data-snippet="s11_shadowing"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09x%3B%0A%0A%09x%20%3D%2010%3B%0A%09%7B%0A%09%09int%09x%3B%0A%0A%09%09x%20%3D%2099%3B%0A%09%09printf%28%22%25d%5Cn%22%2C%20x%29%3B%0A%09%7D%0A%09printf%28%22%25d%5Cn%22%2C%20x%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHR4O1xuXG5cdHggPSAxMDtcblx0e1xuXHRcdGludFx0eDtcblxuXHRcdHggPSA5OTtcblx0XHRwcmludGYoXCIlZFxcblwiLCB4KTtcblx0fVxuXHRwcmludGYoXCIlZFxcblwiLCB4KTtcblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span>
               <span class="sl0">int main(void) {</span>
               <span class="sl1">int x =
                 10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
@@ -1107,7 +1329,9 @@ a <span class="co">=</span> b <span class="co">==</span> c    <span class="cm">/
             </div>
             <ul class="mt-md">
               <li>A variable lives from its declaration to the closing <code class="ic">}</code></li>
-              <li><strong>Shadowing:</strong> inner name hides outer — outer still exists, just unreachable
+              <li><strong>Shadowing:</strong> inner name hides outer — outer still exists, just unreachable.
+                Compiles silently with <code class="ic">-Wall -Wextra -Werror</code> — only
+                <code class="ic">-Wshadow</code> warns (<a href="#s03" class="text-cyan">S06</a>)
               </li>
               <li>42 norm: declare all variables <strong>at the top of the function</strong> — no nested
                 declarations
@@ -1128,22 +1352,24 @@ a <span class="co">=</span> b <span class="co">==</span> c    <span class="cm">/
             <div class="snum">S12</div>
           </div>
           <div class="slide-body">
-            <pre><code><span class="ct">int</span>   x;
-<span class="cf">printf</span>(<span class="cs">"%d\n"</span>, x);   <span class="cm">// undefined behaviour — prints whatever was there before</span>
+            <pre class="language-c" data-snippet="s12_uninitialized" data-no-flags><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%23include%20%3Cstddef.h%3E%0A%0Avoid%09%2Aft_memset%28void%20%2Ab%2C%20int%20c%2C%20size_t%20len%29%0A%7B%0A%09unsigned%20char%09%2Ap%3B%0A%0A%09p%20%3D%20b%3B%0A%09while%20%28len--%29%0A%09%09%2Ap%2B%2B%20%3D%20%28unsigned%20char%29c%3B%0A%09return%20%28b%29%3B%0A%7D%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09x%3B%0A%09int%09y%3B%0A%09int%09arr%5B5%5D%3B%0A%0A%09printf%28%22%25d%5Cn%22%2C%20x%29%3B%0A%09y%20%3D%200%3B%0A%09printf%28%22%25d%5Cn%22%2C%20y%29%3B%0A%09ft_memset%28arr%2C%200%2C%20sizeof%28arr%29%29%3B%0A%09printf%28%22%25d%20%25d%5Cn%22%2C%20arr%5B0%5D%2C%20arr%5B4%5D%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuI2luY2x1ZGUgPHN0ZGRlZi5oPlxuXG52b2lkXHQqZnRfbWVtc2V0KHZvaWQgKmIsIGludCBjLCBzaXplX3QgbGVuKVxue1xuXHR1bnNpZ25lZCBjaGFyXHQqcDtcblxuXHRwID0gYjtcblx0d2hpbGUgKGxlbi0tKVxuXHRcdCpwKysgPSAodW5zaWduZWQgY2hhciljO1xuXHRyZXR1cm4gKGIpO1xufVxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHR4O1xuXHRpbnRcdHk7XG5cdGludFx0YXJyWzVdO1xuXG5cdHByaW50ZihcIiVkXFxuXCIsIHgpO1xuXHR5ID0gMDtcblx0cHJpbnRmKFwiJWRcXG5cIiwgeSk7XG5cdGZ0X21lbXNldChhcnIsIDAsIHNpemVvZihhcnIpKTtcblx0cHJpbnRmKFwiJWQgJWRcXG5cIiwgYXJyWzBdLCBhcnJbNF0pO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuI2luY2x1ZGUgPHN0ZGRlZi5oPlxuXG52b2lkXHQqZnRfbWVtc2V0KHZvaWQgKmIsIGludCBjLCBzaXplX3QgbGVuKVxue1xuXHR1bnNpZ25lZCBjaGFyXHQqcDtcblxuXHRwID0gYjtcblx0d2hpbGUgKGxlbi0tKVxuXHRcdCpwKysgPSAodW5zaWduZWQgY2hhciljO1xuXHRyZXR1cm4gKGIpO1xufVxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHR4O1xuXHRpbnRcdHk7XG5cdGludFx0YXJyWzVdO1xuXG5cdHByaW50ZihcIiVkXFxuXCIsIHgpO1xuXHR5ID0gMDtcblx0cHJpbnRmKFwiJWRcXG5cIiwgeSk7XG5cdGZ0X21lbXNldChhcnIsIDAsIHNpemVvZihhcnIpKTtcblx0cHJpbnRmKFwiJWQgJWRcXG5cIiwgYXJyWzBdLCBhcnJbNF0pO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Run without flags</a></span><code class="language-c">int   x;
+printf("%d\n", x);   // undefined behaviour — prints whatever was there before
 
-<span class="ct">int</span>   x;
-x <span class="co">=</span> <span class="cn">0</span>;               <span class="cm">// explicit initialization — predictable</span>
+int   x;
+x = 0;               // explicit initialization — predictable
 
-<span class="ct">int</span>   arr[<span class="cn">5</span>];
-<span class="cf">ft_memset</span>(arr, <span class="cn">0</span>, <span class="ck">sizeof</span>(arr));  <span class="cm">// zero-initialize a whole array</span></code></pre>
+int   arr[5];
+ft_memset(arr, 0, sizeof(arr));  // zero-initialize a whole array</code></pre>
             <ul>
               <li>An uninitialized local variable holds whatever memory happened to be there</li>
               <li>C makes no guarantee — the value may differ on every run, every machine</li>
               <li>Habit: initialize to 0 when you declare, even if you will assign later</li>
+              <li>With <code class="ic">-Wall -Wextra -Werror</code> this doesn't compile —
+                <code class="ic">'x' is used uninitialized</code></li>
             </ul>
-            <div class="slide-key">Compile and run — show the garbage value. Run again. It may change. This is
-              the
-              behaviour named "undefined".</div>
+            <div class="slide-key">The 42 flags stop this before it runs. Without them it compiles silently and
+              prints whatever was in memory — a different value on different runs. That is the behaviour named
+              "undefined".</div>
           </div>
         </div>
       </div>
@@ -1151,7 +1377,7 @@ x <span class="co">=</span> <span class="cn">0</span>;               <span class
       <button class="notes-toggle" onclick="toggleNotes('n05',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Scope &amp; Lifetime</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n05" hidden>
         <div class="notes-body">
@@ -1166,9 +1392,12 @@ x <span class="co">=</span> <span class="cn">0</span>;               <span class
               norm-compliant code this can't happen, but the concept of lifetime still applies at function
               scope.</p>
           </div>
-          <p><strong>On uninitialized vars (S12):</strong> Actually compile and run. Show the garbage. Run
-            twice — it
-            may differ. This visual demonstration is more memorable than any explanation. After: "Where
+          <p><strong>On uninitialized vars (S12):</strong> Click ⚙ Compile &amp; run first: with the 42 flags
+            the compiler refuses it (<code>'x' is used uninitialized</code>). Then ▶ Step through: x shows as
+            <code>?</code> and it stops at the <code>printf</code> with an "uninitialised value" error. To show
+            the garbage itself, compile it live without flags (<code>cc s12_uninitialized.c</code>) and run it
+            a few times — the value can change between runs (gcc gave -1025092928, then 0). This visual
+            demonstration is more memorable than any explanation. After: "Where
             exactly does
             that variable live in memory?" — let answers come. "Stack" is correct. "That's the next session."
           </p>
@@ -1197,14 +1426,14 @@ x <span class="co">=</span> <span class="cn">0</span>;               <span class
             <div class="snum">S13</div>
           </div>
           <div class="slide-body">
-            <pre><code><span class="ct">int</span>   i;
+            <pre class="language-c" data-snippet="s13_while"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09i%3B%0A%0A%09i%20%3D%200%3B%0A%09while%20%28i%20%3C%205%29%0A%09%7B%0A%09%09printf%28%22%25d%5Cn%22%2C%20i%29%3B%0A%09%09i%2B%2B%3B%0A%09%7D%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRpO1xuXG5cdGkgPSAwO1xuXHR3aGlsZSAoaSA8IDUpXG5cdHtcblx0XHRwcmludGYoXCIlZFxcblwiLCBpKTtcblx0XHRpKys7XG5cdH1cblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int   i;
 
-i <span class="co">=</span> <span class="cn">0</span>;                       <span class="cm">// 1. init      — before the loop</span>
-<span class="ck">while</span> (i <span class="co">&lt;</span> <span class="cn">5</span>)                <span class="cm">// 2. condition — tested before each iteration</span>
+i = 0;                       // 1. init      — before the loop
+while (i &lt; 5)                // 2. condition — tested before each iteration
 {
-    <span class="cf">printf</span>(<span class="cs">"%d\n"</span>, i);        <span class="cm">// 3. body      — what you want to repeat</span>
-    i<span class="co">++</span>;                      <span class="cm">// 4. increment — move toward the exit condition</span>
-}                             <span class="cm">// jumps back to 2</span></code></pre>
+    printf("%d\n", i);        // 3. body      — what you want to repeat
+    i++;                      // 4. increment — move toward the exit condition
+}                             // jumps back to 2</code></pre>
             <ul>
               <li><strong>for</strong> exists and is the same machine — norm forbids it. Converting: step 1
                 goes before,
@@ -1232,20 +1461,20 @@ i <span class="co">=</span> <span class="cn">0</span>;                       <sp
             <div class="snum">S14</div>
           </div>
           <div class="slide-body">
-            <pre><code><span class="ct">int</span>   row;
-<span class="ct">int</span>   col;
+            <pre class="language-c" data-snippet="s14_nested_loops"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09row%3B%0A%09int%09col%3B%0A%0A%09row%20%3D%200%3B%0A%09while%20%28row%20%3C%203%29%0A%09%7B%0A%09%09col%20%3D%200%3B%0A%09%09while%20%28col%20%3C%204%29%0A%09%09%7B%0A%09%09%09printf%28%22%5B%25d%2C%25d%5D%20%22%2C%20row%2C%20col%29%3B%0A%09%09%09col%2B%2B%3B%0A%09%09%7D%0A%09%09printf%28%22%5Cn%22%29%3B%0A%09%09row%2B%2B%3B%0A%09%7D%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRyb3c7XG5cdGludFx0Y29sO1xuXG5cdHJvdyA9IDA7XG5cdHdoaWxlIChyb3cgPCAzKVxuXHR7XG5cdFx0Y29sID0gMDtcblx0XHR3aGlsZSAoY29sIDwgNClcblx0XHR7XG5cdFx0XHRwcmludGYoXCJbJWQsJWRdIFwiLCByb3csIGNvbCk7XG5cdFx0XHRjb2wrKztcblx0XHR9XG5cdFx0cHJpbnRmKFwiXFxuXCIpO1xuXHRcdHJvdysrO1xuXHR9XG5cdHJldHVybiAoMCk7XG59XG4iLCAiY29tcGlsZXJzIjogW3siaWQiOiAiY2cxNjIiLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifV0sICJleGVjdXRvcnMiOiBbeyJjb21waWxlciI6IHsiaWQiOiAiY2cxNjIiLCAibGlicyI6IFtdLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifSwgImFyZ3VtZW50cyI6ICIiLCAic3RkaW4iOiAiIn1dfV19" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int   row;
+int   col;
 
-row <span class="co">=</span> <span class="cn">0</span>;
-<span class="ck">while</span> (row <span class="co">&lt;</span> <span class="cn">3</span>)                <span class="cm">// outer: controls which row we are on</span>
+row = 0;
+while (row &lt; 3)                // outer: controls which row we are on
 {
-    col <span class="co">=</span> <span class="cn">0</span>;
-    <span class="ck">while</span> (col <span class="co">&lt;</span> <span class="cn">4</span>)             <span class="cm">// inner: runs completely for each row</span>
+    col = 0;
+    while (col &lt; 4)             // inner: runs completely for each row
     {
-        <span class="cf">printf</span>(<span class="cs">"[%d,%d] "</span>, row, col);
-        col<span class="co">++</span>;
+        printf("[%d,%d] ", row, col);
+        col++;
     }
-    <span class="cf">printf</span>(<span class="cs">"\n"</span>);
-    row<span class="co">++</span>;
+    printf("\n");
+    row++;
 }</code></pre>
             <ul>
               <li>Inner loop executes <strong>completely</strong> for each outer step: 3 × 4 = 12 total</li>
@@ -1269,7 +1498,7 @@ row <span class="co">=</span> <span class="cn">0</span>;
       <button class="notes-toggle" onclick="toggleNotes('n06',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Loops</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n06" hidden>
         <div class="notes-body">
@@ -1321,24 +1550,24 @@ row <span class="co">=</span> <span class="cn">0</span>;
             <div class="snum">S15</div>
           </div>
           <div class="slide-body">
-            <pre><code><span class="cm">// functions are verbs — they do something</span>
-<span class="ct">int</span>    <span class="cf">count_words</span>(<span class="ct">char</span> <span class="co">*</span>sentence, <span class="ct">char</span> separator);
-<span class="ct">char</span>   <span class="co">*</span><span class="cf">find_next_token</span>(<span class="ct">char</span> <span class="co">*</span>input);
-<span class="ct">int</span>    <span class="cf">validate_input</span>(<span class="ct">char</span> <span class="co">*</span>buffer, <span class="ct">size_t</span> length);
+            <pre class="language-c"><code class="language-c">// functions are verbs — they do something
+int    count_words(char *sentence, char separator);
+char   *find_next_token(char *input);
+int    validate_input(char *buffer, size_t length);
 
-<span class="cm">// variables and parameters are nouns — they hold something</span>
-<span class="ct">size_t</span>  word_count;
-<span class="ct">char</span>    <span class="co">*</span>current_token;
-<span class="ct">int</span>     is_valid;      <span class="cm">// booleans: starts with is_ or has_</span>
+// variables and parameters are nouns — they hold something
+size_t  word_count;
+char    *current_token;
+int     is_valid;      // booleans: starts with is_ or has_
 
-<span class="cm">// names that carry dimension belong in the context</span>
-<span class="ct">int</span>     pixel_x;      <span class="cm">// not i</span>
-<span class="ct">int</span>     pixel_y;      <span class="cm">// not j</span>
-<span class="ct">int</span>     row;          <span class="cm">// not i — even for simple loops</span>
-<span class="ct">int</span>     col;          <span class="cm">// not j</span>
+// names that carry dimension belong in the context
+int     pixel_x;      // not i
+int     pixel_y;      // not j
+int     row;          // not i — even for simple loops
+int     col;          // not j
 
-<span class="cm">// len is universal — always understood</span>
-<span class="ct">size_t</span>  len;</code></pre>
+// len is universal — always understood
+size_t  len;</code></pre>
             <ul class="mt-md">
               <li>42 norm: snake_case for everything, no camelCase</li>
               <li>A name should answer: <em>what does this hold</em> or <em>what does this do</em></li>
@@ -1354,7 +1583,7 @@ row <span class="co">=</span> <span class="cn">0</span>;
       <button class="notes-toggle" onclick="toggleNotes('n07',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Clean Code</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n07" hidden>
         <div class="notes-body">
@@ -1410,33 +1639,33 @@ row <span class="co">=</span> <span class="cn">0</span>;
           <div class="slide-body">
             <p class="subtext mb-lg"><em>Defensive programming:</em> write
               code that handles what <em>shouldn't</em> happen — before it does.</p>
-            <div class="two-col">
+            <div class="two-col grid-2">
               <div>
-                <div class="col-label col-bad">Three levels of nesting</div>
-                <pre class="m-0 text-lg"><code><span class="ct">int</span> process(<span class="ct">char</span> <span class="co">*</span>s, <span class="ct">int</span> len)
+                <div class="col-label text-red">Three levels of nesting</div>
+                <pre class="m-0 text-lg language-c" data-snippet="s16_nested"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%23include%20%3Cstddef.h%3E%0A%0Aint%09process%28char%20%2As%2C%20int%20len%29%0A%7B%0A%09int%09result%3B%0A%0A%09result%20%3D%200%3B%0A%09if%20%28s%29%0A%09%7B%0A%09%09if%20%28len%20%3E%200%29%0A%09%09%7B%0A%09%09%09result%20%3D%201%3B%0A%09%09%7D%0A%09%7D%0A%09return%20%28result%29%3B%0A%7D%0A%0Aint%09main%28void%29%0A%7B%0A%09printf%28%22%25d%5Cn%22%2C%20process%28%22abc%22%2C%203%29%29%3B%0A%09printf%28%22%25d%5Cn%22%2C%20process%28NULL%2C%203%29%29%3B%0A%09printf%28%22%25d%5Cn%22%2C%20process%28%22abc%22%2C%200%29%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuI2luY2x1ZGUgPHN0ZGRlZi5oPlxuXG5pbnRcdHByb2Nlc3MoY2hhciAqcywgaW50IGxlbilcbntcblx0aW50XHRyZXN1bHQ7XG5cblx0cmVzdWx0ID0gMDtcblx0aWYgKHMpXG5cdHtcblx0XHRpZiAobGVuID4gMClcblx0XHR7XG5cdFx0XHRyZXN1bHQgPSAxO1xuXHRcdH1cblx0fVxuXHRyZXR1cm4gKHJlc3VsdCk7XG59XG5cbmludFx0bWFpbih2b2lkKVxue1xuXHRwcmludGYoXCIlZFxcblwiLCBwcm9jZXNzKFwiYWJjXCIsIDMpKTtcblx0cHJpbnRmKFwiJWRcXG5cIiwgcHJvY2VzcyhOVUxMLCAzKSk7XG5cdHByaW50ZihcIiVkXFxuXCIsIHByb2Nlc3MoXCJhYmNcIiwgMCkpO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int process(char *s, int len)
 {
-    <span class="ct">int</span>   result;
+    int   result;
 
-    result <span class="co">=</span> <span class="cn">0</span>;
-    <span class="ck">if</span> (s)
+    result = 0;
+    if (s)
     {
-        <span class="ck">if</span> (len <span class="co">&gt;</span> <span class="cn">0</span>)
+        if (len &gt; 0)
         {
-            <span class="cm">// work lives 3 levels deep</span>
-            result <span class="co">=</span> <span class="cn">1</span>;
+            // work lives 3 levels deep
+            result = 1;
         }
     }
-    <span class="ck">return</span> (result);
+    return (result);
 }</code></pre>
               </div>
               <div>
-                <div class="col-label col-good">Flat — one level</div>
-                <pre class="m-0 text-lg"><code><span class="ct">int</span> process(<span class="ct">char</span> <span class="co">*</span>s, <span class="ct">int</span> len)
+                <div class="col-label text-green">Flat — one level</div>
+                <pre class="m-0 text-lg language-c" data-snippet="s16_guard_clauses"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%23include%20%3Cstddef.h%3E%0A%0Aint%09process%28char%20%2As%2C%20int%20len%29%0A%7B%0A%09if%20%28%21s%20%7C%7C%20len%20%3C%3D%200%29%0A%09%09return%20%280%29%3B%0A%09return%20%281%29%3B%0A%7D%0A%0Aint%09main%28void%29%0A%7B%0A%09printf%28%22%25d%5Cn%22%2C%20process%28%22abc%22%2C%203%29%29%3B%0A%09printf%28%22%25d%5Cn%22%2C%20process%28NULL%2C%203%29%29%3B%0A%09printf%28%22%25d%5Cn%22%2C%20process%28%22abc%22%2C%200%29%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuI2luY2x1ZGUgPHN0ZGRlZi5oPlxuXG5pbnRcdHByb2Nlc3MoY2hhciAqcywgaW50IGxlbilcbntcblx0aWYgKCFzIHx8IGxlbiA8PSAwKVxuXHRcdHJldHVybiAoMCk7XG5cdHJldHVybiAoMSk7XG59XG5cbmludFx0bWFpbih2b2lkKVxue1xuXHRwcmludGYoXCIlZFxcblwiLCBwcm9jZXNzKFwiYWJjXCIsIDMpKTtcblx0cHJpbnRmKFwiJWRcXG5cIiwgcHJvY2VzcyhOVUxMLCAzKSk7XG5cdHByaW50ZihcIiVkXFxuXCIsIHByb2Nlc3MoXCJhYmNcIiwgMCkpO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int process(char *s, int len)
 {
-    <span class="ck">if</span> (<span class="co">!</span>s <span class="co">||</span> len <span class="co">&lt;=</span> <span class="cn">0</span>)
-        <span class="ck">return</span> (<span class="cn">0</span>);
-    <span class="cm">// happy path — no nesting</span>
-    <span class="ck">return</span> (<span class="cn">1</span>);
+    if (!s || len &lt;= 0)
+        return (0);
+    // happy path — no nesting
+    return (1);
 }</code></pre>
                 <br>
                 <p class="text-lg">Invert the bad conditions. Return early. Keep the main logic at the
@@ -1464,28 +1693,28 @@ row <span class="co">=</span> <span class="cn">0</span>;
               <div class="m-sub">You are a muggle. Name your constants.</div>
               <div class="m-rule">#define your values — always.</div>
             </div>
-            <div class="two-col mt-lg">
+            <div class="two-col mt-lg grid-2">
               <div>
-                <div class="col-label col-bad">❌ Magic (for compilers only)</div>
-                <pre class="m-0 text-lg"><code><span class="ct">char</span>   buf[<span class="cn">1024</span>];
-<span class="ct">int</span>    limit <span class="co">=</span> <span class="cn">42</span>;
+                <div class="col-label text-red">❌ Magic (for compilers only)</div>
+                <pre class="m-0 text-lg language-c" data-snippet="s17_magic_numbers"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Avoid%09handle_overflow%28void%29%0A%7B%0A%09printf%28%22too%20many%20players%5Cn%22%29%3B%0A%7D%0A%0Aint%09main%28void%29%0A%7B%0A%09char%09buf%5B1024%5D%3B%0A%09int%09%09limit%3B%0A%09int%09%09count%3B%0A%0A%09limit%20%3D%2042%3B%0A%09count%20%3D%2050%3B%0A%09printf%28%22buffer%20%25zu%20bytes%2C%20limit%20%25d%5Cn%22%2C%20sizeof%28buf%29%2C%20limit%29%3B%0A%09if%20%28count%20%3E%2042%29%0A%09%09handle_overflow%28%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG52b2lkXHRoYW5kbGVfb3ZlcmZsb3codm9pZClcbntcblx0cHJpbnRmKFwidG9vIG1hbnkgcGxheWVyc1xcblwiKTtcbn1cblxuaW50XHRtYWluKHZvaWQpXG57XG5cdGNoYXJcdGJ1ZlsxMDI0XTtcblx0aW50XHRcdGxpbWl0O1xuXHRpbnRcdFx0Y291bnQ7XG5cblx0bGltaXQgPSA0Mjtcblx0Y291bnQgPSA1MDtcblx0cHJpbnRmKFwiYnVmZmVyICV6dSBieXRlcywgbGltaXQgJWRcXG5cIiwgc2l6ZW9mKGJ1ZiksIGxpbWl0KTtcblx0aWYgKGNvdW50ID4gNDIpXG5cdFx0aGFuZGxlX292ZXJmbG93KCk7XG5cdHJldHVybiAoMCk7XG59XG4iLCAiY29tcGlsZXJzIjogW3siaWQiOiAiY2cxNjIiLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifV0sICJleGVjdXRvcnMiOiBbeyJjb21waWxlciI6IHsiaWQiOiAiY2cxNjIiLCAibGlicyI6IFtdLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifSwgImFyZ3VtZW50cyI6ICIiLCAic3RkaW4iOiAiIn1dfV19" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">char   buf[1024];
+int    limit = 42;
 
-<span class="ck">if</span> (count <span class="co">&gt;</span> <span class="cn">42</span>)
+if (count &gt; 42)
     handle_overflow();</code></pre>
-                <p class="subtext-sm mt-sm">What is 1024? What is 42? Change one
+                <p class="subtext mt-sm">What is 1024? What is 42? Change one
                   — did you find them all?</p>
               </div>
               <div>
-                <div class="col-label col-good">✓ Named constants</div>
-                <pre class="m-0 text-lg"><code><span class="cp">#define</span> BUFFER_SIZE  <span class="cn">1024</span>
-<span class="cp">#define</span> MAX_PLAYERS  <span class="cn">42</span>
+                <div class="col-label text-green">✓ Named constants</div>
+                <pre class="m-0 text-lg language-c" data-snippet="s17_named_constants"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0A%23define%20BUFFER_SIZE%20%201024%0A%23define%20MAX_PLAYERS%20%2042%0A%0Avoid%09handle_overflow%28void%29%0A%7B%0A%09printf%28%22too%20many%20players%5Cn%22%29%3B%0A%7D%0A%0Aint%09main%28void%29%0A%7B%0A%09char%09buf%5BBUFFER_SIZE%5D%3B%0A%09int%09%09limit%3B%0A%09int%09%09count%3B%0A%0A%09limit%20%3D%20MAX_PLAYERS%3B%0A%09count%20%3D%2050%3B%0A%09printf%28%22buffer%20%25zu%20bytes%2C%20limit%20%25d%5Cn%22%2C%20sizeof%28buf%29%2C%20limit%29%3B%0A%09if%20%28count%20%3E%20MAX_PLAYERS%29%0A%09%09handle_overflow%28%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG4jZGVmaW5lIEJVRkZFUl9TSVpFICAxMDI0XG4jZGVmaW5lIE1BWF9QTEFZRVJTICA0MlxuXG52b2lkXHRoYW5kbGVfb3ZlcmZsb3codm9pZClcbntcblx0cHJpbnRmKFwidG9vIG1hbnkgcGxheWVyc1xcblwiKTtcbn1cblxuaW50XHRtYWluKHZvaWQpXG57XG5cdGNoYXJcdGJ1ZltCVUZGRVJfU0laRV07XG5cdGludFx0XHRsaW1pdDtcblx0aW50XHRcdGNvdW50O1xuXG5cdGxpbWl0ID0gTUFYX1BMQVlFUlM7XG5cdGNvdW50ID0gNTA7XG5cdHByaW50ZihcImJ1ZmZlciAlenUgYnl0ZXMsIGxpbWl0ICVkXFxuXCIsIHNpemVvZihidWYpLCBsaW1pdCk7XG5cdGlmIChjb3VudCA%2BIE1BWF9QTEFZRVJTKVxuXHRcdGhhbmRsZV9vdmVyZmxvdygpO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">#define BUFFER_SIZE  1024
+#define MAX_PLAYERS  42
 
-<span class="ct">char</span>   buf[BUFFER_SIZE];
-<span class="ct">int</span>    limit <span class="co">=</span> MAX_PLAYERS;
+char   buf[BUFFER_SIZE];
+int    limit = MAX_PLAYERS;
 
-<span class="ck">if</span> (count <span class="co">&gt;</span> MAX_PLAYERS)
+if (count &gt; MAX_PLAYERS)
     handle_overflow();</code></pre>
-                <p class="subtext-sm mt-sm">Change it in one place. Intent is
+                <p class="subtext mt-sm">Change it in one place. Intent is
                   visible. No hunting.</p>
               </div>
             </div>
@@ -1505,30 +1734,30 @@ row <span class="co">=</span> <span class="cn">0</span>;
             <div class="snum">S18</div>
           </div>
           <div class="slide-body">
-            <div class="two-col">
+            <div class="two-col grid-2">
               <div>
-                <div class="col-label col-note">Header guard — prevent double inclusion</div>
-                <pre class="m-0 text-lg"><code><span class="cp">#ifndef</span> MYPROJECT_H
-<span class="cp"># define</span> MYPROJECT_H
+                <div class="col-label text-cyan">Header guard — prevent double inclusion</div>
+                <pre class="m-0 text-lg language-c"><code class="language-c">#ifndef MYPROJECT_H
+# define MYPROJECT_H
 
-<span class="cp"># include</span> <span class="cs">&lt;unistd.h&gt;</span>
+# include &lt;unistd.h&gt;
 
-<span class="ct">int</span>   my_function(<span class="ck">void</span>);
+int   my_function(void);
 
-<span class="cp">#endif</span></code></pre>
-                <p class="subtext-sm mt-sm">Without this: including the same
+#endif</code></pre>
+                <p class="subtext mt-sm">Without this: including the same
                   header twice causes duplicate declarations → compile error.</p>
               </div>
               <div>
-                <div class="col-label col-note">const — making intent visible</div>
-                <pre class="m-0 text-lg"><code><span class="ck">const</span> <span class="ct">char</span>  <span class="co">*</span>s;
-<span class="cm">// data is immutable, pointer can change</span>
+                <div class="col-label text-cyan">const — making intent visible</div>
+                <pre class="m-0 text-lg language-c"><code class="language-c">const char  *s;
+// data is immutable, pointer can change
 
-<span class="ct">char</span>  <span class="co">*</span><span class="ck">const</span> s;
-<span class="cm">// pointer is immutable, data can change</span>
+char  *const s;
+// pointer is immutable, data can change
 
-<span class="ct">size_t</span>  <span class="cf">ft_strlen</span>(<span class="ck">const</span> <span class="ct">char</span> <span class="co">*</span>str);
-<span class="cm">// promise: I will not modify your string</span></code></pre>
+size_t  ft_strlen(const char *str);
+// promise: I will not modify your string</code></pre>
               </div>
             </div>
             <div class="slide-key">Header guards are the canonical C defensive pattern — every .h file you
@@ -1547,20 +1776,20 @@ row <span class="co">=</span> <span class="cn">0</span>;
             <div class="snum">S19a</div>
           </div>
           <div class="slide-body">
-            <pre><code><span class="ct">int</span>     arr[] <span class="co">=</span> {<span class="cn">10</span>, <span class="cn">20</span>, <span class="cn">30</span>, <span class="cn">40</span>, <span class="cn">50</span>};
-<span class="ct">size_t</span>  len;
-<span class="ct">int</span>     <span class="co">*</span>ptr;
+            <pre class="language-c" data-snippet="s19a_sizeof"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09%09arr%5B5%5D%3B%0A%09size_t%09len%3B%0A%09int%09%09%2Aptr%3B%0A%0A%09arr%5B0%5D%20%3D%2010%3B%0A%09arr%5B1%5D%20%3D%2020%3B%0A%09arr%5B2%5D%20%3D%2030%3B%0A%09arr%5B3%5D%20%3D%2040%3B%0A%09arr%5B4%5D%20%3D%2050%3B%0A%09len%20%3D%20sizeof%28arr%29%20%2F%20sizeof%28arr%5B0%5D%29%3B%0A%09ptr%20%3D%20arr%3B%0A%09while%20%28ptr%20%3C%20arr%20%2B%20len%29%0A%09%7B%0A%09%09printf%28%22%25d%5Cn%22%2C%20%2Aptr%29%3B%0A%09%09ptr%2B%2B%3B%0A%09%7D%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRcdGFycls1XTtcblx0c2l6ZV90XHRsZW47XG5cdGludFx0XHQqcHRyO1xuXG5cdGFyclswXSA9IDEwO1xuXHRhcnJbMV0gPSAyMDtcblx0YXJyWzJdID0gMzA7XG5cdGFyclszXSA9IDQwO1xuXHRhcnJbNF0gPSA1MDtcblx0bGVuID0gc2l6ZW9mKGFycikgLyBzaXplb2YoYXJyWzBdKTtcblx0cHRyID0gYXJyO1xuXHR3aGlsZSAocHRyIDwgYXJyICsgbGVuKVxuXHR7XG5cdFx0cHJpbnRmKFwiJWRcXG5cIiwgKnB0cik7XG5cdFx0cHRyKys7XG5cdH1cblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int     arr[] = {10, 20, 30, 40, 50};
+size_t  len;
+int     *ptr;
 
-<span class="cm">// sizeof(arr)    = 5 x 4 = 20 bytes (total array)</span>
-<span class="cm">// sizeof(arr[0]) = 4 bytes     (one element)</span>
-<span class="cm">// 20 / 4         = 5           (number of elements)</span>
-len <span class="co">=</span> <span class="ck">sizeof</span>(arr) <span class="co">/</span> <span class="ck">sizeof</span>(arr[<span class="cn">0</span>]);
+// sizeof(arr)    = 5 x 4 = 20 bytes (total array)
+// sizeof(arr[0]) = 4 bytes     (one element)
+// 20 / 4         = 5           (number of elements)
+len = sizeof(arr) / sizeof(arr[0]);
 
-ptr <span class="co">=</span> arr;
-<span class="ck">while</span> (ptr <span class="co">&lt;</span> arr <span class="co">+</span> len)
+ptr = arr;
+while (ptr &lt; arr + len)
 {
-    <span class="cf">printf</span>(<span class="cs">"%d\n"</span>, <span class="co">*</span>ptr);
-    ptr<span class="co">++</span>;
+    printf("%d\n", *ptr);
+    ptr++;
 }</code></pre>
             <ul>
               <li>The pointer <strong>is</strong> the iterator — no index variable needed</li>
@@ -1587,25 +1816,25 @@ ptr <span class="co">=</span> arr;
             <div class="snum">S19b</div>
           </div>
           <div class="slide-body">
-            <pre><code><span class="cm">// Works when the array has a sentinel — a value that marks the end</span>
-<span class="ct">int</span>   arr[] <span class="co">=</span> {<span class="cn">10</span>, <span class="cn">20</span>, <span class="cn">30</span>, <span class="cn">40</span>, <span class="cn">50</span>, <span class="cn">0</span>};   <span class="cm">// 0 = end marker</span>
-<span class="ct">int</span>   <span class="co">*</span>ptr;
+            <pre class="language-c" data-snippet="s19b_sentinel"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%2F%2F%20args%3A%20hello%2042%20world%0A%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28int%20argc%2C%20char%20%2A%2Aargv%29%0A%7B%0A%09int%09%09arr%5B6%5D%3B%0A%09int%09%09%2Aptr%3B%0A%09char%09%2A%2Aarg%3B%0A%0A%09%28void%29argc%3B%0A%09arr%5B0%5D%20%3D%2010%3B%0A%09arr%5B1%5D%20%3D%2020%3B%0A%09arr%5B2%5D%20%3D%2030%3B%0A%09arr%5B3%5D%20%3D%2040%3B%0A%09arr%5B4%5D%20%3D%2050%3B%0A%09arr%5B5%5D%20%3D%200%3B%0A%09ptr%20%3D%20arr%3B%0A%09while%20%28%2Aptr%29%0A%09%7B%0A%09%09printf%28%22%25d%5Cn%22%2C%20%2Aptr%29%3B%0A%09%09ptr%2B%2B%3B%0A%09%7D%0A%09arg%20%3D%20argv%20%2B%201%3B%0A%09while%20%28%2Aarg%29%0A%09%7B%0A%09%09printf%28%22%25s%5Cn%22%2C%20%2Aarg%29%3B%0A%09%09arg%2B%2B%3B%0A%09%7D%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIi8vIGFyZ3M6IGhlbGxvIDQyIHdvcmxkXG4jaW5jbHVkZSA8c3RkaW8uaD5cblxuaW50XHRtYWluKGludCBhcmdjLCBjaGFyICoqYXJndilcbntcblx0aW50XHRcdGFycls2XTtcblx0aW50XHRcdCpwdHI7XG5cdGNoYXJcdCoqYXJnO1xuXG5cdCh2b2lkKWFyZ2M7XG5cdGFyclswXSA9IDEwO1xuXHRhcnJbMV0gPSAyMDtcblx0YXJyWzJdID0gMzA7XG5cdGFyclszXSA9IDQwO1xuXHRhcnJbNF0gPSA1MDtcblx0YXJyWzVdID0gMDtcblx0cHRyID0gYXJyO1xuXHR3aGlsZSAoKnB0cilcblx0e1xuXHRcdHByaW50ZihcIiVkXFxuXCIsICpwdHIpO1xuXHRcdHB0cisrO1xuXHR9XG5cdGFyZyA9IGFyZ3YgKyAxO1xuXHR3aGlsZSAoKmFyZylcblx0e1xuXHRcdHByaW50ZihcIiVzXFxuXCIsICphcmcpO1xuXHRcdGFyZysrO1xuXHR9XG5cdHJldHVybiAoMCk7XG59XG4iLCAiY29tcGlsZXJzIjogW3siaWQiOiAiY2cxNjIiLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifV0sICJleGVjdXRvcnMiOiBbeyJjb21waWxlciI6IHsiaWQiOiAiY2cxNjIiLCAibGlicyI6IFtdLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifSwgImFyZ3VtZW50cyI6ICJoZWxsbyA0MiB3b3JsZCIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">// Works when the array has a sentinel — a value that marks the end
+int   arr[] = {10, 20, 30, 40, 50, 0};   // 0 = end marker
+int   *ptr;
 
-ptr <span class="co">=</span> arr;
-<span class="ck">while</span> (<span class="co">*</span>ptr)
+ptr = arr;
+while (*ptr)
 {
-    <span class="cf">printf</span>(<span class="cs">"%d\n"</span>, <span class="co">*</span>ptr);
-    ptr<span class="co">++</span>;
+    printf("%d\n", *ptr);
+    ptr++;
 }
 
-<span class="cm">// argv is already NULL-terminated — same pattern, no design needed</span>
-<span class="ct">char</span>  <span class="co">**</span>arg;
+// argv is already NULL-terminated — same pattern, no design needed
+char  **arg;
 
-arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1</span>;    <span class="cm">// skip program name</span>
-<span class="ck">while</span> (<span class="co">*</span>arg)
+arg = argv + 1;    // skip program name
+while (*arg)
 {
-    <span class="cf">printf</span>(<span class="cs">"%s\n"</span>, <span class="co">*</span>arg);
-    arg<span class="co">++</span>;
+    printf("%s\n", *arg);
+    arg++;
 }</code></pre>
             <ul>
               <li>Strings already use this — <code class="ic">'\0'</code> is a sentinel. Strings are not
@@ -1624,7 +1853,7 @@ arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1<
       <button class="notes-toggle" onclick="toggleNotes('n08',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Defensive Programming</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n08" hidden>
         <div class="notes-body">
@@ -1704,7 +1933,7 @@ arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1<
             <p class="mb-lg">Start at the identifier. Go <strong>right</strong> first, then
               <strong>left</strong>, jump out of parentheses and repeat.
             </p>
-            <div class="highlight-box">
+            <div class="card highlight-box">
               <p class="slide-box-text text-xl text-center text-amber mb-lg">
                 char &nbsp;*(*f)(int, char *)</p>
               <div class="cdecl-steps">
@@ -1751,16 +1980,16 @@ arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1<
             <div class="snum">S21</div>
           </div>
           <div class="slide-body">
-            <pre><code><span class="cm">// Read these before I reveal — right-then-left from the name</span>
+            <pre class="language-c"><code class="language-c">// Read these before I reveal — right-then-left from the name
 
-<span class="ct">int</span>   (<span class="co">*</span>arr)[<span class="cn">5</span>]
-<span class="cm">// arr is a pointer to array 5 of int</span>
+int   (*arr)[5]
+// arr is a pointer to array 5 of int
 
-<span class="ck">const</span> <span class="ct">char</span>  <span class="co">*</span>s
-<span class="cm">// s is a pointer to const char  (data immutable, pointer movable)</span>
+const char  *s
+// s is a pointer to const char  (data immutable, pointer movable)
 
-<span class="ct">char</span>  <span class="co">*</span><span class="ck">const</span> s
-<span class="cm">// s is a const pointer to char  (pointer immutable, data mutable)</span></code></pre>
+char  *const s
+// s is a const pointer to char  (pointer immutable, data mutable)</code></pre>
             <p class="mt-md">Navigate live to <strong class="text-cyan">cdecl.org</strong> — type
               a declaration, get plain English. Use it as validation, not as a crutch.</p>
             <ul class="mt-md">
@@ -1776,7 +2005,7 @@ arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1<
       <button class="notes-toggle" onclick="toggleNotes('n09',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Reading C</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n09" hidden>
         <div class="notes-body">
@@ -1835,71 +2064,71 @@ arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1<
             <div class="snum">S22</div>
           </div>
           <div class="slide-body">
-            <div class="recap-grid">
-              <a class="recap-item" href="#s00">
+            <div class="recap-grid grid-2">
+              <a class="card recap-item" href="#s00">
                 <div class="recap-icon">✋</div>
                 <div>
                   <div class="rtitle">First Byte</div>
                   <div class="rkey">Bits → bytes → binary decomposition</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s01">
+              <a class="card recap-item" href="#s01">
                 <div class="recap-icon">📚</div>
                 <div>
                   <div class="rtitle">Vocabulary</div>
                   <div class="rkey">Return type · parameter · condition · statement</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s02">
+              <a class="card recap-item" href="#s02">
                 <div class="recap-icon">🔢</div>
                 <div>
                   <div class="rtitle">Byte &amp; Types</div>
                   <div class="rkey">Nibbles · hex · type as memory contract</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s03">
+              <a class="card recap-item" href="#s03">
                 <div class="recap-icon">⚙️</div>
                 <div>
                   <div class="rtitle">Compiler Flags &amp; Makefile</div>
                   <div class="rkey">-Wall -Wextra -Werror · build contract</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s04">
+              <a class="card recap-item" href="#s04">
                 <div class="recap-icon">🔀</div>
                 <div>
                   <div class="rtitle">Boolean Logic</div>
                   <div class="rkey">AND / OR / XOR / NAND / NOR · short-circuit · precedence</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s05">
+              <a class="card recap-item" href="#s05">
                 <div class="recap-icon">📦</div>
                 <div>
                   <div class="rtitle">Scope &amp; Lifetime</div>
                   <div class="rkey">{ } boundaries · shadowing · initialization</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s06">
+              <a class="card recap-item" href="#s06">
                 <div class="recap-icon">🔄</div>
                 <div>
                   <div class="rtitle">Loops</div>
                   <div class="rkey">Four parts · nested · meaningful names</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s07">
+              <a class="card recap-item" href="#s07">
                 <div class="recap-icon">✨</div>
                 <div>
                   <div class="rtitle">Clean Code</div>
                   <div class="rkey">Functions = verbs · variables = nouns · snake_case</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s08">
+              <a class="card recap-item" href="#s08">
                 <div class="recap-icon">🛡️</div>
                 <div>
                   <div class="rtitle">Defensive Programming</div>
                   <div class="rkey">Guards · #define · header guards · pointer iteration</div>
                 </div>
               </a>
-              <a class="recap-item" href="#s09">
+              <a class="card recap-item" href="#s09">
                 <div class="recap-icon">📖</div>
                 <div>
                   <div class="rtitle">Reading C</div>
@@ -1915,7 +2144,7 @@ arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1<
       <button class="notes-toggle" onclick="toggleNotes('n10',this)">
         <span class="toggle-icon">📋</span>
         <span class="toggle-label">Presenter Notes — Closing</span>
-        <span class="toggle-arrow">▼</span>
+        <span class="arrow">▼</span>
       </button>
       <div class="notes" id="n10" hidden>
         <div class="notes-body">
@@ -1940,6 +2169,11 @@ arg <span class="co">=</span> argv <span class="co">+</span> <span class="cn">1<
     </section>
 
   </div><!-- /content -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-makefile.min.js"></script>
 
   <script>
     function toggleNav() {

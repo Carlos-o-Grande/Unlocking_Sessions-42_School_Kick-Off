@@ -465,19 +465,6 @@ section {
   margin-top: 65vh;
 }
 
-.slide-meta {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 1px;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 0.35rem;
-  padding-left: 2px;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-}
-
 /* tag pills: slide type tags and the scope-visual tags */
 .stag,
 .stag2 {
@@ -489,6 +476,8 @@ section {
 .stag {
   font-weight: 700;
   letter-spacing: 0.8px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
 }
 
 .stag-int, .stag2.shadow { background: #28183f; color: #c084fc; }
@@ -521,15 +510,28 @@ section {
   color: var(--accent);
 }
 
+.slide-hdr h3 a {
+  color: inherit;
+}
+
 .slide-hdr.c-amber  { --accent: var(--amber); }
 .slide-hdr.c-green  { --accent: var(--green); }
 .slide-hdr.c-purple { --accent: var(--purple); }
 .slide-hdr.c-red    { --accent: var(--red); }
 
+/* right side of the slide title line: type tag + slide number */
+.hdr-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-shrink: 0;
+}
+
 .slide-hdr .snum {
   font-family: var(--font-mono);
-  font-size: 0.83rem;
+  font-size: 1.05rem;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .slide-body {

@@ -97,7 +97,7 @@
         <a class="toc-item" href="#s02"><span class="n">02</span> The Byte &amp; Types</a>
         <a class="toc-item" href="#s03"><span class="n">03</span> Compiler Flags &amp; Makefile</a>
         <a class="toc-item" href="#s04"><span class="n">04</span> Boolean Logic &amp; Precedence</a>
-        <a class="toc-item" href="#s04b"><span class="n">04+</span> Boolean Logic at Work (optional)</a>
+        <a class="toc-item" href="#s04b"><span class="n">04+</span> Boolean Logic at Work</a>
         <a class="toc-item" href="#s05"><span class="n">05</span> Scope &amp; Variable Lifetime</a>
         <a class="toc-item" href="#s06"><span class="n">06</span> Loops</a>
         <a class="toc-item" href="#s07"><span class="n">07</span> Clean Code</a>
@@ -107,16 +107,16 @@
       <div class="budget">
         <div class="bchip">00 · ~5 min</div>
         <div class="bchip">01 · ~3 min</div>
-        <div class="bchip">02 · ~7 min</div>
+        <div class="bchip">02 · ~9 min</div>
         <div class="bchip">03 · ~6 min</div>
         <div class="bchip">04 · ~11 min</div>
-        <div class="bchip">04+ · ~5 min (optional)</div>
+        <div class="bchip">04+ · ~5 min</div>
         <div class="bchip">05 · ~5 min</div>
         <div class="bchip">06 · ~6 min</div>
         <div class="bchip">07 · ~3 min</div>
         <div class="bchip">08 · ~10 min</div>
         <div class="bchip">09 · ~6 min</div>
-        <div class="bchip total">Core ~62 min · optional +7 min (04+, S06)</div>
+        <div class="bchip total">Core ~51 min · optional +18 min (S06, S07, S14, S15, S18, S26, S27)</div>
       </div>
     </div>
 
@@ -132,11 +132,10 @@
 
       <!-- S01 - the gag: audience-facing only -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 01 <span class="stag stag-int">Interactive</span></div>
         <div class="slide">
           <div class="slide-hdr c-amber">
             <h3>How many fingers?</h3>
-            <div class="snum">S01</div>
+            <div class="hdr-meta"><span class="stag stag-int">Interactive</span><div class="snum">Slide 01</div></div>
           </div>
           <div class="slide-body">
             <div class="card big-txt">✋</div>
@@ -146,12 +145,10 @@
 
       <!-- S02 - binary hands: decode these -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 02 <span class="stag stag-int">Interactive - Audience Exercise</span>
-        </div>
         <div class="slide">
           <div class="slide-hdr c-amber">
             <h3>Read the byte - what's the value?</h3>
-            <div class="snum">S02</div>
+            <div class="hdr-meta"><span class="stag stag-int">Interactive - Audience Exercise</span><div class="snum">Slide 02</div></div>
           </div>
           <div class="slide-body">
             <div class="bit-legend">
@@ -236,11 +233,10 @@
       </div>
 
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 03 <span class="stag stag-vis">Visual</span></div>
         <div class="slide">
           <div class="slide-hdr c-purple">
             <h3>Parts of a C function - shared vocabulary</h3>
-            <div class="snum">S03</div>
+            <div class="hdr-meta"><span class="stag stag-vis">Visual</span><div class="snum">Slide 03</div></div>
           </div>
           <div class="slide-body">
             <div class="two-col grid-2">
@@ -340,16 +336,15 @@
       <div class="section-hdr">
         <div class="num">🔢</div>
         <h2>The Byte &amp; Types in C</h2>
-        <div class="timing">~7 min</div>
+        <div class="timing">~9 min</div>
       </div>
 
       <!-- S04 - nibbles & hex -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 04 <span class="stag stag-live">Live Demo - IDE</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Nibbles &amp; hex - 0x42 is not 42</h3>
-            <div class="snum">S04</div>
+            <div class="hdr-meta"><span class="stag stag-live">Live Demo - IDE</span><div class="snum">Slide 04</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-md">A nibble is 4 bits. Two nibbles make a
@@ -415,11 +410,10 @@ int     main(void)
 
       <!-- S05 - types table -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 05 <span class="stag stag-tbl">Table</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Types - the compiler's memory contract</h3>
-            <div class="snum">S05</div>
+            <div class="hdr-meta"><span class="stag stag-tbl">Table</span><div class="snum">Slide 05</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-md">A type tells the compiler: <em>how
@@ -504,11 +498,10 @@ result = (float)a / b;    // explicit cast - result is 3.5</code></pre>
 
       <!-- S06 - signed vs unsigned (optional) -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 06 <span class="stag stag-code">Code - Optional</span></div>
         <div class="slide">
           <div class="slide-hdr c-amber">
             <h3>Signed vs unsigned - same bits, two readings</h3>
-            <div class="snum">S06</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code - Optional</span><div class="snum">Slide 06</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-lg">The type doesn't change the bits in memory - it changes how they are read.</p>
@@ -573,11 +566,10 @@ unsigned char      0 → 255</code></pre>
 
       <!-- S07 - compiler flags -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 07 <span class="stag stag-tbl">Table</span></div>
         <div class="slide">
           <div class="slide-hdr c-red">
             <h3>-Wall -Wextra -Werror - your first line of defence</h3>
-            <div class="snum">S07</div>
+            <div class="hdr-meta"><span class="stag stag-tbl">Table - Optional</span><div class="snum">Slide 07</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-lg">These three flags are mandatory at 42.
@@ -646,11 +638,10 @@ unsigned char      0 → 255</code></pre>
 
       <!-- S08 - makefile -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 08 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr c-green">
             <h3>Makefile - the build contract</h3>
-            <div class="snum">S08</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 08</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-md">Add source filenames to <code class="ic">FILES</code> to compile
@@ -745,11 +736,10 @@ re: fclean all
 
       <!-- S09 - truth tables -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 09 <span class="stag stag-tbl">Tables</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Boolean operators - truth tables</h3>
-            <div class="snum">S09</div>
+            <div class="hdr-meta"><span class="stag stag-tbl">Tables</span><div class="snum">Slide 09</div></div>
           </div>
           <div class="slide-body">
             <p class="mb-md text-xl">In C: <code class="ic">0</code> is false. <strong>Every
@@ -1008,11 +998,10 @@ re: fclean all
 
       <!-- S10 - short-circuit -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 10 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Short-circuit evaluation</h3>
-            <div class="snum">S10</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 10</div></div>
           </div>
           <div class="slide-body">
             <ul class="mb-lg">
@@ -1035,11 +1024,10 @@ if (ptr &amp;&amp; ptr-&gt;value == 42)   // safe - right side only runs if ptr 
 
       <!-- S11 - = vs == -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 11 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>The <code class="ic">=</code> vs <code class="ic">==</code> trap</h3>
-            <div class="snum">S11</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 11</div></div>
           </div>
           <div class="slide-body">
             <p class="mb-lg"><code class="ic">=</code> assigns, <code class="ic">==</code> compares. Mixing them
@@ -1065,11 +1053,10 @@ if (x == 5)   // compares x to 5 - what you meant
 
       <!-- S12 - precedence -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 12 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Operator precedence - where C puts the invisible parentheses</h3>
-            <div class="snum">S12</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 12</div></div>
           </div>
           <div class="slide-body">
             <p class="prec-note">Higher rows group first - they decide where the invisible parentheses go (what
@@ -1144,11 +1131,10 @@ a = b == c    // becomes: a = (b == c) - comparison before assignment
 
       <!-- S13 - precedence vs evaluation order -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 13 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Precedence ≠ evaluation order</h3>
-            <div class="snum">S13</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 13</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-lg">Two different questions about the same expression: how is it grouped, and
@@ -1263,16 +1249,15 @@ show(f(), g());     // which name prints first?
       <div class="section-hdr">
         <div class="num">🧮</div>
         <h2>Boolean logic at work - adding and multiplying</h2>
-        <div class="timing">~5 min · optional</div>
+        <div class="timing">~5 min</div>
       </div>
 
       <!-- S14 - how the CPU adds -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 14 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr c-purple">
             <h3>How the CPU adds - XOR and AND</h3>
-            <div class="snum">S14</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code - Optional</span><div class="snum">Slide 14</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-lg">The AND and XOR from the truth tables, applied to every bit of a number at
@@ -1333,11 +1318,10 @@ while (b != 0)
 
       <!-- S15 - multiplication: shift and add -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 15 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr c-purple">
             <h3>How the CPU multiplies - shift and add</h3>
-            <div class="snum">S15</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code - Optional</span><div class="snum">Slide 15</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-lg">Shifting left one place multiplies by 2: <code class="ic">0011</code> (3)
@@ -1406,11 +1390,10 @@ while (b != 0)
       </div>
 
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 16 <span class="stag stag-vis">Visual</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Scope - { } is a life boundary</h3>
-            <div class="snum">S16</div>
+            <div class="hdr-meta"><span class="stag stag-vis">Visual</span><div class="snum">Slide 16</div></div>
           </div>
           <div class="slide-body">
             <div class="two-col grid-2">
@@ -1464,11 +1447,10 @@ while (b != 0)
       </div>
 
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 17 <span class="stag stag-live">Live Demo</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Uninitialized variables - reading garbage</h3>
-            <div class="snum">S17</div>
+            <div class="hdr-meta"><span class="stag stag-live">Live Demo</span><div class="snum">Slide 17</div></div>
           </div>
           <div class="slide-body">
             <pre class="language-c" data-snippet="s17_uninitialized" data-no-flags><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%23include%20%3Cstddef.h%3E%0A%0Avoid%09%2Aft_memset%28void%20%2Ab%2C%20int%20c%2C%20size_t%20len%29%0A%7B%0A%09unsigned%20char%09%2Ap%3B%0A%0A%09p%20%3D%20b%3B%0A%09while%20%28len--%29%0A%09%09%2Ap%2B%2B%20%3D%20%28unsigned%20char%29c%3B%0A%09return%20%28b%29%3B%0A%7D%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09x%3B%0A%09int%09y%3B%0A%09int%09arr%5B5%5D%3B%0A%0A%09printf%28%22%25d%5Cn%22%2C%20x%29%3B%0A%09y%20%3D%200%3B%0A%09printf%28%22%25d%5Cn%22%2C%20y%29%3B%0A%09ft_memset%28arr%2C%200%2C%20sizeof%28arr%29%29%3B%0A%09printf%28%22%25d%20%25d%5Cn%22%2C%20arr%5B0%5D%2C%20arr%5B4%5D%29%3B%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuI2luY2x1ZGUgPHN0ZGRlZi5oPlxuXG52b2lkXHQqZnRfbWVtc2V0KHZvaWQgKmIsIGludCBjLCBzaXplX3QgbGVuKVxue1xuXHR1bnNpZ25lZCBjaGFyXHQqcDtcblxuXHRwID0gYjtcblx0d2hpbGUgKGxlbi0tKVxuXHRcdCpwKysgPSAodW5zaWduZWQgY2hhciljO1xuXHRyZXR1cm4gKGIpO1xufVxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHR4O1xuXHRpbnRcdHk7XG5cdGludFx0YXJyWzVdO1xuXG5cdHByaW50ZihcIiVkXFxuXCIsIHgpO1xuXHR5ID0gMDtcblx0cHJpbnRmKFwiJWRcXG5cIiwgeSk7XG5cdGZ0X21lbXNldChhcnIsIDAsIHNpemVvZihhcnIpKTtcblx0cHJpbnRmKFwiJWQgJWRcXG5cIiwgYXJyWzBdLCBhcnJbNF0pO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiLVdhbGwgLVdleHRyYSAtV2Vycm9yIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuI2luY2x1ZGUgPHN0ZGRlZi5oPlxuXG52b2lkXHQqZnRfbWVtc2V0KHZvaWQgKmIsIGludCBjLCBzaXplX3QgbGVuKVxue1xuXHR1bnNpZ25lZCBjaGFyXHQqcDtcblxuXHRwID0gYjtcblx0d2hpbGUgKGxlbi0tKVxuXHRcdCpwKysgPSAodW5zaWduZWQgY2hhciljO1xuXHRyZXR1cm4gKGIpO1xufVxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHR4O1xuXHRpbnRcdHk7XG5cdGludFx0YXJyWzVdO1xuXG5cdHByaW50ZihcIiVkXFxuXCIsIHgpO1xuXHR5ID0gMDtcblx0cHJpbnRmKFwiJWRcXG5cIiwgeSk7XG5cdGZ0X21lbXNldChhcnIsIDAsIHNpemVvZihhcnIpKTtcblx0cHJpbnRmKFwiJWQgJWRcXG5cIiwgYXJyWzBdLCBhcnJbNF0pO1xuXHRyZXR1cm4gKDApO1xufVxuIiwgImNvbXBpbGVycyI6IFt7ImlkIjogImNnMTYyIiwgIm9wdGlvbnMiOiAiIn1dLCAiZXhlY3V0b3JzIjogW3siY29tcGlsZXIiOiB7ImlkIjogImNnMTYyIiwgImxpYnMiOiBbXSwgIm9wdGlvbnMiOiAiIn0sICJhcmd1bWVudHMiOiAiIiwgInN0ZGluIjogIiJ9XX1dfQ%3D%3D" target="_blank" rel="noopener">⚙ Run without flags</a></span><code class="language-c">int   x;
@@ -1537,11 +1519,10 @@ ft_memset(arr, 0, sizeof(arr));  // zero-initialize a whole array</code></pre>
       </div>
 
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 18 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>While - the only loop you write at 42</h3>
-            <div class="snum">S18</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code - Optional</span><div class="snum">Slide 18</div></div>
           </div>
           <div class="slide-body">
             <pre class="language-c" data-snippet="s18_while"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09i%3B%0A%0A%09i%20%3D%200%3B%0A%09while%20%28i%20%3C%205%29%0A%09%7B%0A%09%09printf%28%22%25d%5Cn%22%2C%20i%29%3B%0A%09%09i%2B%2B%3B%0A%09%7D%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRpO1xuXG5cdGkgPSAwO1xuXHR3aGlsZSAoaSA8IDUpXG5cdHtcblx0XHRwcmludGYoXCIlZFxcblwiLCBpKTtcblx0XHRpKys7XG5cdH1cblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int   i;
@@ -1572,11 +1553,10 @@ while (i &lt; 5)                // 2. condition - tested before each iteration
       </div>
 
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 19 <span class="stag stag-live">Live Demo</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>Nested loops - name your variables for the context</h3>
-            <div class="snum">S19</div>
+            <div class="hdr-meta"><span class="stag stag-live">Live Demo</span><div class="snum">Slide 19</div></div>
           </div>
           <div class="slide-body">
             <pre class="language-c" data-snippet="s19_nested_loops"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09row%3B%0A%09int%09col%3B%0A%0A%09row%20%3D%200%3B%0A%09while%20%28row%20%3C%203%29%0A%09%7B%0A%09%09col%20%3D%200%3B%0A%09%09while%20%28col%20%3C%204%29%0A%09%09%7B%0A%09%09%09printf%28%22%5B%25d%2C%25d%5D%20%22%2C%20row%2C%20col%29%3B%0A%09%09%09col%2B%2B%3B%0A%09%09%7D%0A%09%09printf%28%22%5Cn%22%29%3B%0A%09%09row%2B%2B%3B%0A%09%7D%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRyb3c7XG5cdGludFx0Y29sO1xuXG5cdHJvdyA9IDA7XG5cdHdoaWxlIChyb3cgPCAzKVxuXHR7XG5cdFx0Y29sID0gMDtcblx0XHR3aGlsZSAoY29sIDwgNClcblx0XHR7XG5cdFx0XHRwcmludGYoXCJbJWQsJWRdIFwiLCByb3csIGNvbCk7XG5cdFx0XHRjb2wrKztcblx0XHR9XG5cdFx0cHJpbnRmKFwiXFxuXCIpO1xuXHRcdHJvdysrO1xuXHR9XG5cdHJldHVybiAoMCk7XG59XG4iLCAiY29tcGlsZXJzIjogW3siaWQiOiAiY2cxNjIiLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifV0sICJleGVjdXRvcnMiOiBbeyJjb21waWxlciI6IHsiaWQiOiAiY2cxNjIiLCAibGlicyI6IFtdLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifSwgImFyZ3VtZW50cyI6ICIiLCAic3RkaW4iOiAiIn1dfV19" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int   row;
@@ -1660,11 +1640,10 @@ while (row &lt; 3)                // outer: controls which row we are on
       </div>
 
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 20 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr c-green">
             <h3>Names communicate intent</h3>
-            <div class="snum">S20</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 20</div></div>
           </div>
           <div class="slide-body">
             <pre class="language-c"><code class="language-c">// functions are verbs - they do something
@@ -1746,11 +1725,10 @@ size_t  len;</code></pre>
 
       <!-- S21 - guard clauses -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 21 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr c-purple">
             <h3>Guard clauses - handle bad cases first</h3>
-            <div class="snum">S21</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 21</div></div>
           </div>
           <div class="slide-body">
             <p class="subtext mb-lg"><em>Defensive programming:</em> write
@@ -1797,11 +1775,10 @@ size_t  len;</code></pre>
 
       <!-- S22 - Magic numbers / Muggle -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 22 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr c-amber">
             <h3>Magic numbers - only the compiler is magic</h3>
-            <div class="snum">S22</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 22</div></div>
           </div>
           <div class="slide-body">
             <div class="muggle-hero">
@@ -1843,11 +1820,10 @@ if (count &gt; MAX_PLAYERS)
 
       <!-- S23 - Header guards & const -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 23 <span class="stag stag-code">Code</span></div>
         <div class="slide">
           <div class="slide-hdr c-purple">
             <h3>Header guards &amp; const - systematic protection</h3>
-            <div class="snum">S23</div>
+            <div class="hdr-meta"><span class="stag stag-code">Code</span><div class="snum">Slide 23</div></div>
           </div>
           <div class="slide-body">
             <div class="two-col grid-2">
@@ -1889,11 +1865,10 @@ size_t  ft_strlen(const char *str);
 
       <!-- S24 - Array iteration approach A: sizeof -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 24 - Approach A <span class="stag stag-live">Live Demo</span></div>
         <div class="slide">
           <div class="slide-hdr c-purple">
             <h3>Iterating without int i - approach A: sizeof</h3>
-            <div class="snum">S24</div>
+            <div class="hdr-meta"><span class="stag stag-live">Live Demo</span><div class="snum">Slide 24</div></div>
           </div>
           <div class="slide-body">
             <pre class="language-c" data-snippet="s24_sizeof"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28void%29%0A%7B%0A%09int%09%09arr%5B5%5D%3B%0A%09size_t%09len%3B%0A%09int%09%09%2Aptr%3B%0A%0A%09arr%5B0%5D%20%3D%2010%3B%0A%09arr%5B1%5D%20%3D%2020%3B%0A%09arr%5B2%5D%20%3D%2030%3B%0A%09arr%5B3%5D%20%3D%2040%3B%0A%09arr%5B4%5D%20%3D%2050%3B%0A%09len%20%3D%20sizeof%28arr%29%20%2F%20sizeof%28arr%5B0%5D%29%3B%0A%09ptr%20%3D%20arr%3B%0A%09while%20%28ptr%20%3C%20arr%20%2B%20len%29%0A%09%7B%0A%09%09printf%28%22%25d%5Cn%22%2C%20%2Aptr%29%3B%0A%09%09ptr%2B%2B%3B%0A%09%7D%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIiNpbmNsdWRlIDxzdGRpby5oPlxuXG5pbnRcdG1haW4odm9pZClcbntcblx0aW50XHRcdGFycls1XTtcblx0c2l6ZV90XHRsZW47XG5cdGludFx0XHQqcHRyO1xuXG5cdGFyclswXSA9IDEwO1xuXHRhcnJbMV0gPSAyMDtcblx0YXJyWzJdID0gMzA7XG5cdGFyclszXSA9IDQwO1xuXHRhcnJbNF0gPSA1MDtcblx0bGVuID0gc2l6ZW9mKGFycikgLyBzaXplb2YoYXJyWzBdKTtcblx0cHRyID0gYXJyO1xuXHR3aGlsZSAocHRyIDwgYXJyICsgbGVuKVxuXHR7XG5cdFx0cHJpbnRmKFwiJWRcXG5cIiwgKnB0cik7XG5cdFx0cHRyKys7XG5cdH1cblx0cmV0dXJuICgwKTtcbn1cbiIsICJjb21waWxlcnMiOiBbeyJpZCI6ICJjZzE2MiIsICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9XSwgImV4ZWN1dG9ycyI6IFt7ImNvbXBpbGVyIjogeyJpZCI6ICJjZzE2MiIsICJsaWJzIjogW10sICJvcHRpb25zIjogIi1XYWxsIC1XZXh0cmEgLVdlcnJvciJ9LCAiYXJndW1lbnRzIjogIiIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">int     arr[] = {10, 20, 30, 40, 50};
@@ -1929,11 +1904,10 @@ while (ptr &lt; arr + len)
 
       <!-- S25 - Array iteration approach B: sentinel -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 25 - Approach B <span class="stag stag-live">Live Demo</span></div>
         <div class="slide">
           <div class="slide-hdr c-purple">
             <h3>Iterating without int i - approach B: pointer as iterator</h3>
-            <div class="snum">S25</div>
+            <div class="hdr-meta"><span class="stag stag-live">Live Demo</span><div class="snum">Slide 25</div></div>
           </div>
           <div class="slide-body">
             <pre class="language-c" data-snippet="s25_sentinel"><span class="run-links"><a href="https://pythontutor.com/visualize.html#code=%2F%2F%20args%3A%20hello%2042%20world%0A%23include%20%3Cstdio.h%3E%0A%0Aint%09main%28int%20argc%2C%20char%20%2A%2Aargv%29%0A%7B%0A%09int%09%09arr%5B6%5D%3B%0A%09int%09%09%2Aptr%3B%0A%09char%09%2A%2Aarg%3B%0A%0A%09%28void%29argc%3B%0A%09arr%5B0%5D%20%3D%2010%3B%0A%09arr%5B1%5D%20%3D%2020%3B%0A%09arr%5B2%5D%20%3D%2030%3B%0A%09arr%5B3%5D%20%3D%2040%3B%0A%09arr%5B4%5D%20%3D%2050%3B%0A%09arr%5B5%5D%20%3D%200%3B%0A%09ptr%20%3D%20arr%3B%0A%09while%20%28%2Aptr%29%0A%09%7B%0A%09%09printf%28%22%25d%5Cn%22%2C%20%2Aptr%29%3B%0A%09%09ptr%2B%2B%3B%0A%09%7D%0A%09arg%20%3D%20argv%20%2B%201%3B%0A%09while%20%28%2Aarg%29%0A%09%7B%0A%09%09printf%28%22%25s%5Cn%22%2C%20%2Aarg%29%3B%0A%09%09arg%2B%2B%3B%0A%09%7D%0A%09return%20%280%29%3B%0A%7D%0A&amp;py=c_gcc9.3.0&amp;mode=display&amp;curInstr=0" target="_blank" rel="noopener">▶ Step through</a><a href="https://godbolt.org/clientstate/eyJzZXNzaW9ucyI6IFt7ImlkIjogMSwgImxhbmd1YWdlIjogImMiLCAic291cmNlIjogIi8vIGFyZ3M6IGhlbGxvIDQyIHdvcmxkXG4jaW5jbHVkZSA8c3RkaW8uaD5cblxuaW50XHRtYWluKGludCBhcmdjLCBjaGFyICoqYXJndilcbntcblx0aW50XHRcdGFycls2XTtcblx0aW50XHRcdCpwdHI7XG5cdGNoYXJcdCoqYXJnO1xuXG5cdCh2b2lkKWFyZ2M7XG5cdGFyclswXSA9IDEwO1xuXHRhcnJbMV0gPSAyMDtcblx0YXJyWzJdID0gMzA7XG5cdGFyclszXSA9IDQwO1xuXHRhcnJbNF0gPSA1MDtcblx0YXJyWzVdID0gMDtcblx0cHRyID0gYXJyO1xuXHR3aGlsZSAoKnB0cilcblx0e1xuXHRcdHByaW50ZihcIiVkXFxuXCIsICpwdHIpO1xuXHRcdHB0cisrO1xuXHR9XG5cdGFyZyA9IGFyZ3YgKyAxO1xuXHR3aGlsZSAoKmFyZylcblx0e1xuXHRcdHByaW50ZihcIiVzXFxuXCIsICphcmcpO1xuXHRcdGFyZysrO1xuXHR9XG5cdHJldHVybiAoMCk7XG59XG4iLCAiY29tcGlsZXJzIjogW3siaWQiOiAiY2cxNjIiLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifV0sICJleGVjdXRvcnMiOiBbeyJjb21waWxlciI6IHsiaWQiOiAiY2cxNjIiLCAibGlicyI6IFtdLCAib3B0aW9ucyI6ICItV2FsbCAtV2V4dHJhIC1XZXJyb3IifSwgImFyZ3VtZW50cyI6ICJoZWxsbyA0MiB3b3JsZCIsICJzdGRpbiI6ICIifV19XX0%3D" target="_blank" rel="noopener">⚙ Compile &amp; run</a></span><code class="language-c">// Works when the array has a sentinel - a value that marks the end
@@ -2039,11 +2013,10 @@ while (*arg)
 
       <!-- S26 -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 26 <span class="stag stag-vis">Visual</span></div>
         <div class="slide">
           <div class="slide-hdr c-amber">
             <h3>The inside-out, right-then-left rule</h3>
-            <div class="snum">S26</div>
+            <div class="hdr-meta"><span class="stag stag-vis">Visual - Optional</span><div class="snum">Slide 26</div></div>
           </div>
           <div class="slide-body">
             <p class="mb-lg text-center">Start at the identifier. Go <strong>right</strong> first, then
@@ -2089,11 +2062,10 @@ while (*arg)
 
       <!-- S27 -->
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 27 <span class="stag stag-live">Live Demo - cdecl.org</span></div>
         <div class="slide">
           <div class="slide-hdr c-amber">
-            <h3>Practice - and validate at cdecl.org</h3>
-            <div class="snum">S27</div>
+            <h3>Practice - and validate at <a href="https://cdecl.org/" target="_blank" rel="noopener">cdecl.org</a></h3>
+            <div class="hdr-meta"><span class="stag stag-live">Live Demo - cdecl.org - Optional</span><div class="snum">Slide 27</div></div>
           </div>
           <div class="slide-body">
             <pre class="language-c" data-reveal-comments><code class="language-c">// Read these before I reveal - right-then-left from the name
@@ -2106,7 +2078,7 @@ const char  *s
 
 char  *const s
 // s is a const pointer to char  (pointer immutable, data mutable)</code></pre>
-            <p class="mt-md">Navigate live to <strong class="text-cyan">cdecl.org</strong> - type
+            <p class="mt-md">Navigate live to <a href="https://cdecl.org/" target="_blank" rel="noopener" class="text-cyan"><strong>cdecl.org</strong></a> - type
               a declaration, get plain English. Use it as validation, not as a crutch.</p>
             <ul class="mt-md">
               <li>const <strong>left</strong> of * → data is const</li>
@@ -2172,11 +2144,10 @@ char  *const s
       </div>
 
       <div class="slide-wrap">
-        <div class="slide-meta">Slide 28 <span class="stag stag-int">Interactive</span></div>
         <div class="slide">
           <div class="slide-hdr">
             <h3>What we covered - did I explain it correctly?</h3>
-            <div class="snum">S28</div>
+            <div class="hdr-meta"><span class="stag stag-int">Interactive</span><div class="snum">Slide 28</div></div>
           </div>
           <div class="slide-body">
             <div class="recap-grid grid-2">

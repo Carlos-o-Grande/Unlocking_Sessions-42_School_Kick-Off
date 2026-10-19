@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   style.css — Unlocking Session: Syntax
+   style.css - Unlocking Session: Syntax
    42 School · Kick-off Week
 ════════════════════════════════════════════════ */
 
@@ -85,28 +85,40 @@ body {
   white-space: nowrap;
 }
 
+/* current-section pill: centred in the top bar, slightly taller than it; opens the section menu */
 .nav-dropdown {
-  position: relative;
+  position: absolute;
+  top: 0.45rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.nav-menu-btn {
-  background: var(--surface);
+.topnav .section-pill {
+  margin: 0;
+  padding: 0.35rem 1.1rem 0.35rem 0.35rem;
+  background: var(--bg-deep);
   border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .5);
   color: var(--text);
-  padding: 0.42rem 1.1rem;
-  border-radius: 7px;
+  font: inherit;
   cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
+  white-space: nowrap;
+}
+
+.topnav .section-pill:hover {
+  border-color: var(--cyan-dim);
+}
+
+.pill-content {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 1.1rem;
 }
 
-.nav-menu-btn:hover {
-  border-color: var(--cyan-dim);
-  color: var(--text-hi);
+/* in-page section headers only feed the pill */
+.content .section-hdr {
+  display: none;
 }
 
 .arrow {
@@ -122,7 +134,8 @@ body {
   display: none;
   position: absolute;
   top: calc(100% + 7px);
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   background: var(--bg-deep);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -142,7 +155,7 @@ body {
   gap: 0.7rem;
   padding: 0.6rem 0.9rem;
   border-radius: 6px;
-  color: var(--muted);
+  color: var(--text);
   text-decoration: none;
   font-size: 1rem;
   transition: background .15s, color .15s;
@@ -194,7 +207,7 @@ body {
   justify-content: center;
   background: linear-gradient(150deg, #09111f 0%, var(--bg) 70%);
   border-bottom: 1px solid var(--border);
-  padding: 4rem 3rem;
+  padding: 4rem 3rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -250,7 +263,7 @@ body {
   gap: 3.5rem;
   align-items: flex-start;
   flex-shrink: 0;
-  margin-top: 6rem;
+  margin-top: 5rem;
   margin-right: 6rem;
 }
 
@@ -329,22 +342,39 @@ body {
   margin-bottom: 1.2rem;
 }
 
+/* session map: three columns, filled top to bottom */
 .toc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-auto-flow: column;
   gap: 0.4rem 3rem;
 }
 
+@media (max-width: 650px) {
+  .toc-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+  }
+}
+
 .toc-item {
-  font-size: 1rem;
-  color: var(--muted);
+  color: var(--text);
+  text-decoration: none;
   display: flex;
   gap: 0.6rem;
   align-items: baseline;
 }
 
+.toc-item:hover {
+  color: var(--text-hi);
+}
+
 .toc-item .n {
   font-family: var(--font-mono);
   font-size: 0.93rem;
-  color: var(--cyan-dim);
+  color: var(--cyan);
   flex-shrink: 0;
 }
 
@@ -363,7 +393,7 @@ body {
   padding: 0.26rem 0.72rem;
   border-radius: 5px;
   border: 1px solid var(--border);
-  color: var(--muted);
+  color: var(--text);
 }
 
 .bchip.total {
@@ -384,27 +414,29 @@ section {
   margin: 3.5rem 0 1.6rem;
 }
 
+/* section icon: dark circle with the section colour as a ring, so emoji stay readable */
 .section-hdr .num {
   width: 2.7rem;
   height: 2.7rem;
   border-radius: 50%;
-  background: var(--cyan);
-  color: #221a0c;
+  background: var(--surface2);
+  border: 2px solid var(--cyan);
+  color: var(--text-hi);
   font-family: var(--font-head);
   font-weight: 800;
-  font-size: 1rem;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.section-hdr .num.s-open  { background: var(--amber); }
-.section-hdr .num.s-vocab { background: var(--purple); }
-.section-hdr .num.s-tools { background: var(--red);    color: #fff; }
-.section-hdr .num.s-clean { background: var(--green);  color: var(--bg-deep); }
-.section-hdr .num.s-def   { background: var(--purple); color: #fff; }
-.section-hdr .num.s-read  { background: var(--amber);  color: var(--bg-deep); }
+.section-hdr .num.s-open  { border-color: var(--amber); }
+.section-hdr .num.s-vocab { border-color: var(--purple); }
+.section-hdr .num.s-tools { border-color: var(--red); }
+.section-hdr .num.s-clean { border-color: var(--green); }
+.section-hdr .num.s-def   { border-color: var(--purple); }
+.section-hdr .num.s-read  { border-color: var(--amber); }
 
 .section-hdr h2 {
   font-family: var(--font-head);
@@ -429,7 +461,7 @@ section {
   margin-bottom: 1.1rem;
 }
 
-.slide-wrap+.slide-wrap {
+.slide-wrap ~ .slide-wrap {
   margin-top: 65vh;
 }
 
@@ -565,21 +597,13 @@ pre {
   tab-size: 4;
 }
 
-/* Used only by the Section 01 "Vocabulary" slide, which hand-colors its code
-   sample to match a legend (return type / function name / parameter / local
-   variable) — a distinction Prism's generic C grammar can't express. */
-.ck  { color: var(--code-keyword); }
-.cn  { color: var(--code-number); }
-.co  { color: var(--code-operator); }
+/* S03 vocabulary slide: type, function name and keywords use the Prism colours below;
+   these are the parts Prism doesn't mark, coloured to match the slide's legend */
+.vpar  { color: var(--green); }
+.vvar  { color: var(--red); }
+.vcond { color: var(--orange); }
 
-/* vocabulary coloring */
-.vt  { color: var(--amber); font-weight: 600; }
-.vfn { color: var(--cyan); font-weight: 600; }
-.vpt { color: var(--purple); }
-.vpn { color: var(--green-light); font-weight: 500; }
-.vv  { color: var(--red); }
-
-/* Prism.js tokens — all other code blocks */
+/* Prism.js tokens - all other code blocks */
 .token.comment { color: var(--code-comment); font-style: italic; }
 .token.keyword, .token.directive { color: var(--code-keyword); }
 .token.class-name { color: var(--code-type); }
@@ -618,6 +642,18 @@ pre {
   padding-top: 2.9rem;
 }
 
+/* answers to audience questions: blurred until clicked */
+.reveal {
+  filter: blur(7px);
+  cursor: pointer;
+  transition: filter .25s;
+}
+
+.reveal.shown {
+  filter: none;
+  cursor: auto;
+}
+
 /* ── LAYOUT HELPERS ───────────────────────────── */
 .card {
   background: var(--bg);
@@ -647,12 +683,6 @@ pre {
   text-transform: uppercase;
   margin-bottom: 0.4rem;
   font-weight: 700;
-}
-
-hr.divider {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 1.1rem 0;
 }
 
 .big-txt {
@@ -685,6 +715,7 @@ code.ic {
   padding: 0.13rem 0.4rem;
   border-radius: 4px;
   color: var(--amber);
+  white-space: nowrap;
 }
 
 /* ── VOCAB LEGEND ─────────────────────────────── */
@@ -706,6 +737,7 @@ code.ic {
   border-radius: 50%;
   flex-shrink: 0;
   margin-top: 0.38rem;
+  background: currentColor;
 }
 
 .vocab-item .vname {
@@ -853,6 +885,9 @@ table.bt td {
 
 /* De Morgan / NAND / NOR section */
 .demorgan-section {
+  display: grid;
+  grid-template-columns: 13rem 1fr 1fr;
+  gap: 1.8rem;
   margin-top: 1.5rem;
   padding: 1.3rem 1.5rem;
   background: rgba(167, 139, 250, .06);
@@ -863,11 +898,13 @@ table.bt td {
 .demorgan-title {
   font-size: 1rem;
   color: var(--purple);
-  margin-bottom: 1.1rem;
+  align-self: center;
 }
 
-.demorgan-grid {
-  gap: 1.8rem;
+@media (max-width: 650px) {
+  .demorgan-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 .dm-eq {
@@ -883,7 +920,7 @@ table.bt td {
 }
 
 .dm-name {
-  color: var(--red);
+  color: var(--text-hi);
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -969,13 +1006,24 @@ table.bt td {
   font-style: italic;
 }
 
+/* 13 rows in two columns, read top to bottom: rows 1-7 left, 8-13 right */
 .prec-table {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, auto);
+  grid-auto-flow: column;
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   margin: 0.5rem 0 0.9rem;
+}
+
+.prec-row:nth-child(-n+7) {
+  border-right: 1px solid var(--border);
+}
+
+.prec-row:nth-child(7) {
+  border-bottom: none;
 }
 
 .prec-row {
@@ -1003,7 +1051,7 @@ table.bt td {
 
 .prec-lbl {
   font-size: 1.15rem;
-  min-width: 200px;
+  min-width: 220px;
   color: var(--muted);
 }
 
@@ -1077,8 +1125,8 @@ table.bt td {
 
 /* ── NIBBLE VISUAL ────────────────────────────── */
 .nibble-vis {
-  line-height: 2.2;
-  padding: 1.2rem 1.6rem;
+  line-height: 1.8;
+  padding: 0.9rem 1.6rem;
   margin: 0.9rem 0;
   overflow-x: auto;
 }
@@ -1235,7 +1283,7 @@ table.bt td {
 }
 
 .engage::before {
-  content: '💬  ENGAGEMENT — ';
+  content: '💬  ENGAGEMENT - ';
   color: #059669;
 }
 
@@ -1310,15 +1358,15 @@ table.bt td {
 .text-green { color: var(--green); }
 .text-cyan  { color: var(--cyan); }
 
-/* background */
-.bg-red    { background: var(--red); }
-.bg-amber  { background: var(--amber); }
-.bg-purple { background: var(--purple); }
-.bg-cyan   { background: var(--cyan); }
-
 /* layout */
 .block       { display: block; }
 .text-center { text-align: center; }
+
+/* text that must keep its own line breaks */
+.nowrap { white-space: nowrap; }
+
+/* lists with more room between items */
+.spaced li { margin: 0.9rem 0; }
 
 /* typography */
 .text-lg { font-size: 1.15rem; }
@@ -1373,13 +1421,19 @@ code.ic,
   background: var(--surface2);
   border: 2px solid var(--border);
   color: var(--cyan);
-  font-size: 1.8rem;
   cursor: pointer;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+}
+
+.slide-nav svg {
+  width: 2.2rem;
+  height: 2.2rem;
+  fill: currentColor;
 }
 
 .slide-nav button:hover {

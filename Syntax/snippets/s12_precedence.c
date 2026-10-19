@@ -7,7 +7,7 @@ int	main(void)
 	int	c;
 	int	x;
 	int	arr[2];
-	int	*p;
+	int	*ptr;
 
 	a = 4;
 	b = 2;
@@ -15,9 +15,9 @@ int	main(void)
 	printf("you meant         (a & b) == 0: %d\n", (a & b) == 0);
 	arr[0] = 10;
 	arr[1] = 20;
-	p = arr;
-	x = *p++;
-	printf("*p++ read %d, p now points at %d\n", x, *p);
+	ptr = arr;
+	x = *ptr++;
+	printf("*ptr++ read %d, ptr now points at %d\n", x, *ptr);
 	b = 3;
 	c = 3;
 	a = b == c;

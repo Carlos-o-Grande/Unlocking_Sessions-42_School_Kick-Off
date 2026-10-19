@@ -8,7 +8,7 @@ After editing a `.c` file, check it with the 42 flags, then rewrite every panel'
 (run from the `Syntax` folder):
 
 ```
-cc -Wall -Wextra -Werror snippets/s11_shadowing.c && ./a.out
+cc -Wall -Wextra -Werror snippets/s16_shadowing.c && ./a.out
 python3 snippets/make_links.py --update Unlocking_session_Syntax.html
 ```
 
@@ -19,19 +19,24 @@ the page: `python3 snippets/make_links.py snippets/<name>.c`.
 A line `// args: a b c` in a `.c` file sets the command-line arguments for the Compiler Explorer run
 (Python Tutor has no arguments).
 
+A panel with `data-compare="<compiler id>"` (e.g. `cclang2210` = x86-64 clang 22.1.0) makes the Compile & run
+link open a second run pane with that compiler, next to gcc - used on S13 to show gcc and clang
+evaluating function arguments in a different order. Note: the run pane is tied to its compiler;
+changing the compiler in the assembly pane does not change what the run pane uses.
+
 Two programs fail to compile with the 42 flags on purpose, because that is what their slide teaches:
-`s09_assign_vs_compare.c` (`if (x = 5)`, `-Wparentheses`) and `s12_uninitialized.c`
+`s11_assign_vs_compare.c` (`if (x = 5)`, `-Wparentheses`) and `s17_uninitialized.c`
 (reading an uninitialised variable, `-Wuninitialized`). Their Compile & run button shows the
 compiler stopping them. Their panels also carry `data-no-flags`, which adds a third button,
 ⚙ Run without flags: the same Compiler Explorer setup with no flags, so the program compiles and runs. Python Tutor compiles without `-Werror`: it steps through
-`s09_assign_vs_compare.c` normally, and stops `s12_uninitialized.c` at the `printf` with
+`s11_assign_vs_compare.c` normally, and stops `s17_uninitialized.c` at the `printf` with
 "Conditional jump or move depends on uninitialised value(s)".
-`s09_null_check.c` crashes on purpose at its last `if`: Compile & run shows `SIGSEGV`,
+`s10_null_check.c` crashes on purpose at its last `if`: Compile & run shows `SIGSEGV`,
 Python Tutor stops there with "Invalid read of size 4".
 
 The code lives inside the link itself, so nothing is uploaded until someone clicks it.
 
-## Python Tutor — step-by-step visualiser
+## Python Tutor - step-by-step visualiser
 
 No official API docs. Parameters below were read from the site's frontend bundle
 (`https://pythontutor.com/build/visualize.bundle.js`) on 2026-10-16.
@@ -52,7 +57,7 @@ https://pythontutor.com/visualize.html#code=<url-encoded source>&py=c_gcc9.3.0&m
 Others it reads but we don't need: `cumulative`, `heapPrimitives`, `textReferences`, `rawInputLstJSON`
 (stdin lines as a JSON list), `verticalStack`.
 
-## Compiler Explorer (godbolt.org) — compile, assembly, run
+## Compiler Explorer (godbolt.org) - compile, assembly, run
 
 Source: https://github.com/compiler-explorer/compiler-explorer/blob/main/docs/API.md
 (BSD-2-Clause, © Compiler Explorer authors), excerpt retrieved 2026-10-16:
